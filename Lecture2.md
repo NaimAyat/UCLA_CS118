@@ -41,8 +41,8 @@
     * Typically a few microseconds or less
   * d<sub>queue</sub> = queueing delay
     * traffic intensity = L * a / R = Packet size (bits) * Average packet arrival rate / Link bandwidth (bps)
-      * L * a / R ~ 0: average queueing delay is small
-      * L * a / R -> 1: average queueing delays become large
+      * L * a / R = 0: average queueing delay is small
+      * L * a / R = 1: average queueing delay is large
       * L * a / R > 1: more "work" is arriving than can be serviced; average delay is infinite
     * Depends on congestion
   * d<sub>trans</sub> = transmission delay
