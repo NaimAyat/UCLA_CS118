@@ -23,5 +23,5 @@
     * Still an unsolved problem
 ## Performance Metrics
  1. Throughput: How fast?
- 2. Delay: How responsive is the network?
- 3. Loss: How good is packet delivery?
+ 1. Delay: How responsive is the network?
+ 1. Loss: How good is packet delivery?
