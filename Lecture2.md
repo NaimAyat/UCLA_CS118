@@ -36,13 +36,13 @@
   2. Queueing
      * Time waiting at output link for transmission
      * Depends on congestion level of router
-* Nodal delay (d_nodal = d_proc + d_queue + d_trans + d_prop)
-  * d_proc = processing delay
+* Nodal delay (d<sub>nodal</sub> = d<sub>proc</sub> + d<sub>queue</sub> + d<sub>trans</sub> + d<sub>prop</sub>)
+  * d<sub>proc</sub> = processing delay
     * Typically a few microseconds or less
-  * d_queue = queueing delay
+  * d<sub>queue</sub> = queueing delay
     * Depends on congestion
-  * d_trans = transmission delay
+  * d<sub>trans</sub> = transmission delay
     * = L / R = Packet size (bits) / Link bandwidth (bps)
-  * d_prop = propagation delay
+  * d<sub>prop</sub> = propagation delay
     * = d / s = Length of physical link / Propagation speed in medium (~2*10<sup>8</sup> m/s)
     * A few microsecs to hundreds of microseconds
