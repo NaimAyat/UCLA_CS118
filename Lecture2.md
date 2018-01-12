@@ -23,8 +23,8 @@
     * Still an unsolved problem
 ## Performance Metrics
  1. Throughput: How fast?
- 1. Delay: How responsive is the network?
- 1. Loss: How good is packet delivery?
+ 2. Delay: How responsive is the network?
+ 3. Loss: How good is packet delivery?
  * How do loss and delay occur?
    * Packets queue in router buffers
      * Packet arrival rate to link exceeds output link capacity
