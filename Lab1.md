@@ -56,7 +56,7 @@
      * Cable
 ## Socket Programming
 * Model for network programming
-  *  Clients-Server Model
+  *  Client-Server Model
     * Clients request data
       * Initiate communication
       * Send request and wait for server reply
