@@ -64,3 +64,17 @@
        * Hardware
        * Software
      * How do we standardize/organize them?
+       * Layering
+         * Dealing with complex systems
+           * Explicit structure allows identification, realationship of complex system's pieces
+             * Layered reference model
+     * Internet protocol stack:
+       * Application: supporting network applications
+         * FTP, SMTP, HTTP
+       * Transport: process to process data transfer
+         * TCP, UDP
+       * Network: routing of datagrams from source to destination
+         * IP, routing protocols
+       * Link: data transfer between neighboring network elements
+         * PPP, Ehternet
+       * Phyisical: bits on wire
