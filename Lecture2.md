@@ -8,4 +8,7 @@
     * Each user
       * 100kb/s when active
       * Active 10% of the time
-   
+  * Circuit switching
+    * 10 users
+  * Packet switching
+    * With 35 users, probability > 10 active at the same time is less than 0.0004
