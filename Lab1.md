@@ -12,6 +12,9 @@
   * Network of networks
     * End systems are connected via a core network
       * Packet is sent through wifi or cable
+      * End systems are "smart"; core is "dumb"
+        * Core has no function other than to transfer packets
+        * End systems include PCs, mobile phones, etc.
 * Network protocol
   * Layered structure
 * Circuit switching vs. packet switching
