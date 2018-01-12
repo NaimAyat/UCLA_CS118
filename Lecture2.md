@@ -55,7 +55,7 @@
     * Traceroute program: provides delay measurement from source to router
  ## Protocol "Layers"
    * Networks are complex:
-     * Many pieces
+     * Composed of many pieces:
        * Hosts
        * Routers
        * Links of various media
