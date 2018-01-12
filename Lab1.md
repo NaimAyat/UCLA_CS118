@@ -86,4 +86,9 @@
   * No flow control
   * No congestion control
   * Faster than TCP
-
+* Network Programming API
+  * Socket: A network socket is an endpoint of an inter-process communication flow across a computer network
+  * A socket address is identified by <ip:port>
+    * IP address can be thought of the location of your computer on the internet
+    * Port number is used for different services to share the network resources
+    * [Some port numbers are "reversed"](https://tools.ietf.org/html/rfc1700)
