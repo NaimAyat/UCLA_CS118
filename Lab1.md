@@ -20,7 +20,17 @@
 * Network protocol
   * Layered structure
 * Circuit switching vs. packet switching
-  * Processing delay, queuing delay, transmission delay, propagation delay
+  * Processing delay, d<sub>process</sub>
+  * Queuing delay, d<sub>queuing</sub>
+    * For each process, there is a FIFO buffer
+    * The packets have to wait until the prior packet has been sent
+    * Delay comes from waiting in the router buffer
+    * When buffer overflows, there are packet drops
+    * When there are too many packet drops, the transport speed has to slow down
+  * Transmission delay d<sub>transmission</sub>
+    * Occurs as router sends packet through link
+    * Determined by the link capacity
+  * Propagation delay
 * Access systems
   * Multiple devices can connect to a single access point
     * Each device receives a unique ID from access point
