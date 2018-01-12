@@ -29,10 +29,10 @@
    * Packets queue in router buffers
      * Packet arrival rate to link exceeds output link capacity
      * Packets queue, wait for turn
- * Four sources of packet delay
-   1. Nodal processing
+* Four sources of packet delay
+  1. Nodal processing
      * Check bit errors
      * Determine output link
-   2. Queueing
+  2. Queueing
      * Time waiting at output link for transmission
      * Depends on congestion level of router
