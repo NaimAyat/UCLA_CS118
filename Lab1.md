@@ -26,7 +26,7 @@
     * Each device receives a unique ID from access point
     * Access points include wifi routers and cell towers
 * ISP (Internet Service Provider)
-  1. End device sends packet to his ISP
+  1. Packet goes to sender's ISP
   2. If sender's ISP is the same as receiver's ISP, packet goes straight to receiver
   3. If sender's ISP is different from receiver's ISP, packet goes to higher-level ISP
   4. Higher-level ISP sends packet to receiver's ISP
