@@ -23,6 +23,7 @@
     * Still an unsolved problem
 ## Performance Metrics
  1. Throughput: How fast?
+   * Rate (bits/time) at which bits transferred between sender and receiver.
  2. Delay: How responsive is the network?
  3. Loss: How good is packet delivery?
  * How do loss and delay occur?
@@ -49,6 +50,7 @@
     * = L / R = Packet size (bits) / Link bandwidth (bps)
   * d<sub>prop</sub> = propagation delay
     * = d / s = Length of physical link / Propagation speed in medium (~2*10<sup>8</sup> m/s)
-    * A few microsecs to hundreds of microseconds
+    * A few microseconds to hundreds of microseconds
 ## What does "real" internet delay and loss look like?
   * Traceroute program: provides delay measurement from source to router
+  
