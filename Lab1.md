@@ -79,10 +79,11 @@
     * If sender sends A first and B second, receiver will get A first and B second
   * Regulated data flow
     * Flow control and congestion control
+  * Slower than UDP
 * UDP (User Data Protocol)
   * No reliability guarantee
   * No ordered delivery guarantee
   * No flow control
   * No congestion control
-  * Fast
+  * Faster than TCP
 
