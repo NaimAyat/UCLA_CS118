@@ -10,6 +10,8 @@
 * Internet architecture
   * End systems, communication links, routers
   * Network of networks
+    * Private networks connect end systems within the network
+      * For example, government end systems can communicate with one another
     * End systems are connected via a core network
       * Packet is sent through wifi or cable
       * End systems are "smart"; core is "dumb"
@@ -19,3 +21,7 @@
   * Layered structure
 * Circuit switching vs. packet switching
   * Processing delay, queuing delay, transmission delay, propagation delay
+* Access systems
+  * Multiple devices can connect to a single access point
+    * Each device receives a unique ID from access point
+    * Access points include wifi routers and cell towers
