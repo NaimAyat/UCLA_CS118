@@ -30,7 +30,7 @@
   * Transmission delay d<sub>transmission</sub>
     * Occurs as router sends packet through link
     * Determined by the link capacity
-  * Propagation delay
+  * Propagation delay d<sub>propagation</sub>
 * Access systems
   * Multiple devices can connect to a single access point
     * Each device receives a unique ID from access point
