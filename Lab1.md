@@ -91,4 +91,4 @@
   * A socket address is identified by <ip:port>
     * IP address can be thought of the location of your computer on the internet
     * Port number is used for different services to share the network resources
-    * [Some port numbers are "reversed"](https://tools.ietf.org/html/rfc1700)
+    * [Some port numbers are "reserved"](https://tools.ietf.org/html/rfc1700)
