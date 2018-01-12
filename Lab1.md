@@ -71,3 +71,11 @@
   * You can usually choose between two transport protocols
     1. TCP
     2. UDP
+* TCP (Transmission Control Protocol)
+  * Reliable data transfer
+    * Guaranteed delivery of all data
+    * No duplication will be received
+  * Ordered data transfer
+    * If sender sends A first and B second, receiver will get A first and B second
+  * Regulated data flow
+    * Flow control and congestion control
