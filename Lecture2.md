@@ -34,16 +34,16 @@
   1. Nodal processing
      * Check bit errors
      * Determine output link
-  2. Queueing
+  2. Queuing
      * Time waiting at output link for transmission
      * Depends on congestion level of router
 * Nodal delay (d<sub>nodal</sub> = d<sub>proc</sub> + d<sub>queue</sub> + d<sub>trans</sub> + d<sub>prop</sub>)
   * d<sub>proc</sub> = processing delay
     * Typically a few microseconds or less
-  * d<sub>queue</sub> = queueing delay
+  * d<sub>queue</sub> = queuing delay
     * traffic intensity = L * a / R = Packet size (bits) * Average packet arrival rate / Link bandwidth (bps)
-      * L * a / R = 0: average queueing delay is small
-      * L * a / R = 1: average queueing delay is large
+      * L * a / R = 0: average queuing delay is small
+      * L * a / R = 1: average queuing delay is large
       * L * a / R > 1: more "work" is arriving than can be serviced; average delay is infinite
     * Depends on congestion
   * d<sub>trans</sub> = transmission delay
