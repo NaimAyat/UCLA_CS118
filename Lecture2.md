@@ -23,7 +23,7 @@
     * Still an unsolved problem
 ## Performance Metrics
  1. Throughput: How fast?
-   * Rate (bits/time) at which bits transferred between sender and receiver.
+    * Rate (bits/time) at which bits transferred between sender and receiver.
  2. Delay: How responsive is the network?
  3. Loss: How good is packet delivery?
  * How do loss and delay occur?
