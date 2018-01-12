@@ -51,6 +51,16 @@
   * d<sub>prop</sub> = propagation delay
     * = d / s = Length of physical link / Propagation speed in medium (~2*10<sup>8</sup> m/s)
     * A few microseconds to hundreds of microseconds
-## What does "real" internet delay and loss look like?
-  * Traceroute program: provides delay measurement from source to router
-  
+  * What does "real" internet delay and loss look like?
+    * Traceroute program: provides delay measurement from source to router
+ ## Protocol "Layers"
+   * Networks are complex:
+     * Many pieces
+       * Hosts
+       * Routers
+       * Links of various media
+       * Applications
+       * Protocols
+       * Hardware
+       * Software
+     * How do we standardize/organize them?
