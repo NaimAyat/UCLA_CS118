@@ -21,6 +21,7 @@
   * Layered structure
 * Circuit switching vs. packet switching
   * Processing delay, d<sub>process</sub>
+    * Created by router reading packet headers to determine where packet should be sent
   * Queuing delay, d<sub>queuing</sub>
     * For each process, there is a FIFO buffer
     * The packets have to wait until the prior packet has been sent
@@ -31,6 +32,7 @@
     * Occurs as router sends packet through link
     * Determined by the link capacity
   * Propagation delay d<sub>propagation</sub>
+    * Happens when packets are on the link; the link has a max speed at which packets can travel
 * Access systems
   * Multiple devices can connect to a single access point
     * Each device receives a unique ID from access point
