@@ -25,3 +25,15 @@
   * Multiple devices can connect to a single access point
     * Each device receives a unique ID from access point
     * Access points include wifi routers and cell towers
+* ISP (Internet Service Provider)
+* Hierarchy
+  1. Application layer
+     * Web browser, email client, etc.
+  2. Transport layer
+     * Congestion
+  3. Network layer
+     * Routing
+  4. Link layer
+     * Transmission
+  5. Physical layer
+     * Cable
