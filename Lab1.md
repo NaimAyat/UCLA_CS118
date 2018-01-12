@@ -55,3 +55,19 @@
   5. Physical layer
      * Cable
 ## Socket Programming
+* Model for network programming
+  *  Clients-Server Model
+    * Clients request data
+      * Initiate communication
+      * Send request and wait for server reply
+    * Servers respond to data requests
+      * Well-known addresses
+      * Wait for client connection
+      * Process requests and delay
+* Abstraction level
+  * Clients and servers are both prograps at the application layer
+  * Transport layer is responsible for providing communication services
+  * The lower layers take care of the rest (routing, transmission, etc.)
+  * You can usually choose between two transport protocols
+    1. TCP
+    2. UDP
