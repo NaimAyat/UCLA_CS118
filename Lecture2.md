@@ -12,3 +12,16 @@
     * 10 users
   * Packet switching
     * With 35 users, probability > 10 active at the same time is less than 0.0004
+      * 0.0004 
+  * Packet switching is good for bursty data
+    * Resource sharing
+    * Simpler, no call setup
+  * Excessive congestion: packet delay and loss
+    * Protocols needed for reliable data transfer, congestion control
+  * How to provide circuit-like behavior?
+    * Bandwidth guarantees needed for audio/video apps
+    * Still an unsolved problem
+## Performance Metrics
+ 1. Throughput: How fast?
+ 2. Delay: How responsive is the network?
+ 3. Loss: How good is packet delivery?
