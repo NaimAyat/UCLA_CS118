@@ -50,3 +50,4 @@
   * d<sub>prop</sub> = propagation delay
     * = d / s = Length of physical link / Propagation speed in medium (~2*10<sup>8</sup> m/s)
     * A few microsecs to hundreds of microseconds
+## What do "real" internet delay and loss look like?
