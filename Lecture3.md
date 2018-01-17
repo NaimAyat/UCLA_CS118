@@ -32,3 +32,12 @@
     * Peers are intermittently connected and change IP addresses
     * Highly scalable but difficult to manage
   * Hybrid of client-server and P2P
+    * Skype
+      * Voice-over-IP P2P application
+      * Centralized server: finding address of remote party
+      * Client-client connection: direct (not via server)
+    * Instant messaging
+      * Chatting between two users is P2P
+      * Centralized service: client presence detection/location
+        * User registers its IP address with central server when it comes online
+        * User contacts central server to find IP addresses of friends
