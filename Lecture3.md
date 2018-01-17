@@ -27,4 +27,8 @@
         * Ex. End devices are assigned a different IP each time they access Google search
       * Do not communicate directly with eachother
   * Peer-to-peer
+    * No always-on server
+    * Arbitrary end systems directly communicate
+    * Peers are intermittently connected and change IP addresses
+    * Highly scalable but difficult to manage
   * Hybrid of client-server and P2P
