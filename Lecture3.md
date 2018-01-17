@@ -91,3 +91,13 @@
   * Security
     * Encryption, data integrity
 * [Transport Service Requirements of Common Apps](https://www.cs.umd.edu/~shankar/417-F01/Slides/chapter2a-aus/img007.gif)
+* Internet Transport Protocols Services
+  * TCP service:
+    * Connection-oriented: setup required between client and server processes
+    * Reliable transport between sending and receiving processes
+    * Flow control: sender won't overwhelm receiver
+    * Congestion control: throttle sender when network is overloaded
+    * Does not provide: timing, minimum throughput guarantees, security
+  * UDP service:
+    * Unreliable data transfer between sending and receiving process
+    * Does not provide: connection setup, reliability, flow control, congestion control, timing, throughput guarantee, or security
