@@ -65,3 +65,17 @@
      * Example port numbers:
        * HTTP server: 80
        * Mail server: 25
+   * App-layer protocol defines
+     * Types of messages exhanged
+       * Ex. Request, response
+     * Message syntax
+       * What fields in messages and how fields are delineated
+     * Message semantics
+       * Meaning of information in fields
+     * Rules for when and how processes send and respond to messages
+     * Public-domain protocols
+       * Defined in RFCs
+       * Allows for interoperability
+       * Ex. HTTP, SMTP
+     * Proprietary protocols
+       * Ex. Skype
