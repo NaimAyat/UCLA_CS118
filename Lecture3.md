@@ -90,3 +90,4 @@
     * Other apps ("elastic apps") make use of whatever throughput they get
   * Security
     * Encryption, data integrity
+* [Transport Service Requirements of Common Apps](https://www.cs.umd.edu/~shankar/417-F01/Slides/chapter2a-aus/img007.gif)
