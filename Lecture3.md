@@ -79,3 +79,14 @@
      * Ex. HTTP, SMTP
    * Proprietary protocols
      * Ex. Skype
+* What transport service does an app need?
+  * Data loss
+    * Some apps (ex. audio) can tolerate some loss
+    * Other apps (ex. file transfer, telnet) require 100% reliable data transfer
+  * Timing
+    * Some apps (ex. Internet telephony, interactive games) require low delay to be "effective"
+  * Throughput
+    * Some apps (ex. multimedia require minimum amount of throughput to be "effective"
+    * Other apps ("elastic apps") make use of whatever throughput they get
+  * Security
+    * Encryption, data integrity
