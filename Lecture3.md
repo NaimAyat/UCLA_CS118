@@ -41,3 +41,10 @@
       * Centralized service: client presence detection/location
         * User registers its IP address with central server when it comes online
         * User contacts central server to find IP addresses of friends
+   * Processes communicating
+     * Process: Program running within a host
+     * Within the same host, two processes communicate using inter-process communication (defined by OS)
+     * Processes in different hosts communicate by exchanging messages
+     * Client process: Process that initiates communication
+     * Server process: Process that waits to be contacted
+     * Note: applications with P2P architectures have client processes and server processes
