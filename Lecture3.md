@@ -102,3 +102,10 @@
     * Unreliable data transfer between sending and receiving process
     * Does not provide: connection setup, reliability, flow control, congestion control, timing, throughput guarantee, or security
 * [Transport Protocol Service Used by Common Apps](http://users.ece.utexas.edu/~valvano/Volume1/E-Book/C16_InternetOfThings_files/c16-image014.gif)
+* Web and HTTP
+  * Jargon
+    * *Web page* consists of objects
+    * Object can be HTML file, JPEG image, Java applet, audio file, etc.
+    * Web page consists of *base HTML-file* which includes several referenced objects
+    * Each object is addressable by a *URL*
+      * Ex. `http://naimayat.me/index.html`. Host name is `naimayat.me`, path name is `index.html`
