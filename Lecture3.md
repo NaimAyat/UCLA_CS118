@@ -125,8 +125,9 @@
 * Aside: Protocols that maintain "state" are complex
   * Past history (state) must be maintained
   * If server/client crashes, their view of "state" may be inconsistent, must be reconciled
-#### HTTP Connections
+#### HTTP-Connections
 * Nonpersistent HTTP
   * At most one object is sent over a TCP connection
 * Persistent HTTP
   * Multiple objects can be sent over single TCP connection between client and server
+#### HTTP Connections
