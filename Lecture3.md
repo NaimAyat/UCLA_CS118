@@ -56,3 +56,12 @@
      * API
        1. Choice of transport protocol
        2. Ability to fix a few parameters
+   * Addressing processes
+     * To receive messages, process must have *identifier*
+     * Host device has unique 32-bit IP address
+     * Does IP address of host on which process runs suffice for identifying the process?
+       * No, many processes can be running on the same host
+     * Identified includes both *IP addresses* and *port numbers* associated with process on host
+     * Example port numbers:
+       * HTTP server: 80
+       * Mail server: 25
