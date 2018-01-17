@@ -128,6 +128,10 @@
 #### HTTP-Connections
 * Nonpersistent HTTP
   * At most one object is sent over a TCP connection
+  * Suppose user enters URL `naimayat.me/index.html`:
+    1. HTTP client initiates TCP connection to HTTP server (proess) at `naimayat.me` on port 80
+    2. HTTP server at host `naimayat.me` waiting for TCP connection at port 80. "Accepts" connection, notifying client
+    3. HTTP client sends HTTP *request message* containing URL into TCP connection socket. Message indicates that client wants object index.html
+    4. HTTP server receives request message, forms *response message* containing requested object, and sends message into its socket
 * Persistent HTTP
   * Multiple objects can be sent over single TCP connection between client and server
-#### HTTP Connections
