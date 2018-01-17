@@ -133,5 +133,8 @@
     2. HTTP server at host `naimayat.me` waiting for TCP connection at port 80. "Accepts" connection, notifying client
     3. HTTP client sends HTTP *request message* containing URL into TCP connection socket. Message indicates that client wants object index.html
     4. HTTP server receives request message, forms *response message* containing requested object, and sends message into its socket
+    5. HTTP server closes TCP connection
+    6. HTTP client receives response message containing HTML file, displays HTML. Parsing HTML file, finds 10 referenced `.jpeg` objects.
+    7. Steps 1-6 repeated for each of 10 `.jpeg` objects
 * Persistent HTTP
   * Multiple objects can be sent over single TCP connection between client and server
