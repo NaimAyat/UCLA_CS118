@@ -109,3 +109,9 @@
     * Web page consists of *base HTML-file* which includes several referenced objects
     * Each object is addressable by a *URL*
       * Ex. `http://naimayat.me/index.html`. Host name is `naimayat.me`, path name is `index.html`
+  * HTTP Overview
+    * HTTP = Hypertext Transfer Protocol
+    * Web's application layer protocol
+    * Client-server model
+      * Client: browser that requests, receives, "displays" Web objects
+      * Server: Web server sends objects in response to requests
