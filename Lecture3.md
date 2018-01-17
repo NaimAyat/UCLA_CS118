@@ -109,9 +109,19 @@
     * Web page consists of *base HTML-file* which includes several referenced objects
     * Each object is addressable by a *URL*
       * Ex. `http://naimayat.me/index.html`. Host name is `naimayat.me`, path name is `index.html`
-  * HTTP Overview
-    * HTTP = Hypertext Transfer Protocol
-    * Web's application layer protocol
-    * Client-server model
-      * Client: browser that requests, receives, "displays" Web objects
-      * Server: Web server sends objects in response to requests
+### HTTP Overview
+* HTTP = Hypertext Transfer Protocol
+* Web's application layer protocol
+* Client-server model
+  * Client: browser that requests, receives, "displays" Web objects
+  * Server: Web server sends objects in response to requests
+* Uses TCP:
+  * Client initiates TCP connection (creates socket) to server, port 80
+  * Server accepts TCP connection from client
+  * HTTP messages (application-layer protocol messages) exchanged between browser (HTTP client) and Web server (HTTP server)
+  * TCP connection closed
+* HTTP is "stateless"
+  * Server maintains no information about past client requests
+* Aside: Protocols that maintain "state" are complex
+  * Past history (state) must be maintained
+  * If server/client crashes, their view of "state" may be inconsistent, must be reconciled
