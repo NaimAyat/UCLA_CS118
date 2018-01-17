@@ -41,41 +41,41 @@
       * Centralized service: client presence detection/location
         * User registers its IP address with central server when it comes online
         * User contacts central server to find IP addresses of friends
-   * Processes communicating
-     * Process: Program running within a host
-     * Within the same host, two processes communicate using inter-process communication (defined by OS)
-     * Processes in different hosts communicate by exchanging messages
-     * Client process: Process that initiates communication
-     * Server process: Process that waits to be contacted
-     * Note: applications with P2P architectures have client processes and server processes
-   * Sockets
-     * Process sends/receives messages to/from its socket
-     * Socket analogous to door
-       * Sending process shoves message out door
-       * Sending process relies on transport infrastructure on other side of door which brings message to socket at receiving process
-     * API
-       1. Choice of transport protocol
-       2. Ability to fix a few parameters
-   * Addressing processes
-     * To receive messages, process must have *identifier*
-     * Host device has unique 32-bit IP address
-     * Does IP address of host on which process runs suffice for identifying the process?
-       * No, many processes can be running on the same host
-     * Identified includes both *IP addresses* and *port numbers* associated with process on host
-     * Example port numbers:
-       * HTTP server: 80
-       * Mail server: 25
-   * App-layer protocol defines
-     * Types of messages exhanged
-       * Ex. Request, response
-     * Message syntax
-       * What fields in messages and how fields are delineated
-     * Message semantics
-       * Meaning of information in fields
-     * Rules for when and how processes send and respond to messages
-     * Public-domain protocols
-       * Defined in RFCs
-       * Allows for interoperability
-       * Ex. HTTP, SMTP
-     * Proprietary protocols
-       * Ex. Skype
+ * Processes communicating
+   * Process: Program running within a host
+   * Within the same host, two processes communicate using inter-process communication (defined by OS)
+   * Processes in different hosts communicate by exchanging messages
+   * Client process: Process that initiates communication
+   * Server process: Process that waits to be contacted
+   * Note: applications with P2P architectures have client processes and server processes
+ * Sockets
+   * Process sends/receives messages to/from its socket
+   * Socket analogous to door
+     * Sending process shoves message out door
+     * Sending process relies on transport infrastructure on other side of door which brings message to socket at receiving process
+   * API
+     1. Choice of transport protocol
+     2. Ability to fix a few parameters
+ * Addressing processes
+   * To receive messages, process must have *identifier*
+   * Host device has unique 32-bit IP address
+   * Does IP address of host on which process runs suffice for identifying the process?
+     * No, many processes can be running on the same host
+   * Identified includes both *IP addresses* and *port numbers* associated with process on host
+   * Example port numbers:
+     * HTTP server: 80
+     * Mail server: 25
+ * App-layer protocol defines
+   * Types of messages exhanged
+     * Ex. Request, response
+   * Message syntax
+     * What fields in messages and how fields are delineated
+   * Message semantics
+     * Meaning of information in fields
+   * Rules for when and how processes send and respond to messages
+   * Public-domain protocols
+     * Defined in RFCs
+     * Allows for interoperability
+     * Ex. HTTP, SMTP
+   * Proprietary protocols
+     * Ex. Skype
