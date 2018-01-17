@@ -91,7 +91,7 @@
   * Security
     * Encryption, data integrity
 * [Transport Service Requirements of Common Apps](https://www.cs.umd.edu/~shankar/417-F01/Slides/chapter2a-aus/img007.gif)
-* Internet Transport Protocols Services
+* Internet Transport Protocol Services
   * TCP service:
     * Connection-oriented: setup required between client and server processes
     * Reliable transport between sending and receiving processes
