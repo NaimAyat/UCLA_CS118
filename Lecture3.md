@@ -48,3 +48,11 @@
      * Client process: Process that initiates communication
      * Server process: Process that waits to be contacted
      * Note: applications with P2P architectures have client processes and server processes
+   * Sockets
+     * Process sends/receives messages to/from its socket
+     * Socket analogous to door
+       * Sending process shoves message out door
+       * Sending process relies on transport infrastructure on other side of door which brings message to socket at receiving process
+     * API
+       1. Choice of transport protocol
+       2. Ability to fix a few parameters
