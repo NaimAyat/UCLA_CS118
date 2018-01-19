@@ -92,6 +92,9 @@
 * How to keep "state":
   * Protocol endpoints: maintain state at sender/receiver over multiple transactions
   * Cookies: HTTP messages keep state
+* Privacy
+  * Cookies permit sites to learn a lot about you
+  * You may supply name and e-mail to sites
 * Example
   * Naim always accesses Internet from PC
   * Visits specific e-commerce site for first time
