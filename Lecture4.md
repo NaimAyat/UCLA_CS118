@@ -84,6 +84,14 @@
   2. Cookie header line in next HTTP request message
   3. Cookie file kept on user's host, managed by user's browser
   4. Back-end database at Web site
+* Used for:
+  * Authorization
+  * Shopping carts
+  * Recommendations
+  * User session state (Web e-mail)
+* How to keep "state":
+  * Protocol endpoints: maintain state at sender/receiver over multiple transactions
+  * Cookies: HTTP messages keep state
 * Example
   * Naim always accesses Internet from PC
   * Visits specific e-commerce site for first time
