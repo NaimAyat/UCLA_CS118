@@ -26,19 +26,6 @@
           \r\n
           ```
   2. Response
-          ```
-          HTTP/1.1 200 OK\r\n
-          Date: Sun, 26 Sep 2010 20:09:20 GMT\r\n
-          Server: Apache/2.0.52 (CentOS)\r\n      
-          Last-Modified: Tue, 30 Oct 2007 17:00:02 GMT\r\n 
-          ETag: "17dc6-a5c-bf716880"\r\n
-          Accept-Ranges: bytes\r\n
-          Content-Length: 2652\r\n
-          Keep-Alive: timeout=10, max=100\r\n
-          Connection: Keep-Alive\r\n
-          Content-Type: text/html; charset=ISO-8859-1\r\n
-          \r\n
-          ```
 ## Uploading Form Input
 * POST method
   * Web page often includes form input
@@ -58,3 +45,48 @@
     * Uploads file in entity body to path specified in URL field
   * DELETE
     * Deletes file specified in URL field
+## HTTP Response Status Codes
+* Status code appears in 1st line in server-to-client response method
+* Examples: 
+  * 200 OK
+    * Request succeeded, requested object later in this msg
+  * 301 Moved Permanently
+    * Requested object moved, new location specified later in this msg (Location:)
+  * 400 Bad Request
+    * Request msg not understood by server
+  * 404 Not Found
+    * Requested document not found on this server
+  * 505 HTTP
+    * Version not supported
+## Trying HTTP (Client Side) for Yourself
+1. Telnet to a Web server:
+   * `telnet gaia.cs.umass.edu 80`. 
+     * Opens TCP connection to port 80 (default HTTP server port) at gaia.cs.umass.edu. Anything typed in will be sent 
+     to port 80 at gaia.cs.umass.edu
+ 2. Type GET HTTP request
+    ```
+    GET /kurose_ross/interactive/index.php HTTP/1.1 
+    Host: gaia.cs.umass.edu
+    ```
+3. Look at response message sent by HTTP server
+## Stateless HTTP
+* In general, HTTP is *stateless*
+  * Server maintains no information about past client requests
+* Uses TCP
+  * Client initiates TCP connection (creates socket) to server, port 80
+  * Server accepts TCP connection from client
+  * HTTP messages (application-layer protocol messages) exchanged between browser (HTTP client) and Web server (HTTP server)
+  * TCP connection closed
+## User-Server State: Cookies
+* Many Web sites use cookies
+* Four components:
+  1. Cookie header line of HTTP response message
+  2. Cookie header line in next HTTP request message
+  3. Cookie file kept on user's host, managed by user's browser
+  4. Back-end database at Web site
+* Example
+  * Naim always accesses Internet from PC
+  * Visits specific e-commerce site for first time
+  * When initial HTTP requests arrive at site, site creates
+    * Unique ID
+    * Entry in backend database for ID
