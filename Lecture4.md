@@ -116,3 +116,16 @@ Goal: Satisfy client request without involving origin server
   * reduce response time for client request
   * Reduce traffic on an institution's access link
   * Internet dense with caches: enables "poor" content providers to effectively delever content (so too does P2P file sharing)
+## Conditional GET
+* Goal: Don't send object if cache has up-to-date cached version
+  * No object transmition delay
+  * Lower link utilization
+* Cache: specify date of cached copy in HTTP request
+  ```
+  If-modified-since: 
+    <date>
+  ```
+* Server: response contains no object if cached copy is up-to-date
+  ```
+  HTTP/1.0 304 Not Modified
+  ````
