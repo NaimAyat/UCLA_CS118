@@ -27,7 +27,7 @@
 * Total = 2RTT + Transmission Time
 ## Nonpersistent vs. Persistent
 * For parallel TCP connections where `n` is the number of objects to transport and `m` is the number of parallel TCP connections:
-  * ⌈n/m⌉ = number of RTTs required
+  * `⌈n/m⌉ = number of RTTs required`
 ### Nonpersistent HTTP
 * Requires 2 RTTs per object
 * OS overhead for each TCP connection
