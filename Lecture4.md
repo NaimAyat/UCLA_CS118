@@ -157,6 +157,6 @@ Goal: Satisfy client request without involving origin server
   2. Mail servers
   * Simple mail transfer protocol: SMTP
 * User Agent
-  * AKA "mail reader" (ex. Outlook, Thunderbird, Gmail Android app)
+  * AKA "mail reader" (ex. Outlook, Thunderbird)
   * Composing, editing, reading mail messages
   * Outgoing, incoming messages stored on server
