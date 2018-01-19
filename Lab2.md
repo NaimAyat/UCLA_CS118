@@ -26,12 +26,12 @@
 * File transmission time
 * Total = 2RTT + Transmission Time
 ## Nonpersistent vs. Persistent
-* Nonpersistent
-  * Requires 2 RTTs per object
-  * OS overhead for each TCP connection
-  * Browsers often open parallel TCP connections to fetch referenced objects
-* Persistent HTTP:
-  * Server leaves connection open after sending response
-  * Subsequent HTTP messages between same client/server sent over open connection
-  * Client sends requests as soon as it encounters a referenced object
-  * As little as one RTT for all the referenced objects
+### Nonpersistent HTTP
+* Requires 2 RTTs per object
+* OS overhead for each TCP connection
+* Browsers often open parallel TCP connections to fetch referenced objects
+### Persistent HTTP
+* Server leaves connection open after sending response
+* Subsequent HTTP messages between same client/server sent over open connection
+* Client sends requests as soon as it encounters a referenced object
+* As little as one RTT for all the referenced objects
