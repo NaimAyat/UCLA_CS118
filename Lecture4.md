@@ -1,5 +1,5 @@
 # Lecture 4 (Jan 18, 2018)
-## Persistent HTTP 
+## Persistent vs. Non-Persistent HTTP 
 ### Non-Persistent HTTP Issues
 * Requires 2 RTTs (round-trip delay times) per object
 * OS overhead for *each* TCP connection
