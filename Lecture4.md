@@ -160,3 +160,9 @@ Goal: Satisfy client request without involving origin server
   * AKA "mail reader" (ex. Outlook, Thunderbird)
   * Composing, editing, reading mail messages
   * Outgoing, incoming messages stored on server
+### Mail Servers
+* Mailbox contains incoming messages from user
+* Message queue of outgoing (to be sent) mail messages
+* SMTP protocl between mail servers to send email messages
+  * Client: sending mail server
+  * "Server": receiving mail server
