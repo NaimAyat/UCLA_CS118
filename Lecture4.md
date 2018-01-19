@@ -13,9 +13,19 @@
 * Two types of HTTP messages:
   1. Request
      * ASCII (human-readable format)
-     
+     ```
+     GET /index.html HTTP/1.1\r\n
+     Host: www-net.cs.umass.edu\r\n
+     User-Agent: Firefox/3.6.10\r\n
+     Accept: text/html,application/xhtml+xml\r\n
+     Accept-Language: en-us,en;q=0.5\r\n
+     Accept-Encoding: gzip,deflate\r\n
+     Accept-Charset: ISO-8859-1,utf-8;q=0.7\r\n
+     Keep-Alive: 115\r\n
+     Connection: keep-alive\r\n
+     \r\n
+     ```
   2. Response
-  
 ## Uploading Form Input
 * POST method
   * Web page often includes form input
@@ -23,3 +33,15 @@
 * URL method
   * Uses GET method
   * Input is uploaded in URL field of request line
+## Method Types
+* HTTP/1.0
+  * GET
+  * POST
+  * HEAD
+    * Asks server to leave requested object out of response
+* HTTP/1.1
+  * GET, POST, HEAD
+  * PUT
+    * Uploads file in entity body to path specified in URL field
+  * DELETE
+    * Deletes file specified in URL field
