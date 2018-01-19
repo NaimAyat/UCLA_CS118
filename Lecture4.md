@@ -166,3 +166,17 @@ Goal: Satisfy client request without involving origin server
 * SMTP protocl between mail servers to send email messages
   * Client: sending mail server
   * "Server": receiving mail server
+### SMTP [RFC 2821]
+* Uses TCP to reliably transfer email message from client to server, port 25
+* Direct transfer: sending server to receiving server
+* Three phases of transfer
+  1. Handshaking (greeting)
+  2. Transfer of messages
+  3. Closure
+#### Example Scenario: Alice Sends Message to Bob
+1. Alice uses UA (user agent) to compose message "to" `bob@someschool.edu`
+2. Alice's UA sends message to her mail server; message placed in message queue
+3. Client side of SMTp opens TCP connection with Bob's mail server
+4. SMTP client sends Alice's message over the TCP connection
+5. Bob's mail erver places the message in Bob's mailbox
+6. Bob invokes his UA to read message
