@@ -95,6 +95,7 @@
 * Privacy
   * Cookies permit sites to learn a lot about you
   * You may supply name and e-mail to sites
+  * Data can be used for advertising
 * Example
   * Naim always accesses Internet from PC
   * Visits specific e-commerce site for first time
