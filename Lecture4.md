@@ -147,7 +147,16 @@ Goal: Satisfy client request without involving origin server
 * Use rich, user-friendly interfaced based on Ajax and similar clienr-side interactivity tools
 ## Web 3.0
 * Extends the hyperlinked human-readable web pages by inserting machine-readable metadata about pages and how they are related to each other
-* Using extensible makeup language (XML), resource description framework (RDF), web ontology language (OWL)
+* Using extensible markup language (XML), resource description framework (RDF), web ontology language (OWL)
   * XML: syntax for conent structures within documents
   * RDF: expressing data models
   * OWL: adds more vocabularies on describing properties and classes
+## Electronic Mail
+* Three major components:
+  1. User agents
+  2. Mail servers
+  * Simple mail transfer protocol: SMTP
+* User Agent
+  * AKA "mail reader" (ex. Outlook, Thunderbird, GMail Android app)
+  * Composing, editing, reading mail messages
+  * Outgoing, incoming messages stored on server
