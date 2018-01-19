@@ -180,3 +180,8 @@ Goal: Satisfy client request without involving origin server
 4. SMTP client sends Alice's message over the TCP connection
 5. Bob's mail erver places the message in Bob's mailbox
 6. Bob invokes his UA to read message
+### Try SMPT Interaction for Yourself
+* `telnet servername 25`
+* See `220` reply from server
+* Enter `HELO`, `MAIL FROM`, `RCPT TO`, `DATA`, `QUIT` commands
+* Sends email without email client
