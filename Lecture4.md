@@ -173,6 +173,15 @@ Goal: Satisfy client request without involving origin server
   1. Handshaking (greeting)
   2. Transfer of messages
   3. Closure
+* Uses persistent connections
+* Requires message (header & body) to be in 7-bit ASCII
+* SMTP server uses `CRLF.CRLF` to determine end of message
+#### Comparison with HTTP:
+* HTTP: pull
+* SMTP: push
+* Both have ASCII command/response interaction, status codes
+* HTTP: each object encapsulated in its own response message
+* SMTP: multiple objects sent in multipart message
 #### Example Scenario: Alice Sends Message to Bob
 1. Alice uses UA (user agent) to compose message "to" `bob@someschool.edu`
 2. Alice's UA sends message to her mail server; message placed in message queue
@@ -185,3 +194,51 @@ Goal: Satisfy client request without involving origin server
 * See `220` reply from server
 * Enter `HELO`, `MAIL FROM`, `RCPT TO`, `DATA`, `QUIT` commands
 * Sends email without email client
+### Mail Access Protocols
+* SMTP: Delivery/storage to receiver's server
+* Mail access protocol: retreival from server
+  * POP: Post Office Protocol [RFC 1939]: authorization, download
+  * IMAP: Internet Mail Access Protocol [RCF 1730]: more features, including manipulation of stored messages
+  * HTTP: Gmail, Yahoo, Hotmail
+#### POP3 Protocol
+* Authorization phase
+  * Client commands
+    * `user`: declare username
+    * `pass`: password
+  * Server responses
+    * `+OK`
+    * `-ERR`
+  * Transaction phase, client
+    * `list`: list message numbers
+    * `retr`: retrieve message by number
+    * `dele`: delete
+    * `quit`
+#### IMAP
+* Keeps all messages in one place: at server
+* Allows user to organize message in folders
+* Keeps user state across sessions
+  * Names of folders and mappings between message IDs and folder name
+## DNS (Domain Name System)
+* People: many identifiers
+  * SSN, name, passport number
+* Internet hosts, routers
+  * IP address (32 bit), used for addressing diagrams
+  * "name" (ex. naimayat.me), used by humans
+* How do we map between IP address and name, and vice-versa?
+  * Distrubuted database: implemented in a hierarchy of many name servers
+  * Application-layer protocol: hots, name servers communicate to resolve names (address/name translation)
+    * Note: core Internet function, implemented as application-layer protocol
+    * Complexity at network "edge"
+### DNS Services
+* Hostname to IP address translation
+* Host aliasing
+  * Canonical, alias names
+* Mail server aliasing
+* Load distribution
+  * Replaced Web servers: many IP addresses correspond to one name
+* Cons:
+  * Single point of failure
+  * Traffic volume
+  * Distant centralized database
+  * Maintenance
+  * Doesn't scale
