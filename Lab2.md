@@ -16,5 +16,7 @@
 * Web page consists of objects, addressable by a URL
 * HTTP: Hypertext transfer protocol
   * Client/server model
-  * Uses TCP
-  * Stateless (use cookies if we want stateful service)
+  * Uses TCP, a stateful protocol
+  * HTTP itself, however, is stateless (use cookies if we want stateful service)
+  * Note: UDP is stateless
+   
