@@ -19,4 +19,9 @@
   * Uses TCP, a stateful protocol
   * HTTP itself, however, is stateless (use cookies if we want stateful service)
   * Note: UDP is stateless
-   
+## Response Time
+* RTT (round-trip delay time): time for a small packet to travel from a client to server and back
+* One RTT to initiate TCP connection
+* One RTT for HTTP request an first few bytes of HTTP response to return
+* File transmission time
+* Total = 2RTT + Transmission Time
