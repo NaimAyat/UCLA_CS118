@@ -129,3 +129,25 @@ Goal: Satisfy client request without involving origin server
   ```
   HTTP/1.0 304 Not Modified
   ````
+## Ongoing Effort on HTTP 2.0
+* The next planned version after HTTP1.1 (RFC 2616 in 1999) 
+  * 1.4% of Web sites support it (Sept. 2015); 11.4% by Jan 2017
+* Designed to improve throughput of client-server connections
+* Based on Google's SPDY
+* Backward compatible with transaction semantics of HTTP 1.1
+* New features: 
+  * Multiplexing multiple streams over one HTTP 2.0 connection; request-response pipelining
+  * Header compression
+  * Server push (preemptive transfer to clients)
+## Web 2.0
+* No update on the technical specs, more of a marketing idea
+* Rather to cumulative changes in the way software developers and users use the Web
+* "Network as a platform" computing
+  * Build applications on Web, not desktops
+* Use rich, user-friendly interfaced based on Ajax and similar clienr-side interactivity tools
+## Web 3.0
+* Extends the hyperlinked human-readable web pages by inserting machine-readable metadata about pages and how they are related to each other
+* Using extensible makeup language (XML), resource description framework (RDF), web ontology language (OWL)
+  * XML: syntax for conent structures within documents
+  * RDF: expressing data models
+  * OWL: adds more vocabularies on describing properties and classes
