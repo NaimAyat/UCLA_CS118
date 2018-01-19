@@ -102,3 +102,17 @@
   * When initial HTTP requests arrive at site, site creates
     * Unique ID
     * Entry in backend database for ID
+## Web Caches (Proxy Server)
+Goal: Satisfy client request without involving origin server
+* User sets browser: Web accesses via cahce
+* Browser sends all HTTP requests to cache
+  * Objects in cache: cache returns object
+  * Else cache requests object from origin server, then returns object to client
+* Cache acts as both client and server
+  * Server for original requesting client
+  * Client to origin server
+* Typically cache is installed by ISP (ex. University, company, residential ISP)
+* Why Web caching?
+  * reduce response time for client request
+  * Reduce traffic on an institution's access link
+  * Internet dense with caches: enables "poor" content providers to effectively delever content (so too does P2P file sharing)
