@@ -12,3 +12,9 @@
   * Client-server model: Web (TCP), FTP (TCP), E-mail (TCP), DNS (UDP/TCP), RTP
   * Peer-to-peer: BitTorrent (TCP), Tor (AKA "Onion Routing", TCP)
   * Hybrid model: Skype (TCP & UDP), GTalk (TCP & UDP)
+## Web and HTTP
+* Web page consists of objects, addressable by a URL
+* HTTP: Hypertext transfer protocol
+  * Client/server model
+  * Uses TCP
+  * Stateless (use cookies if we want stateful service)
