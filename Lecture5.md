@@ -93,3 +93,10 @@
 * Peers in torrent send/receive file chunks
 * Tracker: tracks peers participating in torrent
 * Torrent: group of peers echanging chunks of a file
+* Peer joining torrent:
+  * Has no chunks, but will accumulate them over time from other peers
+  * Registers with tracker to get list of peers, connects to subset of peers ("neighbors")
+* While downloading, peer uploads chunks to other peers
+* Peer may change peers with whom it exchanges chunks
+* Churn: peers may come and go
+* Once peer has entire file, it may (selfishly) leave or (altruistically) remain in torrent
