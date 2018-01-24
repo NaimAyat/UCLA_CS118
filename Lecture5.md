@@ -100,3 +100,14 @@
 * Peer may change peers with whom it exchanges chunks
 * Churn: peers may come and go
 * Once peer has entire file, it may (selfishly) leave or (altruistically) remain in torrent
+#### Requesting chunks
+* At any given time, different peers have different subsets of file chunks
+* Periodically, alice asks each peer for list of chunks that they have
+* Alice requests missing chunks from peers, rarest first
+#### Sending chunks: tit-for-tat
+* Alice sends chunks to those four peers currentl sending her chunks at highest rate
+  * Other peers are choked by Alice (do not receive chunks from her)
+  * Re-evaluate top four every 10 secs
+* Every 30 secs: randomly select another peer, peer starts sending chunks
+  * "Optimisitically unchoke" this peer
+  * Newly chosen peer may join top four
