@@ -60,4 +60,19 @@
     * Recursion desired
     * Recursion available
     * Reply is authoritative
-    
+### Attacking DNS
+* DDoS attacks
+  * Bombard root servers with traffic
+    * Not successful to date
+    * Traffic filtering
+    * Local DNS servers cache IPs of TLD servers, allowing root server bypass
+  * Bombard TLD servers
+    * Potentially more dangerous
+* Redirect attacks
+  * Man-in-middle
+    * Intercept queries
+* DNS poisoning
+  * Send bogus replies to DNS server, which caches
+* Exploit DNS for DDoS
+  * Send queries with spoofed source address: target IP
+  * Requires amplification
