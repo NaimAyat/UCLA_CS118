@@ -6,3 +6,9 @@
     * Client queries root server to find com DNS server
     * Client queries .me DNS server to get  www.naimayat.me DNS server
     * Client queries www.naimayat.me DNS server to get IP address for www.naimayat.me
+### Root Name Servers
+* Contacted by local name server that cannot resolve name
+* Root name server serves to:
+  * Contact authoritative name server if name mapping not known
+  * Gets mapping
+  * Returns mapping to local name server
