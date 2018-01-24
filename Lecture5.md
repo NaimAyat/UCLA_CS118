@@ -27,3 +27,12 @@
 * When host makes DNS query, query is sent to its local DNS server
   * Has local cache of recent name-to-address translation pairs (but may be out of date)
   * Acts as a proxy, forwards query into hierarchy 
+### Caching, Updating Records
+* Once any name server learns mapping, it caches mapping
+  * Cache entries timeout (disappear) after some time (TTL)
+  * TLD servers typically cached in local name servers
+    * Thus, root name servers not often visited
+* Cached entries may be out-of-date (best effor name-to-address translation)
+  * If name host changes IP address, may not be known internet-wide until all TTLs expire
+* Update/notify mechanisms proposed IETF standard
+  * RFC 2136
