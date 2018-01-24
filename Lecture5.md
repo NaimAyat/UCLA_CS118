@@ -76,3 +76,8 @@
 * Exploit DNS for DDoS
   * Send queries with spoofed source address: target IP
   * Requires amplification
+## Pure P2P Architecture
+### File distribution: client-server vs. P2P
+* Question: How much time does it take to distribute a file of size F from one server to N peers?
+  * Peer upload/download capacity is a limited resource
+  
