@@ -12,3 +12,11 @@
   * Contact authoritative name server if name mapping not known
   * Gets mapping
   * Returns mapping to local name server
+### TLD, Authoritative Servers
+* Top-Level Domain (TLD) servers:
+  * Responsible for com, org, net, edu, aero, jobs, museums, and all top-level country domains (ex. uk, fr, ca, jp)
+  * Network Solutions maintains servers for .com TLD
+  * Educase for .edu TLD
+* Authoritative DNS servers:
+  * Organization's own DNS server(s), providing authoritative hostname to IP mappings for organization's named hosts
+  * Can be maintained by organization or service provider
