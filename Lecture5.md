@@ -122,4 +122,18 @@
 * Coding: use redundancy within and between images to decrease number of bits used to encode image
   * Spatial (within image)
   * Temporal (from one image to next)
-  
+* CBR (constant bit rate)
+  * Video encoding rate fixed
+* VBR (variable bit rate)
+#### Streaming Multimedia: DASH
+* DASH: Dynamic, Adaptive Streaming over HTTP
+* Server:
+  * Divides video file into multiple chunks
+  * Each chunk stored, encoded at different rates
+  * Manifest file: provides URLs for different chunks
+* Client:
+  * Periodically measures server-to-client bandwidth
+  * "Intelligence" at client. Client determines:
+    * When to request chunk
+    * What encoding rate to request
+    
