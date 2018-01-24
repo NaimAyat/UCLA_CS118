@@ -51,3 +51,13 @@
     * `value` is canonical name
   * `type=MX`
     * `value` is name of mail server associated with name
+### DNS Protocol, Messages
+* Query and reply messages, both with same message format
+* Message header
+  * Identification: 16 bit number for query, reply to query uses same number
+  * Flags:
+    * Query or reply
+    * Recursion desired
+    * Recursion available
+    * Reply is authoritative
+    
