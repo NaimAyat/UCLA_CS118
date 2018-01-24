@@ -20,3 +20,10 @@
 * Authoritative DNS servers:
   * Organization's own DNS server(s), providing authoritative hostname to IP mappings for organization's named hosts
   * Can be maintained by organization or service provider
+### Local DNS Name Server
+* Does not strictly belong to hierarchy
+* Each ISP (residential ISP, company, university) has one
+  * Also called "default name server"
+* When host makes DNS query, query is sent to its local DNS server
+  * Has local cache of recent name-to-address translation pairs (but may be out of date)
+  * Acts as a proxy, forwards query into hierarchy 
