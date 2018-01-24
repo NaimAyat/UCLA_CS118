@@ -81,3 +81,10 @@
 * Question: How much time does it take to distribute a file of size F from one server to N peers?
   * Peer upload/download capacity is a limited resource
   
+#### File distribution time: P2P
+* Server transmission: must upload at least one copy
+  * Time to send one copy: F/u<sub>s</sub>
+* Client: each client must download file copy
+  * Min client download time: F/d<sub>min</sub>
+* Clients: as aggregate must download NF bits
+  * Max upload rate (limiting max download rate) is u<sub>s</sub> + Σu<sub>i</sub>
