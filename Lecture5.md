@@ -42,12 +42,12 @@
   * `type=A`
     * `name` is hostname
     * `value` is IP address
-  * type=NS
-    * `name` is domain (ex. `foo.com`)
+  * `type=NS`
+    * `name` is domain (ex. foo.com)
     * `value` is hostname of authoritative name server for this domain
   * `type=CNAME`
     * `name` is alias name for some "canonical" (the real) name
     * `www.ibm.com` is really `servereast.backup2.ibm.com`
     * `value` is canonical name
   * `type=MX`
-    * `value` is name of mail server associated with `name`
+    * `value` is name of mail server associated with name
