@@ -111,3 +111,15 @@
 * Every 30 secs: randomly select another peer, peer starts sending chunks
   * "Optimisitically unchoke" this peer
   * Newly chosen peer may join top four
+## Video Streaming and CDNs
+### Context
+* Video traffic: major consumer of Internet bandwidth
+  * Netflix, YouTube: 37%, 16% of downstream residential ISP traffic
+  * ~1B YouTube users, ~75m Netflix Users
+### Video
+* Sequence of images displayed at a constant rate
+* Digital image: array of pixels, each pixel represented by bits
+* Coding: use redundancy within and between images to decrease number of bits used to encode image
+  * Spatial (within image)
+  * Temporal (from one image to next)
+  
