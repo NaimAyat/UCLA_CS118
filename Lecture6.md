@@ -69,3 +69,18 @@
   * Each socket defined by its own 4-tuple
 * Web servers have different sockets for each connecting client
   * Non-persistent HTTP will have different sockets for each request
+### UDP: User Datagram Protocol [RFC 768]
+* No frills, bare bones internet transfer protocol
+* Best effort service, UDP segments may be
+  * Lost
+  * Delivered out-of-order to application
+* Connectionless: 
+  * No handshaking between UDP sender, receiver
+  * Each UDP segment handled independently of others
+* UDP uses:
+  * Streaming multimedia apps (loss tolerant, rate sensitive)
+  * DNS
+  * SNMP
+* Reliable transfer over UDP:
+  * Add reliability at application layer
+  * Application-specific error recovery
