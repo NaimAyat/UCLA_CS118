@@ -12,3 +12,13 @@
 * Transport protocols run on end systems
   * Sender side: breaks app messages into segments, passes to network layer
   * Receiver side: reassembles segments into messages, passes to app layer
+### Transport vs. Network
+* Network layer: logical communication between hosts
+* Transport layer: logical communication between processes
+  * Relies on, enhances, network layer services
+* Household analogy: 12 kids in Ann's house sending letters to 12 kids in Bill's house
+  * Hosts = houses
+  * Processes = kids
+  * App messages = letters in envelopes
+  * Transport protocol = Ann and bill who demux to in-house siblings
+  * Network-layer protocol = postal service
