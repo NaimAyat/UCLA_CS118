@@ -49,3 +49,8 @@
   * Each datagram carries one transport-layer segment
   * Each segment has source, destination port number
 * Host uses IP addresses and port numbers to direct segment to appropriate socket
+##### Connectionless Demultiplexing
+* Recall: created socket has host-local port number
+* Recall: when creating datagram to send into UDP socket, must specify
+  * Destination IP address
+  * Destination port number
