@@ -84,3 +84,14 @@
 * Reliable transfer over UDP:
   * Add reliability at application layer
   * Application-specific error recovery
+#### UDP Checksum
+* Goal: detect errors (ex. flipped bits) in transmitted segment
+* Sender:
+  * Treat segment contents, including header fields, as sequence of 16-bit integers
+  * Checksum: addition of segment conents
+  * Sender puts checksum value into UDP checksum field
+* Receiver:
+  * Compute checksum of received segment
+  * Check if computed checksum equals checksum field value
+    * If `NO` - error detected
+    * If `YES` - no error detected (but still may be errors)
