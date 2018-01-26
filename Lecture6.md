@@ -77,7 +77,7 @@
 * Connectionless: 
   * No handshaking between UDP sender, receiver
   * Each UDP segment handled independently of others
-* UDP uses:
+* Uses of UDP:
   * Streaming multimedia apps (loss tolerant, rate sensitive)
   * DNS
   * SNMP
