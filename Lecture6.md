@@ -1,5 +1,5 @@
 # Lecture 6 (Jan 25, 2018)
-## Content Distribution Networks (CDNs)
+### Content Distribution Networks (CDNs)
 * Challenge: How do we stream conent (selected from millions of videos) to hundreds of thousands of simultaneous users?
   * Option 1: Single, large "mega-server"
     * Single point of failure
@@ -22,3 +22,11 @@
   * From which CDN node to retrieve conent?
   * Viewer behavior in presence of congestion?
   * What conent to place in which CDN node?
+## Transport Layer
+### Transpot Services and Protocols
+* Provide logical communication between app processes running on different hosts
+* Transport protocols run in end systems
+  * Sender side: breaks app messages into segments, passes to network ayer
+  * Receiver side: reassembles segments into messages, passes to app layer
+* More than one transport protocol available to apps
+  * Internet: TCP and UDP
