@@ -43,7 +43,7 @@
 ### Multiplexing/Demultiplexing
 * Multiplexing at sender: handle data from multiple sockets, add transport header (later used for demultiplexing)
 * Demultiplexing at receiver: use header info to deliver received segments to correct socket
-#### Demultiplexing (DEMUX) Breakdown
+#### Demultiplexing (Demux) Breakdown
 * Host receives IP datagrams
   * Each datagram has a source IP address, destination IP address
   * Each datagram carries one transport-layer segment
@@ -58,3 +58,14 @@
   * Checks destination port number in segment
     * IP datagrams with same dest, port number, but different source IP address and/or source port number will be directed to the same socket at destination
   * Directs UDP segment to socket with that port number
+##### Connection-Oriented Demultiplexing
+* TCP socket identified by 4-tuple:
+  * Source IP address
+  * Source port number
+  * Dest IP address
+  * Dest port number
+* Demux: receiver uses all four values to direct segment to appropriate socket
+* Server host may support many simultaneous TCP sockets
+  * Each socket defined by its own 4-tuple
+* Web servers have different sockets for each connecting client
+  * Non-persistent HTTP will have different sockets for each request
