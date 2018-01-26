@@ -8,3 +8,7 @@
 * Iterated query
 * [Graph of query process](http://images.slideplayer.com/25/8272948/slides/slide_4.jpg)
 ## Transport Layer
+### Transport Services
+* Transport protocols run on end systems
+  * Sender side: breaks app messages into segments, passes to network layer
+  * Receiver side: reassembles segments into messages, passes to app layer
