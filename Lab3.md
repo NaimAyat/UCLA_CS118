@@ -44,3 +44,10 @@ UDP HEADER FORMAT:
 |     length    |   checksum    |
 ---------------------------------
 ```
+### TCP
+* Properties of TCP
+  * Reliable transfer
+  * In-order delivery
+  * Flow control and congestion control
+* How can we enable these properties at the host?
+* [TCP header format](http://telescript.denayer.wenk.be/~hcr/cn/idoceo/images/tcp_header.gif)
