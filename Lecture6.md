@@ -60,10 +60,10 @@
   * Directs UDP segment to socket with that port number
 ##### Connection-Oriented Demultiplexing
 * TCP socket identified by 4-tuple:
-  * Source IP address
-  * Source port number
-  * Dest IP address
-  * Dest port number
+  1. Source IP address
+  2. Source port number
+  3. Dest IP address
+  4. Dest port number
 * Demux: receiver uses all four values to direct segment to appropriate socket
 * Server host may support many simultaneous TCP sockets
   * Each socket defined by its own 4-tuple
