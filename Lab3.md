@@ -28,3 +28,19 @@
 * Connectionless vs. connection-oriented
   * UDP uses destination port + addresss
   * TCP uses 4-tuple to identify
+### UDP
+* Connections transport
+  * No handshaking
+  * Best effort, no delivery guarantee
+  * Usage: streaming, DNS, etc.
+* Has checksum to detect failure
+```
+UDP HEADER FORMAT: 
+
+             32 Bits
+<------------------------------->
+|  source port  |   dest port   |
+--------------------------------
+|     length    |   checksum    |
+---------------------------------
+```
