@@ -43,7 +43,7 @@
 ### Multiplexing/Demultiplexing
 * Multiplexing at sender: handle data from multiple sockets, add transport header (later used for demultiplexing)
 * Demultiplexing at receiver: use header info to deliver received segments to correct socket
-#### Demultiplexing Breakdown
+#### Demultiplexing (DEMUX) Breakdown
 * Host receives IP datagrams
   * Each datagram has a source IP address, destination IP address
   * Each datagram carries one transport-layer segment
