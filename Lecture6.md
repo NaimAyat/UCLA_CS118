@@ -54,3 +54,7 @@
 * Recall: when creating datagram to send into UDP socket, must specify
   * Destination IP address
   * Destination port number
+* When host receives UDP segment
+  * Checks destination port number in segment
+    * IP datagrams with same dest, port number, but different source IP address and/or source port number will be directed to the same socket at destination
+  * Directs UDP segment to socket with that port number
