@@ -30,3 +30,13 @@
   * Receiver side: reassembles segments into messages, passes to app layer
 * More than one transport protocol available to apps
   * Internet: TCP and UDP
+### Internet Transport-Layer Protocols
+* Reliable, in-order delivery (TCP)
+  * Congestion control
+  * Flow control
+  * Connection setup
+* Unreliable, unordered delivery: UDP
+  * No-frills extension of "best-effort" IP
+* Services not available:
+  * Delay guarantees
+  * Bandwidth guarantees
