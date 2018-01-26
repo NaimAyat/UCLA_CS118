@@ -1,5 +1,5 @@
 # Lecture 6 (Jan 25, 2018)
-## Content Distribution Networks
+## Content Distribution Networks (CDNs)
 * Challenge: How do we stream conent (selected from millions of videos) to hundreds of thousands of simultaneous users?
   * Option 1: Single, large "mega-server"
     * Single point of failure
@@ -13,3 +13,12 @@
       * Used by Akamai, 1700 locations
     * Bring home: smaller number (dozens) of larger clusters in POPs near (but not within) access networks
       * Used by Limelight
+* CDN: stores copies of content at CDN nodes
+  * Ex. Netflix stores copies of MadMen
+* Subscriber requests conent from CDN
+  * Directed to nearby copy, retrieves content
+  * May choose different copy if network path congested
+* OTT challenges: Coping with a congested internet
+  * From which CDN node to retrieve conent?
+  * Viewer behavior in presence of congestion?
+  * What conent to place in which CDN node?
