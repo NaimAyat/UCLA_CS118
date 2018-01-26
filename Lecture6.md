@@ -40,3 +40,6 @@
 * Services not available:
   * Delay guarantees
   * Bandwidth guarantees
+### Multiplexing/Demultiplexing
+* Multiplexing at sender: handle data from multiple sockets, add transport header (later used for demultiplexing)
+* Demultiplexing at receiver: use header info to deliver received segments to correct socket
