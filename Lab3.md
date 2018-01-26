@@ -22,3 +22,9 @@
   * App messages = letters in envelopes
   * Transport protocol = Ann and bill who demux to in-house siblings
   * Network-layer protocol = postal service
+### Multiplexing, Demultiplexing
+* Multiplexing at send host: gather data from multiple sockets
+* Demultiplexing at receiving host: deliver received segments to the right socket
+* Connectionless vs. connection-oriented
+  * UDP uses destination port + addresss
+  * TCP uses 4-tuple to identify
