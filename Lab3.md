@@ -34,9 +34,9 @@
   * Best effort, no delivery guarantee
   * Usage: streaming, DNS, etc.
 * Has checksum to detect failure
-```
-UDP HEADER FORMAT: 
 
+UDP header format:
+```
              32 Bits
 <------------------------------->
 |  source port  |   dest port   |
