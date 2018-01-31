@@ -10,3 +10,14 @@
   * Two generic forms of pipelined protocols:
     1. Go-Back-N
     2. Selective repeat
+### Go-Back-N
+* Sender can have up to N unacked packets in pipeline
+* Receiver only sends cumulative ack
+  * Doesn't ack packet if there's a gap
+* Sender has timer for oldest unacked packet
+  * When timer expires, retransmit all unacked packets
+### Selective Repeat
+* Sender can have up to N unacked packets in pipeline
+* Receiver sends individual ack for each packet
+* Sender maintains timer for each unacked packet
+  * When timer expires, retransmit only that unacked packet
