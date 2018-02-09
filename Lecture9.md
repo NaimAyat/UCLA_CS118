@@ -11,6 +11,17 @@
   * Retransmit the lost packet
 * Fast recovery: governs the transmission of new data until a non-duplicate ACK arrives
   * Increase cwnd by 1 MSS upon every duplicate ACK
+* Upon 3rd duplicate ACK
+  * `ssthresh = max(cwnd/2, 2*MSS)`
+    * `cwnd` should be flight size to be more accurate
+  * `cwnd = ssthresh + 3*MSS`
+  * Retransmit the lost TCP packet
+* Upon each additional duplicate ACK
+  * `cwnd += 1 MSS`
+  * Transmit a new packet if allowed by the updated `cwnd` and `rwnd`
+* Upon a new (ie. non-duplicate) ACK
+  * `cwnd = ssthresh`
+    * Deflating the congestion window size
 #### Philosophy
 * 3 duplicate ACKs to infer losses and differentiate from transient out-of-order delivery
 * Receiving each duplicate ACK indicates one more packet left at the network and arrived at the receiver
