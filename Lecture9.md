@@ -22,6 +22,10 @@
 * Upon a new (ie. non-duplicate) ACK
   * `cwnd = ssthresh`
     * Deflating the congestion window size
+### Congestion Avoidance
+* Increase `cwnd` by 1 MSS per RTT until congestion (loss) is detected
+  * Conditions: when `cwnd > ssthresh` and no loss occurs
+  * Actions: `cwnd += (MSS/cwnd)*MSS` (bytes) upon every incoming non-duplicate ACK
 #### Philosophy
 * 3 duplicate ACKs to infer losses and differentiate from transient out-of-order delivery
 * Receiving each duplicate ACK indicates one more packet left at the network and arrived at the receiver
