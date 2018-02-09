@@ -2,4 +2,4 @@
 ## TCP Slow Start
 * When connection begins, increase rate exponentially when `cwnd<ssthresh`
   * Double `cwnd` every RTT by setting `cwnd += 1 MSS` for every ACK received
-* Summary: initial rate is slow but ramps up exponentially quickly
+* Summary: initial rate is slow but ramps up exponentially 
