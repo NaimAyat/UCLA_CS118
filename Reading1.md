@@ -145,3 +145,9 @@
 * Easy to create a packet with an arbitrary source address, packet content, and destination address. This is called *IP spoofing*
   * To combat this, implement *end-point authentication*
 ## Chapter 2: Application Layer
+### 2.1 Principles of Network Applications
+* Application architecture is designed by the app developer. There are two choices:
+  1. Client-server architecture
+     * Always-on host, called the server, services requests from many other hosts, called clients
+  2. Peer-to-peer (P2P) architecture
+     * Minimal (or no) reliance on dedicated servers; the application exploits direct communication between pairs of intermittently connected hosts called *peers*
