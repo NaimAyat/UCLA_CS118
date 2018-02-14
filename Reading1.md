@@ -101,3 +101,20 @@
   3. Network
   4. Link
   5. Physical
+##### Application Layer
+* Includes protocols such as HTTP, SMTP, and FTP
+* Protocols distrubuted over multiple end system
+* App layer packets are *messages*
+##### Transport Layer
+* Transports app-layer messages between app endpoints. There are two transport protocols:
+  * TCP
+  * UDP
+* TCP provides a connection-oriented service to its applications, guaranteeing delivery of messages and flow control
+  * Breaks long messages into shorter segments and provides a congestion-control mechanism, so a source throttles its transmission rate when the network is congested
+* UDP provides a connectionless service: no reliability, no flow control, and no congestion control
+* Transport Layer packets are *segments*
+##### Network Layer
+* Moves network-layer packets (*datagrams*) from one host to another
+* The transport-layer protocol gives a segment and destination address to the network layer, just as you give the postal service a letter with an address
+* The network layer delivers the segment to the transport layer in the destination host
+* Includes IP protocol: defines fields in the datagram as well as how end systems and routers act in these fields
