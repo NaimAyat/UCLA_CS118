@@ -162,4 +162,6 @@
 #### 2.1.3 Transport Services Available to Applications
 ##### Reliable Data Transfer
 * Not necessary for loss-tolerant applications, such as video conference software
-
+##### Throughput
+* Applications that have throughput requirements are said to be bandwidth-sensitive applications. Many current multimedia applications are bandwidth sensitive
+* Elastic applications, on the other hand, can make use of as much, or as little, throughput as happens to be available. Electronic mail, file transfer, and Web transfers are all elastic applications
