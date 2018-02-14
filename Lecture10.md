@@ -15,3 +15,6 @@
     * Tail drop: drop arriving packet
     * Priority: drop/remove on priority basis
     * Random: drop/remove randomly
+#### Scheduling Policies: Priority
+* Send highest priority queued packet
+* Multiple classes with different priorities
