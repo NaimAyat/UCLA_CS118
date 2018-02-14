@@ -154,3 +154,12 @@
 #### 2.1.2 Processes Communicating
 ##### Client and Server Processes
 * The process that initiates the communication is the client; the process that waits to be contacted is the server
+##### The Interface Between the Process and the Computer Network
+* A socket is the interface between the app layer and the transport layer within a host. Also called the API between the application and the network
+##### Addressing Processes
+* A host is identified by its IP address
+* The sending process identifies the receiving process with a port number
+#### 2.1.3 Transport Services Available to Applications
+##### Reliable Data Transfer
+* Not necessary for loss-tolerant applications, such as video conference software
+
