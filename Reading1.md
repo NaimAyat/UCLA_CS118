@@ -89,3 +89,5 @@
   * d<sub>end-end</sub> = N(d<sub>proc</sub> + d<sub>trans</sub> + d<sub>prop</sub>)
   * Where d<sub>trans</sub> = L/R; L is packet size
 #### 1.4.4 Throughput in Computer Networks
+* Instantaneous throughput at any instant of time is the rate in bits/sec at which host B is receiving a file
+* Average throughput is F/T where F is the total number of bits in the file and T is the time it took to receive
