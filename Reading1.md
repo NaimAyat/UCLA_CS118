@@ -60,4 +60,18 @@
   * In TDM: time is divided into frames of fixed duration, each frame is divided into a fixed number of time slots
 ##### Packet Switching Versus Circuit Switching
 * Packet switching not suitable for real-time services (ie. telephone and video conference calls) 
-* PAcket switching offers better sharing of transmission capacity and is simpler + more efficient to implement
+* Packet switching offers better sharing of transmission capacity and is simpler + more efficient to implement
+#### 1.3.3 A Network of Networks
+* PoP (point of presence): group of one or more routers at the same location in the provider's network where customer ISPs can connect into the provider ISP
+### 1.4 Delay, Loss. and Throughput in Packet-Switched Networks
+#### 1.4.1 Overview of Delay in Packet-Switched Networks
+* Types of delay: nodal processing delay, queuing delay, transmission delay; together, these give a total nodal delay
+##### Processing Delay
+* Time required to examine the packet's header and determine where to direct the packet
+##### Queuing Delay
+* Time waited in queue before packet transmitted onto link
+##### Transmission Delay
+* L/R, where L is the number of bits and R is the transmission rate of the link
+##### Propagation Delay
+* After a bit is pushed into the link, the time required to propagate from the beginning of the link to router B
+  * Distance between two routers divided by the propagation speede: d/s, where d is the distance between router A and router B and s is the propagation speed of the link
