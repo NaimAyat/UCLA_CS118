@@ -66,6 +66,7 @@
 ### 1.4 Delay, Loss. and Throughput in Packet-Switched Networks
 #### 1.4.1 Overview of Delay in Packet-Switched Networks
 * Types of delay: nodal processing delay, queuing delay, transmission delay; together, these give a total nodal delay
+* d<sub>nodal</sub> = d<sub>proc</sub> + d<sub>queue</sub> + d<sub>trans</sub> + d<sub>prop</sub>
 ##### Processing Delay
 * Time required to examine the packet's header and determine where to direct the packet
 ##### Queuing Delay
