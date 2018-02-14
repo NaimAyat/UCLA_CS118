@@ -44,3 +44,20 @@
 * Each packet switch has multiple links attached; for each attached link, the packet switch has an *output buffer* (AKA output queue) which stores packets that the router is about to send into that link
 * If an arriving packet needs to be transmitted but the link is busy with the transmission of another packet, the arriving packet needs to wait in the output buffer
   * This is called *queuing delay*
+* Since buffer space is finite, it is possible that an arriving packet finds the buffer full with other packages
+  * *Packet loss* occurs in this situation; either the ariving packet or one of the already-queued packets will be dropped
+##### Forwarding Tables and Routing Protocols
+* Each router has a forwarding table that maps destination addresses to that router's outbound links
+#### 1.3.2 Circuit Switching
+* There are two approaches to moving data trhough a network: *circuit switching* and *packet switching*
+* In circuit-switched networks, the resources needed along a path (buffers, link transmission rate) are reserved for the duration of communcation between the end systems
+  * Ex. telephone networks. You establish a *circuit* With the receiver of your call; resources are reserved for the two of you
+##### Multiplexing in Circuit-Switched Networks
+* A circuit in a link is implemented with either *frequency-division multiplexing (FDM)* or *time-division multiplexing (TDM)*
+  * In FDM: the frequency spectrum of a link is divided amongst the connections established across the link
+    * A frequency band is dedicated to each connection for the duration of the connection
+    * The width of this band is called the bandwidth
+  * In TDM: time is divided into frames of fixed duration, each frame is divided into a fixed number of time slots
+##### Packet Switching Versus Circuit Switching
+* Packet switching not suitable for real-time services (ie. telephone and video conference calls) 
+* PAcket switching offers better sharing of transmission capacity and is simpler + more efficient to implement
