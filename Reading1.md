@@ -27,3 +27,16 @@
 * Two most prevalent types of broadband residential access are digital subscriber line (DSL) and cable
   * DSL provided by telco
   * Cable provided by television company
+### 1.3 The Network Core
+#### 1.3.1 Packet Switching
+* End systems exchange messages with eachother
+  * To accomplish this, the source breaks messages into packets
+  * Packets travel through links and packet switches
+    * Two types of packet switches: routers and link-layer switches
+* Most packet switches use *store-and-forward* transmission at the inputs to links
+  * Packet switch must receive entire packet before it can begin the transfer the packet onto the outbound link
+  * Routers must buffer packet's bits until all are received
+  * end-to-end delay (d<sub>end-to-end</sub>) = NL/R
+    * N is the number of links in the system
+    * R is the transmission rate of each link
+    * L is the number of bits transmitted
