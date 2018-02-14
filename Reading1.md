@@ -72,7 +72,7 @@
 ##### Queuing Delay
 * Time waited in queue before packet transmitted onto link
 ##### Transmission Delay
-* L/R, where L is the number of bits and R is the transmission rate of the link
+* d<sub>trans</sub> = L/R, where L is the number of bits and R is the transmission rate of the link
 ##### Propagation Delay
 * After a bit is pushed into the link, the time required to propagate from the beginning of the link to router B
-  * Distance between two routers divided by the propagation speede: d/s, where d is the distance between router A and router B and s is the propagation speed of the link
+  * Distance between two routers divided by the propagation speed: d<sub>prop</sub> = d/s, where d is the distance between router A and router B and s is the propagation speed of the link
