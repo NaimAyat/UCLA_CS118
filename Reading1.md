@@ -125,3 +125,10 @@
 * Link-layer packets are *frames*
 ##### Physical Layer
 * Moves individual bits within a frame from one node to the next
+#### 1.5.2 Encapsulation
+* At the sending host, an app-layer message is passed to the transport layer. In the simplest case, the transport layer takes the message and appends additional info that will be used by the receiver-side transport layer
+  * The application-layer message and the transport-layer header info together constitute the transport-layer segment
+  * The transport layer thus encapsulates the app-layer message, including info allowing the receiver-side transport layer to deliver the message up to the appropriate application and error-detection bits to allow the receiver to determine whether bits in the message have been changed in route
+    * The transport layer then passes the segment to the network layer, which adds network-layer header information such as source and destination end system addresses, creating a datagram
+      * Network layer passes datagram to link layer, which adds its own lin-layer header info and creates a frame
+   * Hence, for each layer, a packet has two types of fields: header fields and a payload field. The payload is typically a packet from the layer above
