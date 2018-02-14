@@ -118,3 +118,10 @@
 * The transport-layer protocol gives a segment and destination address to the network layer, just as you give the postal service a letter with an address
 * The network layer delivers the segment to the transport layer in the destination host
 * Includes IP protocol: defines fields in the datagram as well as how end systems and routers act in these fields
+##### Link Layer
+* Routes a datagram through a series of routers between the source and destination
+* At each node, the network layer passes the datagram down to the link layer, which delivers the datagram to the next node along the route. At this next node, the link layer passes the datagram up to the network layer
+* Examples of link-layer protocols: Ethernet, Wifi
+* Link-layer packets are *frames*
+##### Physical Layer
+* Moves individual bits within a frame from one node to the next
