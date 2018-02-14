@@ -71,6 +71,7 @@
 * Time required to examine the packet's header and determine where to direct the packet
 ##### Queuing Delay
 * Time waited in queue before packet transmitted onto link
+* Unlike other delays, can vary from packet to packet
 ##### Transmission Delay
 * d<sub>trans</sub> = L/R, where L is the number of bits and R is the transmission rate of the link
 ##### Propagation Delay
