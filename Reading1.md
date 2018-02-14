@@ -151,3 +151,6 @@
      * Always-on host, called the server, services requests from many other hosts, called clients
   2. Peer-to-peer (P2P) architecture
      * Minimal (or no) reliance on dedicated servers; the application exploits direct communication between pairs of intermittently connected hosts called *peers*
+#### 2.1.2 Processes Communicating
+##### Client and Server Processes
+* The process that initiates the communication is the client; the process that waits to be contacted is the server
