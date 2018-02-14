@@ -91,3 +91,6 @@
 #### 1.4.4 Throughput in Computer Networks
 * Instantaneous throughput at any instant of time is the rate in bits/sec at which host B is receiving a file
 * Average throughput is F/T where F is the total number of bits in the file and T is the time it took to receive
+### 1.5 Protocol Layers and Their Service Models
+#### 1.5.1 Layered Architecture
+* 
