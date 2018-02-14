@@ -93,4 +93,11 @@
 * Average throughput is F/T where F is the total number of bits in the file and T is the time it took to receive
 ### 1.5 Protocol Layers and Their Service Models
 #### 1.5.1 Layered Architecture
-* 
+##### Protocol Layering
+* Transport-layer and application-layer protocols are almost always implemented in software in the end systems
+* Five-layer internet protocol stack:
+  1. Application
+  2. Transport
+  3. Network
+  4. Link
+  5. Physical
