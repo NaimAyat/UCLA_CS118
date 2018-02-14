@@ -144,3 +144,4 @@
 * Distributed denial-of-service (DDos): attacker controls multiple sources and each source blasts traffic at target
 * Easy to create a packet with an arbitrary source address, packet content, and destination address. This is called *IP spoofing*
   * To combat this, implement *end-point authentication*
+## Chapter 2: Application Layer
