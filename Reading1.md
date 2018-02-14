@@ -141,3 +141,6 @@
   1. Vulnerability attack: Send messages to a vulnerable application or OS running on a targeted host. If the right sequence of packets is sent to a vulnerable application or OS, the service can stop or the host can crash
   2. Bandwidth flooding: send a deluge of packets to the targeted host to clog the target's access link, preventing legitimate packets from reaching the server
   3. Connection flooding: attacker establishes a large number of half- or fully-open TCP connections at the target host. The host is full of bogus connections, so it stops accepting legitimate connections
+* Distributed denial-of-service (DDos): attacker controls multiple sources and each source blasts traffic at target
+* Easy to create a packet with an arbitrary source address, packet content, and destination address. This is called *IP spoofing*
+  * To combat this, implement *end-point authentication*
