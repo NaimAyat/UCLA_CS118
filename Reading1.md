@@ -40,3 +40,7 @@
     * N is the number of links in the system
     * R is the transmission rate of each link
     * L is the number of bits transmitted
+##### Queuing Delays and Packet Loss
+* Each packet switch has multiple links attached; for each attached link, the packet switch has an *output buffer* (AKA output queue) which stores packets that the router is about to send into that link
+* If an arriving packet needs to be transmitted but the link is busy with the transmission of another packet, the arriving packet needs to wait in the output buffer
+  * This is called *queuing delay*
