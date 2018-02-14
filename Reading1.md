@@ -72,8 +72,20 @@
 ##### Queuing Delay
 * Time waited in queue before packet transmitted onto link
 * Unlike other delays, can vary from packet to packet
+* First packet does not experience queuing delay
+* Let a denote the average rate at chich packets arrive at the queue (packets/sec)
+  * Average rate at which bits arrive in the queue is La bits/sec
+  * Assume the queue can hold infinite bits. The ratio La/R is called *traffic intensity*
+    * If La/R > 1, the average rate at which bits arrive at the queue exceeds the rate at which bits can be transmitted from the queue. Hence, queuing delay will approach infinity. Hence, systems must never be designed with a traffic intensity greater than 1.
+    * If La/R < 1, the nature of arriving traffic impacts queuing delay. If packets arrive simultaneously every (L/R)N seconds, the first packet has no queuing delay the second packet has queuing delay L/R, and the nth packet has queuing delay (n-1)L/R 
 ##### Transmission Delay
 * d<sub>trans</sub> = L/R, where L is the number of bits and R is the transmission rate of the link
 ##### Propagation Delay
 * After a bit is pushed into the link, the time required to propagate from the beginning of the link to router B
   * Distance between two routers divided by the propagation speed: d<sub>prop</sub> = d/s, where d is the distance between router A and router B and s is the propagation speed of the link
+#### 1.4.3 End-to-End Delay
+* So far, we've focused on nodal delay (delay at single router)
+* Now, consider todal delay from source to destination. Suppose there are N-1 routers between source and dest
+  * d<sub>end-end</sub> = N(d<sub>proc</sub> + d<sub>trans</sub> + d<sub>prop</sub>)
+  * Where d<sub>trans</sub> = L/R; L is packet size
+#### 1.4.4 Throughput in Computer Networks
