@@ -132,3 +132,12 @@
     * The transport layer then passes the segment to the network layer, which adds network-layer header information such as source and destination end system addresses, creating a datagram
       * Network layer passes datagram to link layer, which adds its own lin-layer header info and creates a frame
    * Hence, for each layer, a packet has two types of fields: header fields and a payload field. The payload is typically a packet from the layer above
+### 1.4 Networks Under Attack
+* Compromised host may be enrolled in a network of similarly compromised devices, known as a *botnet* 
+* Malware can sepread in the form of a virus or worm
+  * Virus: require some form of user interaction to infect a device (ex. open an email attachment containing a malicious .exe)
+  * Worms: enter a decice without explicit user interaction (ex. a user may be running a vulnerable network app to which an attacker can send malware. It is possible that the application may accept the malware and run it, creating a worm on the device. The newly infected device then scans the Internet, searching for other hosts running the same vulnerable network application to send a copy of the worm)
+* Denial-of-service (DoS) attacks render a network, host, or other piece of infrastructure unusable. Three categories:
+  1. Vulnerability attack: Send messages to a vulnerable application or OS running on a targeted host. If the right sequence of packets is sent to a vulnerable application or OS, the service can stop or the host can crash
+  2. Bandwidth flooding: send a deluge of packets to the targeted host to clog the target's access link, preventing legitimate packets from reaching the server
+  3. Connection flooding: attacker establishes a large number of half- or fully-open TCP connections at the target host. The host is full of bogus connections, so it stops accepting legitimate connections
