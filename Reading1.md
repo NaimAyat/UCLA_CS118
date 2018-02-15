@@ -553,3 +553,4 @@ Content-Type: text/html
     6. URG bit indicates that there is data in this segment that the sending-side upper-layer has marked urgent. The location of the last byte of this urgent data is indicated by the 16-bit urgent data pointer field.
 ##### Sequence Numbers and ACK Numbers
 * The sequence number for a segment is the byte-stream number of the first byte in the segment
+* Because TCP only acknowledges bytes up to the first missing byte in the stream, TCP is said to provide cumulative acknowledgments
