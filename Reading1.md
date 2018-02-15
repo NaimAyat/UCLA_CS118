@@ -431,3 +431,7 @@ Content-Type: text/html
 * A transport-layer protocol provides logical communication between processes running on different hosts, a network-layer protocol provides logical communication between hosts
 #### 3.1.2 Overview of the Transport Layer in the Internet
 * The internet makes two transport-layer protcols available to the application layer: UDP (User Datagram Protocol) and TCP (Transmission Control Protocol)
+  * When designing an application, the developer must specify one of these two protocols
+* IP is a *best-effort delivery service*
+* The responsibility of UDP and TCP is to extend IP's delivery service between two end systems to a delivery service between two processes running on the end systems
+* Extending host-to-host delivery to process-to-process delivery is called *transport layer multiplexing* and *demultiplexing*
