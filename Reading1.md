@@ -424,3 +424,6 @@ Content-Type: text/html
     * The optimistically unchoked peer could become one of our top four uploaders, and hence we start trading data
     * This is a tit-for-tat system allowing peers of similar upload capacity to share with each other
 ## Chapter 3: Transport Layer
+### 3.1 Introduction and Transport-Layer Services
+* Transport layer protocol provides for logical communication between application processes running on different hosts
+* Transport-layer packets are called *segments*
