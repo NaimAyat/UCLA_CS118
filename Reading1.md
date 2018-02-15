@@ -398,3 +398,6 @@ Content-Type: text/html
 * Distribution time is the time it takes to get a copy of the file to all N peers
 * Distribution time for client-server architecture D<sub>cs</sub> ≥ max{NF/u<sub>s</sub>, F/d<sub>min</sub>}
   * Where N = number peers, F = file size in bits, u<sub>s</sub> = server upload rate, d<sub>min</sub> = download rate of the peer with the lowest download rate
+* In P2P observe:
+  * At the beginning of the distribution, only the server has the file. To get this file into the community of peers, the server must send each bit of the file at least once into its access link. Thus, the minimum distribution time is at least F/u<sub>s</sub>. (Unlike the client-server scheme, a bit sent once by the server may not have to be sent by the server again, as the peers may redistribute the bit among themselves.)
+  * As with the client-server architecture, the peer with the lowest download rate cannot obtain all F bits of the file in less than F/d<sub>min</sub> seconds. Thus the minimum distribution time is at least F/d<sub>min</sub>.
