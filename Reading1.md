@@ -258,3 +258,18 @@ Content-Type: text/html
 * Entity body is the requested object itself
 * Status line has three fields: the protocol version field, a status code, and a corresponding status message
 #### 2.2.4 User-Server Interaction: Cookies
+* HTP servers are stateless; however, it is often desirable for a website to identify users
+* Components of a cookie
+  1. A cookie header line in HTTP response message
+  2. Cookie header line in HTTP request message
+  3. Cookie file kept on the user's end system and manager by the user's browser
+  4. A back-end database at the website
+* The first time a user visits a site, the user can provide a user identification (possibly his or her name). During the subsequent sessions, the browser passes a cookie header to the server, thereby identifying the user to the server. Cookies can thus be used to create a user session layer on top of stateless HTTP
+#### 2.2.5 Web Caching
+* A Web cache, also called a proxy server, is a network entity that satisfies HTTP requests on the behalf of an origin Web server
+* A user’s browser can be configured so that all of the user’s HTTP requests are first directed to the Web cache
+* Suppose a browser requests the object at `http://www.someschool.edu/campus.gif`:
+  1. Browser establishes a TCP connection to the Web Cache and sends an HTTP request for the object to the Web cache
+  2. The Web cache checks to see if it has a copy of the object stored locally. If it does, the Web cache returns the object within an HTTP response message to the client browser
+  3. If the Web cache does not have the object, the Web cache opens a TCP connection to the origin server, that is, to `www.someschool.edu`. The Web cache then sends an HTTP request for the object into the cache-to-server TCP connection. After receiving this request, the origin server sends the object within an HTTP response to the Web cache
+  4. When the Web cache receives the object, it stores a copy in its local storage and sends a copy, within an HTTP response message, to the client browser (over the existing TCP connection between the client browser and the Web cache)
