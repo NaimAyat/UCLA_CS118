@@ -554,3 +554,8 @@ Content-Type: text/html
 ##### Sequence Numbers and ACK Numbers
 * The sequence number for a segment is the byte-stream number of the first byte in the segment
 * Because TCP only acknowledges bytes up to the first missing byte in the stream, TCP is said to provide cumulative acknowledgments
+#### 3.5.3 Round-Trip Time Estimation and Time
+* TCP uses a timeout/retransmit mechanism to recover from lost segments
+##### Estimating the Round-Trip Time
+* SampleRTT for a segment is the amount of time between when the segment is sent and when an CK is received
+* Instead of measuring a SampleRTT for every transmitted segment, most TCP implementations take only one SampleRTT measurement at a time. That is, at any point in time, the SampleRTT is being estimated for only one of the transmitted but currently unacknowledged segments, leading to a new value of SampleRTT approximately once every RTT
