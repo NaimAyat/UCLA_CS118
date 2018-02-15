@@ -323,3 +323,27 @@ Content-Type: text/html
   1. Auhtorization: user agent sends a username and password to authenticate the user
   2. Transition: user agent receives messages and the user agent can mark messages for deletion/remove deletion marks/obtain mail statistics
   3. Update: occurs after the client has issued `quit` command, ending POP3 session. The mail server deletes the messages that were marked for deletion
+##### IMAP
+* Allows user to create remote folders and assign messages to folders
+* IMAP associates each message with a folder; when a message arrives at the server, it is associated with the recipient's inbox folder
+* The recipient can move the message into a new, user-created folder, read the message, delete the message, etc.
+* Unlike POP3, an IMAP server maintains user state info - for example, the names of folders and which messages are associated with which folders
+##### Web-Based E-Mail
+* The user agent is a web browser, and the user communicates with its remote mailbox via HTTP
+* When a recipient wants to access a message in his mailbox, the message is sent from his mail server to his browser using HTTP rather than POP3 or IMAP
+* When a sender wants to send an e-mail, the message is sent from his browser to his mail server over HTTP rather than SMTP
+### 2.5 DNS - The Internet's Directory Service
+* Hots must have identifiers
+  * One way to identify a host is a hostname, such as `yahoo.com` or `google.com`
+  * Hosts are also identified by IP addresses
+#### 2.5.1 Services Provided by DNS (Domain Name System)
+* Primary goal is to translate hostnames to IP addresses
+* Distributed database implemented in a hierarchy of DNS servers
+* Application-layer protocol that allows hosts to query the distributed database
+* DNS is commonly employed by other application-layer protocols - including HTTP, SMTP, and FTP - to translate user-supplied hostnames to IP addresses
+* For example to access `naimayat.me`, the user host must first obtain the IP address
+  1. The user machine runs the client side of the DNS application
+  2. The browser extracts the hostname `naimayat.me` from the URL
+  3. The DNS client sends a query containing the hostname to a DNS server
+  4. The DNS client receives a reply which includes the IP address for the hostname
+  5. Once the browser receives the UP address from the DNS, it can initiate a TCP connection to the HTTP server process 
