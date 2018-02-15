@@ -532,3 +532,14 @@ Content-Type: text/html
 * The maximum amount of data that can be grabbed and placed in a segment is limited by the maximum segment size (MSS)
   * MSS usually set by determining the length of the largest link-layer frame that can be sent by the local sending host (the Maximum Transmission Unit, MTU) and setting the MSS to ensure that a TCP segment will fit into a single link-layer frame
 * TCP connection consists of buffers, variables, and a socket connection to a process in one host, and another set of buffers, variables, and a socket connection to a process in another host. No buffers or variables are allocated to the connection in the network elements (routers, switches, and repeaters) between the hosts.
+#### 3.5.2 The TCP Segment Structure
+* TCP segment consists of header fields and a data field
+  * Data field contains chunk of app data
+    * MSS limits the size of a segment's data field
+    * When TCP sends a large file, such as an image, it typically breaks the file into chunks of size MSS
+* As with UDP, the header contains source and destination port numbers, which are used for multiplexing/demultiplexing data from/to upper-layer apps
+* Also, as with UDP, header contains a checksum field
+* TCP segment header also contains:
+  * 32-bit sequence number field and 32-bit ACK number field
+  * 16-bit receive window for flow control; used to indicate the number of bytes that a receiver is willing to accept
+  * 4-bit header length field specifies the length of the TCP header in 32-bit words
