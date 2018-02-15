@@ -482,3 +482,4 @@ Content-Type: text/html
   2. Receiver feedback. Since the sender and receiver execute on different end systems (typically), the only way for the sender to learn of the receiver's worldview is for the receiver to provide explicit feedback to the sender. The positive (ACK) and negative (NAK) acknowledgement replies in the message-dictation scenario are examples of such feedback
   3. Retransmission. A packet that is received in error at the receiver will be retransmitted by the sender
 * Sender will not send a new piece of data until it is sure that the receiver has received the current packet. Such protocols are called *stop-and-wait* protocols
+* We need to add a new field to the data packet and have the sender number its data packets by putting a *sequence number* into this field. The receiver then need only check this sequence number to determine whether or not the received packet is a retransmission.
