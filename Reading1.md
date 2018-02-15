@@ -531,3 +531,4 @@ Content-Type: text/html
 * Once data passes through the client socket, TCP directs the data to the connection's *send buffer*, which is one of the buffers set aside by the initial three-way handshake
 * The maximum amount of data that can be grabbed and placed in a segment is limited by the maximum segment size (MSS)
   * MSS usually set by determining the length of the largest link-layer frame that can be sent by the local sending host (the Maximum Transmission Unit, MTU) and setting the MSS to ensure that a TCP segment will fit into a single link-layer frame
+* TCP connection consists of buffers, variables, and a socket connection to a process in one host, and another set of buffers, variables, and a socket connection to a process in another host. No buffers or variables are allocated to the connection in the network elements (routers, switches, and repeaters) between the hosts.
