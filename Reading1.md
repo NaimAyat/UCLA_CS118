@@ -445,7 +445,9 @@ Content-Type: text/html
 * These special fields are the *source port number field* and the *destination port number field*
   * Each port number is a 16-bit number (range from 0 to 66535)
   * The port numbers ranging from 0 to 1023 are called *well-known port numbers* are restricted, meaning they are reserved for use by well-known application protocols such as HTTP (port 80) and FTP (port 21)
-##### Connectionless Multiplexing and Demultiplexing
+##### Connectionless (UDP) Multiplexing and Demultiplexing
 * When a UDP socket is created, the transport layer automatically assigns a port number in the range 1024 to 65535
   * If we use the `bind()` method, we can specify our own address
-  
+##### Connection-Oriented (TCP) Multiplexing and Demultiplexing
+* A TCP socket is identified by a four-tuple as opposed to UDP's two-tuple: (source IP, source port, destination IP, destination port)
+* When a TCP segment arrives from the network to a host, the host uses all four values to direct (demultiplex) the segment to the appropriate socket
