@@ -526,3 +526,6 @@ Content-Type: text/html
 #### 3.5.1 The TCP Connection
 * A TCP connection provides a full-duplex service: If there is a TCP connection between Process A on one host and Process B on another host, then application layer data can flow from Process A to Process B at the same time as application layer data flows from Process B to Process A
 * TCP connection is always *point-to-point*, between a single sender and a single receiver
+* Three-way handshake: the client first sends a special TCP segment; the server responds with a second special TCP segment; and finally the client responds again with a third special segment
+  * First two segments carry no payload, the third may carry a payload
+* Once data passes through the client socket, TCP directs the data to the connection's *send buffer*, which is one of the buffers set aside by the initial three-way handshake
