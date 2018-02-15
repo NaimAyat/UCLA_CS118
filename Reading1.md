@@ -559,3 +559,6 @@ Content-Type: text/html
 ##### Estimating the Round-Trip Time
 * SampleRTT for a segment is the amount of time between when the segment is sent and when an CK is received
 * Instead of measuring a SampleRTT for every transmitted segment, most TCP implementations take only one SampleRTT measurement at a time. That is, at any point in time, the SampleRTT is being estimated for only one of the transmitted but currently unacknowledged segments, leading to a new value of SampleRTT approximately once every RTT
+* Also, TCP never computes a SampleRTT for a segment that has been retransmitted; it only measures SampleRTT for segments that have been transmitted once
+* EstimatedRTT: average of the SampleRTT values. Upon obtaining a new SampleRTT, TCP updates EstimatedRTT according to the following formula: `EstimatedRTT = (1 – α) • EstimatedRTT + α • SampleRTT`
+  * Where `α = 0.125`
