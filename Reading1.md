@@ -423,3 +423,4 @@ Content-Type: text/html
   * Every 30 seconds, the peer picks another neighbor at random and sends it chunks. This randomly selected peer is said to be *optimistically unchoked* in hopes that the random peer will start sending data back
     * The optimistically unchoked peer could become one of our top four uploaders, and hence we start trading data
     * This is a tit-for-tat system allowing peers of similar upload capacity to share with each other
+## Chapter 3: Transport Layer
