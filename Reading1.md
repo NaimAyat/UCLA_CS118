@@ -165,3 +165,27 @@
 ##### Throughput
 * Applications that have throughput requirements are said to be bandwidth-sensitive applications. Many current multimedia applications are bandwidth sensitive
 * Elastic applications, on the other hand, can make use of as much, or as little, throughput as happens to be available. Electronic mail, file transfer, and Web transfers are all elastic applications
+##### Timing
+* Can guarantee, for example, that data arrives to a socket within 100msec
+##### Security 
+* For example, in the sending host, a transport protocol can encrypt all data transmitted by the sending process, and in the receiving host, the transport-layer protocol can decrypt the data before delivering the data to the receiving process
+#### 2.1.4 Transport Services Provided by the Internet
+##### TCP Services
+* Connection-oriented service
+  * Client and server exchange transport-layer control information before the application-level messages begin to flow
+    * This process is called handshaking
+    * Allows client and server to prepare for packets
+  * After handshaking, a TCP connection is said to exist between the sockets of the two processes
+  * Connection is full-duples; two processes can send messages to each other over the connection at the same time
+* Reliable data transfer
+  * TCP delivers all data without error and in the proper order
+* Congestion control
+  * Throttles a sending process when the network is congested between sender and receiver
+##### UDP Services
+* Lightweight, no-frills
+* Connectionless; no handshaking
+* Internet telephony applications prefer UDP for its speed, though reliable data transfer is not guaranteed
+#### 2.1.5 Application Layer Protocols
+* Defines how an application's processes, running on different end systems, pass messages to each other
+  * Defines the types of messages exchanged (ex. request messages and response messages)
+  * The syntax of various message types (Ex. the fields of the message and how they are delineated)
