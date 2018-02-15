@@ -215,3 +215,6 @@
   5. The HTTP client receives the response message. The TCP connection terminates. The message indicates that the encapsulated object is an HTML file. The client extracts the file from the response message, examines the HTML file, and finds referenes to other objects on the page (ex. JPEGs or Java applets)
   6. The first four steps are repeated for each referenced object on the page
 * **Round-trip time (RTT)** is the time it takes for a small packet tor travel from client to server and then back to the client
+##### HTTP with Persistent Connections
+* Non-persistent connections have shortcomings:
+  * A brand-new connection must be established and maintained for each requested object. For each of these connections, TCP buffers must be allocated and TCP variables must be kept in both the client and server
