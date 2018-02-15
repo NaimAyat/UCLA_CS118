@@ -203,6 +203,14 @@
 * HTTP uses TCP as its underlying transport protocol
 * HTTP client first initiates a TCP connection with the server. Once the connection is established, the browser and the server processes access TCP through their socket interfaces
 #### 2.2.2 Non-Persistent and Persistent Connections
+* App developer must choose
 * Non-persistent: each request/response pair is sent over a separate TCP connection
 * Persistent: all the requests and their corresponding responses are sent over the same TCP connection
 ##### HTTP with Non-Persistent Connections
+* Assume we try to access `http://www.someSchool.edu/someDepartment/home.index`
+  1. HTTP client initiates a TCP connection to the server `www.someSchool.edu` on port 80. There will be a socket at the client and a socket on the server
+  2. The HTTP client sends an HTTP request message to the server via its socket. The request message includes the path name `/someDepartment/home.index`
+  3. The HTTP server process receives the request message via its socket, retrieves the object `/someDepartment/home.index` from its storage (RAM or disk), encapsulates the object in an HTTP response message, and sends the response message to the client via its socket
+  4. The HTTP server process tells TCP to close the TCP connection
+  5. The HTTP client receives the response message. The TCP connection terminates. The message indicates that the encapsulated object is an HTML file. The client extracts the file from the response message, examines the HTML file, and finds referenes to other objects on the page (ex. JPEGs or Java applets)
+  6. The first four steps are repeated for each referenced object on the page
