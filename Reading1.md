@@ -391,3 +391,5 @@ Content-Type: text/html
 * Answer section contains the resource records for the name that was originally queried
 * Authority section contains records of other authoritative servers
 * Additional section contains other helpful records. For example, the answer field in a reply to an MX query contains a resource record providing the canonical hostname of a mail server. The additional section contains a Type A record providing the IP address for the canonical hostname of the mail server
+### 2.6 Peer-to-Peer Applications
+* So far, everything covered employs client-server architecture
