@@ -470,4 +470,10 @@ Content-Type: text/html
 * Given that neither link-by-link reliability nor in-memory error detection is guaranteed, UDP must provide error detection at the transport layer, on an end-end basis, if the end-end data transfer service is to provide error detection
 ### 3.4 Principles of Reliable Data Transfer
 * TCP is a reliable data transfer protocol that is implemented on top of an unreliable (IP) end-to-end network layer
-### 3.4.1 Building a Reliable Data Transfer Protocol
+#### 3.4.1 Building a Reliable Data Transfer Protocol
+##### Reliable Data Transfer over a Perfectly Reliable Channel: rdt1.0
+* The finite state machine (FSM) definitions for an rdt1.0 sender and receiver state that it is completely reliable
+##### Reliable Data Transfer over a Perfectly Reliable Channel: rdt2.0
+* A more realistic model of the underlying channel is one in which bits in a packet may be corrupted
+* The message-dictation protocol uses both positive acknowledgements and negative acknowledgements
+  * Process of retransmitting data in a reliable data transfer protocol is called *ARQ (Automatic Repeat Request) Protocol*
