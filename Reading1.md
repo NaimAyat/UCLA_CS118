@@ -484,3 +484,10 @@ Content-Type: text/html
 * Sender will not send a new piece of data until it is sure that the receiver has received the current packet. Such protocols are called *stop-and-wait* protocols
 * We need to add a new field to the data packet and have the sender number its data packets by putting a *sequence number* into this field. The receiver then need only check this sequence number to determine whether or not the received packet is a retransmission
 ##### Reliable Data Transfer over a Lossy Channel with Bit Errors: rdt3.0
+* Suppose now that the underlying channel can lose packets as well as corrupt bits
+* How do we detect packet loss, and how do we combat it?
+  * If sender waits long enough that it is certain that a packet is lost, it can simply retransmit the packet
+    * How long is long enough?
+    * The sender must wait at least as long as RTT between the sender and receiver plus whatever time is needed to process a packet at the receiver. Moreover, the protocol should ideally recover from packet loss as soon as possible; waiting for a worst-case delay could mean a long wait until error recovery is initiated
+    * The adopted approach, therefore, is for the sender to judiciously choose a wait time such that packet loss is likely (though not guaranteed) to have happened. If an ACK is not received in this time, the packet is retransmitted
+    * This introduces the possibility of *duplicate data packets*
