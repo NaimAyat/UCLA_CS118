@@ -491,3 +491,9 @@ Content-Type: text/html
     * The sender must wait at least as long as RTT between the sender and receiver plus whatever time is needed to process a packet at the receiver. Moreover, the protocol should ideally recover from packet loss as soon as possible; waiting for a worst-case delay could mean a long wait until error recovery is initiated
     * The adopted approach, therefore, is for the sender to judiciously choose a wait time such that packet loss is likely (though not guaranteed) to have happened. If an ACK is not received in this time, the packet is retransmitted
     * This introduces the possibility of *duplicate data packets*
+    * Implementing a time-based retransmission mechanism requires a countdown timer that can interrupt the sender. The sender will thus need to be able to:
+      1. Start the timer each time a packet is sent
+      2. Respond to a timer interrupt
+      3. Stop the timer
+    * Because packet sequence numbers alternate between 0 and 1, protocol rdt3.0 is sometimes known as the *alternating-bit protocol*
+    
