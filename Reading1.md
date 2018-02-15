@@ -283,3 +283,11 @@ Content-Type: text/html
   * The user first provides the hostname of the remote host, causing the FTP client process in the local host to establish a TCP connection with the FTP server process in the remote host
   * The user then provides the user identification and password, which are sent over the TCP connection as part of FTP commands
   * Once the server has authorized the user, the user copies one or more files stored in the local file system into the remote file system (or vice versa)
+* HTTP and FTP are both file transfer protocols that run on TCP. However, the two application-layer protocols have important differences:
+  * FTP uses two parallel TCP connections to transfer a file, a control connection and a data connection
+    * Control connection is for sending information such as user identification, password, commands to change remote directory, and commands to "put" and "get" files. 
+    * The data connection is used to actually send a file
+    * Because FTP uses a separate control connection, FTP is said to send its control information out-of-band
+  * HTTP uses only one TCP connection; hence it is said to send its control information in-band
+* FTP maintains **state** about the user
+  * In particular, the server must associate the control connection with a specific user account, and the server must keep track of the user’s current directory as the user wanders about the remote directory tree
