@@ -189,3 +189,5 @@
 * Defines how an application's processes, running on different end systems, pass messages to each other
   * Defines the types of messages exchanged (ex. request messages and response messages)
   * The syntax of various message types (Ex. the fields of the message and how they are delineated)
+  * The semantics of the fields
+  * Rules for determining when and how a process sends messages and responds to messages
