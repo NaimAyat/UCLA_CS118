@@ -596,3 +596,4 @@ Content-Type: text/html
 ### 3.7 TCP Congestion Control
 * The TCP congestion-control mechanism operating at the sender keeps track of an additional variable, the congestion window. The congestion window, denoted *cwnd*, imposes a constraint on the rate at which a TCP sender can send traffic into the network
 * The amound of unACKed data at a sender may not exceed the minimum of cwnd and rwnd: `LastByteSent – LastByteAcked < min{cwnd, rwnd}`
+* **The sender’s send rate is roughly cwnd/RTT bytes/sec. By adjusting the value of cwnd, the sender can therefore adjust the rate at which it sends data into its connection**
