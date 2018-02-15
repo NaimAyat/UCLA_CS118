@@ -437,3 +437,5 @@ Content-Type: text/html
 * Extending host-to-host delivery to process-to-process delivery is called *transport layer multiplexing* and *demultiplexing*
 * TCP provides reliable data transfer using flow control, sequence numbers, acknowledgments, and timers. Also provides congestion control for the general good of the internet
 ### 3.2 Multiplexing and Demultiplexing
+* Job of delivering data in a transport layer segment to the correct socket is called **demultiplexing**
+* Gathering data chunks at the source host from different sockets, encapsulating each data chunk with header information (that will later be used in demultiplexing) to create segments, and passing the segments to the network layer is called **multiplexing**
