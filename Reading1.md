@@ -242,3 +242,19 @@ Accept-language: fr
   * The HTTP version field
 * `Connection: close` means we don't want a persistent connection; close the connection after sending the requested object
 * `Accept-language: fr` means we prefer French, but return the default language if not available
+##### HTTP Response Message
+```
+HTTP/1.1 200 OK
+Connection: close
+Date: Tue, 09 Aug 2011 15:44:04 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 09 Aug 2011 15:11:03 GMT
+Content-Length: 6821
+Content-Type: text/html
+
+(data data data data data ...)
+```
+* Three sections: an initial status line, six header lines, then the entity body
+* Entity body is the requested object itself
+* Status line has three fields: the protocol version field, a status code, and a corresponding status message
+#### 2.2.4 User-Server Interaction: Cookies
