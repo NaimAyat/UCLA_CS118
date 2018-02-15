@@ -551,3 +551,5 @@ Content-Type: text/html
     4. FIN: along with above two, used for connection setup and teardown
     5. PSH bit indicates that the receiver should pass the data to the upper layer immediately
     6. URG bit indicates that there is data in this segment that the sending-side upper-layer has marked urgent. The location of the last byte of this urgent data is indicated by the 16-bit urgent data pointer field.
+##### Sequence Numbers and ACK Numbers
+* The sequence number for a segment is the byte-stream number of the first byte in the segment
