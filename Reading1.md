@@ -278,3 +278,8 @@ Content-Type: text/html
 #### 2.2.6 The Conditional GET
 * HTTP has the conditional GET mechanism that allows a cache to verify its objects are up to date
   * A request message is a so-called conditional GET message if (1) the request message uses the GET method and (2) the request message includes an `If-Modified-Since:` header line
+### 2.3 File Transfer: FTP
+* The user interacts with FTP through an FTP user agent
+  * The user first provides the hostname of the remote host, causing the FTP client process in the local host to establish a TCP connection with the FTP server process in the remote host
+  * The user then provides the user identification and password, which are sent over the TCP connection as part of FTP commands
+  * Once the server has authorized the user, the user copies one or more files stored in the local file system into the remote file system (or vice versa)
