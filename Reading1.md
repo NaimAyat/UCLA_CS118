@@ -430,3 +430,4 @@ Content-Type: text/html
 #### 3.1.1 Relationship Between Transport and Network Layers
 * A transport-layer protocol provides logical communication between processes running on different hosts, a network-layer protocol provides logical communication between hosts
 #### 3.1.2 Overview of the Transport Layer in the Internet
+* The internet makes two transport-layer protcols available to the application layer: UDP (User Datagram Protocol) and TCP (Transmission Control Protocol)
