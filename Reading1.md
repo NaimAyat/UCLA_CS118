@@ -602,3 +602,5 @@ Content-Type: text/html
   * *A lost segment implies congestion, and hence, the TCP sender's rate should be decreased when a segment is lost*
   * *An acknowledged segment indicates that the network is delivering the sender's segments to the receiver, and hence, the sender's rate can be increased when an ACK arrives for a previously unacknowledged segment.*
   * Bandwidth probing. Given ACKs indicating a congestion-free source-to-destination path and loss events indicating a congested path, TCP's strategy for adjusting its transmission rate is to increase its rate in response to arriving ACKs until a loss event occurs, at which point, the transmission rate is decreased. The TCP sender thus increases its transmission rate to probe for the rate that at which congestion onset begins, backs off from that rate, and then to begins probing again to see if the congestion onset rate has changed
+##### Slow Start
+* When TCP connection begins, the value of cwnd is typically initialized to a small value of 1 MSS
