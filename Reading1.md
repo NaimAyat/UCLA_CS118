@@ -585,3 +585,4 @@ Content-Type: text/html
   * LastByteRcvd: the number of the last byte in the data stream that has arrived from the network and has been placed in the receive buffer at B
   * LastByteRcvd – LastByteRead < RcvBuffer
   * Receive window is set to the amount of spare room in the buffer: rwnd = RcvBuffer – [LastByteRcvd – LastByteRead]
+#### 3.5.6 RCP Connection Management
