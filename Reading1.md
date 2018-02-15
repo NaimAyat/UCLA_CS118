@@ -570,3 +570,9 @@ Content-Type: text/html
 * `TimeoutInterval = EstimatedRTT + 4 • DevRTT`
 #### 3.5.4 Reliable Data Transfer
 * TCP creates a *reliable data transfer service* on top of IP's unreliable best-effort service
+##### Doubling the Timeout Interval
+* A modification to TCP in which each time TCP retransmits, it sets the next timeout interval to twice the previous value, rather than deriving it from the last EstimatedRTT and DevRTT
+* The timer expiration is most likely caused by congestion in the network, that is, too many packets arriving at one (or more) router queues in the path between the source and destination, causing packets to be dropped and/or long queuing delays. In times of congestion, if the sources continue to retransmit packets persistently, the congestion may get worse. Instead, TCP acts more politely, with each sender retransmitting after longer and longer intervals.
+##### Fast Retransmit
+* One of the problems with timeout-triggered retransmissions is that the timeout period can be relatively long
+* The sender can often detect packet loss well before the timeout event occurs by noting so-called duplicate ACKs. A duplicate ACK is an ACK that reacknowledges a segment for which the sender has already received an earlier acknowledgment
