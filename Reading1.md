@@ -218,3 +218,11 @@
 ##### HTTP with Persistent Connections
 * Non-persistent connections have shortcomings:
   * A brand-new connection must be established and maintained for each requested object. For each of these connections, TCP buffers must be allocated and TCP variables must be kept in both the client and server
+  * Place a significant burden on the Web server, which may be serving requests from hundreds of clients simultaneously
+  * Each object suffers a delivery delay of two RTTs; one to establish the TCP connection and one to request and receive an object
+* With persistent connections, the server leaves the TCP connection open after sending a response
+* Subsequent requests and responses between the same client and server can be sent over the same connection
+* An entire web page can be sent over a single persistent TCP connection
+* Multiple web pages residing on the same server can be sent from the server to the same client over a single persistent TCP connection
+* Requests for objects can be made back-to-back, without waiting for replies to pending requests (pipelining)
+* The default mode of HTTP uses persistent connections with pipelining
