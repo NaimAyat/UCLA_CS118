@@ -522,3 +522,4 @@ Content-Type: text/html
   * Unlike GBN, the sender will have already received ACKs for some of the packets in the window
   * SR receiver will ACK a correctly received packet regardless of whether in order; out-of-order packets are buffered until any missing packets are received, at which point a batch of packets can be delivered in order to the upper layer
 * Window size must be less than or equal to half the size of the sequence number space for SR protocols.
+### 3.5 Connection-Oriented Transport: TCP
