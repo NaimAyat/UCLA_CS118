@@ -620,6 +620,16 @@ After 1 RTT, cwnd = i+1
 ```
 * On entry to the congestion-avoidance state, the value of cwnd is approximately half its value when congestion was last encountered. Congestion could be just around the corner. Thus, rather than doubling the value of cwnd every RTT, TCP adopts a more conservative approach and increases the value of cwnd by just a single MSS every RTT. This is often accomplished by increasing cwnd by MSS bytes (MSS/cwnd) whenever a new acknowledgment arrives.
 ##### Fast Recovery
+```
+if retransmission due to timeout
+  ssthresh = half current window size
+  set cwnd = 1
+  start with slow start phase again
+if retransmission due to 3 ACK duplicates
+  ssthresh = half current window size
+  cwnd = ssthresh
+  start with congestion avoidance phase
+```
 * The value of cwnd is increased by 1 MSS for every duplicate ACK received for the missing segment that caused TCP to enter the fast-recovery state. Eventually, when an ACK arrives for the missing segment, TCP enters the congestion-avoidance state after deflating cwnd. If a timeout event occurs, fast recovery transitions to the slow-start state after performing the same actions as in slow start and congestion avoidance: The value of cwnd is set to 1 MSS, and the value of ssthresh is set to half the value of cwnd when the loss event occurred.
 ##### Macroscopic Description of TCP Throughput
 * Average throughput of a connection = (0.75 * W)/RTT where W is the window size when a loss event occurs
