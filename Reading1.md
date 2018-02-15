@@ -358,3 +358,9 @@ Content-Type: text/html
   * Traffic volume: the single server would have to handle all the DNS queries for millions of hosts
   * Distant centralized database: a single DNS server cannot be "close to" all the querying clients
   * Maintenence: a single DNS server wuld have to keep records for all internet hosts
+##### A Distributed, Hierarchical Database
+* To deal with scale, DNS uses many server organized in a hierarchical fashion
+  * Mappings are distributed accross three types of servers
+    1. Root DNS servers. There are 13 in the world.
+    2. Top-level domain (TLD) DNS servers. Responsible for top-level domains such as com, org, net, edu.
+    3. Authoritative DNS servers. Every organization with publicly accessible hosts (such as Web servers and mail servers) on the Internet must provide publicly accessible DNS records that map the names of those hosts to IP addresses.
