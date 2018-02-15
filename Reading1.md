@@ -592,3 +592,4 @@ Content-Type: text/html
 ### 3.6 Principles of Congestion Control
 #### 3.6.2 Approaches to Congestion Control
 * End-to-end congestion control approach: network layer provides no explicit support to the transport layer for congestion control purposes. Even the presence of congestion in the network must be inferred by the end systems based only on observed network behavior. TCP segment loss (as indicated by a timeout or a triple duplicate acknowledgment) is taken as an indication of network congestion and TCP decreases its window size accordingly
+* Network-assisted congestion control approach: network-layer components (that is, routers) provide explicit feedback to the sender regarding the congestion state in the network. This feedback may be as simple as a single bit indicating congestion at a link
