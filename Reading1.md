@@ -470,3 +470,4 @@ Content-Type: text/html
 * Given that neither link-by-link reliability nor in-memory error detection is guaranteed, UDP must provide error detection at the transport layer, on an end-end basis, if the end-end data transfer service is to provide error detection
 ### 3.4 Principles of Reliable Data Transfer
 * TCP is a reliable data transfer protocol that is implemented on top of an unreliable (IP) end-to-end network layer
+### 3.4.1 Building a Reliable Data Transfer Protocol
