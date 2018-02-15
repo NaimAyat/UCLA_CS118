@@ -368,3 +368,12 @@ Content-Type: text/html
 ##### DNS Caching
 * In a query chain, when a DNS server receives a DNS reply (containing, for example, a mapping from a hostname to an IP address), it can cache the mapping in its local memory
 * Since mappings between hostnames and IP address are not permanent, DNS servers discard cached information after a period of time (often set to two days)
+#### 2.5.3 DNS Records and Messages
+* The DNS servers that together implement the DNS distributed database store resource records (RRs), including RRs that provide hostname-to-IP address mappings
+* A resource record is a four-tuple that contains the following fields: `(Name, Value, Type, TTL)`
+  * TTL is the time to live; it determines when a resource should be removed from a cache
+  * The meaning of name and value tepend on type:
+    * If type=A, then name is a hostname and value is the IP address for the hostname
+    * If type=NS, then name is a domain and value is the hostname of an authoritative DNS server that knows how to obtain the IP addresses for hosts in the domain
+    * If type=CNAME, then Value is a canonical hostname for the alias hostname name. This record can provide querying hosts the canonical name for a hostname
+    * If type=MX, then value is the canonical name of a mail server that has an alias hostname name
