@@ -579,3 +579,4 @@ Content-Type: text/html
 * Since TCP does not use negative acknowledgments, the receiver cannot send an explicit negative acknowledgment back to the sender. Instead, it simply reacknowledges (that is, generates a duplicate ACK for) the last in-order byte of data it has received
 #### 3.5.5 Flow Control
 * TCP provides *flow-control service* to its applications to eliminate the possibility of the sender overflowing the receiver's buffer
+* TCP provides flow control by having the sender maintain a variable called the *receive window*
