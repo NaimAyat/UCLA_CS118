@@ -384,3 +384,10 @@ Content-Type: text/html
   3. A1-bit authoritative flag is set in a reply message when a DNS server is an authoritative server for a queried name
   4. A 1-bit recursion-desired flag is set when a client (host or DNS server) desires that the DNS server perform recursion when it doesn't have the record
   5. A 1-bit recursionavailable field is set in a reply if the DNS server supports recursion
+  6. there are also four number-of fields. These fields indicate the number of occurrences of the four types of data sections that follow the header
+* Question section contains info about the query
+  1. Name field that contains the name that is being queried
+  2. Type field that indicates the type of question being asked
+* Answer section contains the resource records for the name that was originally queried
+* Authority section contains records of other authoritative servers
+* Additional section contains other helpful records. For example, the answer field in a reply to an MX query contains a resource record providing the canonical hostname of a mail server. The additional section contains a Type A record providing the IP address for the canonical hostname of the mail server
