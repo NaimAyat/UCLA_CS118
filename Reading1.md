@@ -580,3 +580,8 @@ Content-Type: text/html
 #### 3.5.5 Flow Control
 * TCP provides *flow-control service* to its applications to eliminate the possibility of the sender overflowing the receiver's buffer
 * TCP provides flow control by having the sender maintain a variable called the *receive window*
+* Define the following variables:
+  * LastByteRead: the number of the last byte in the data stream read from the buffer by the application process in B
+  * LastByteRcvd: the number of the last byte in the data stream that has arrived from the network and has been placed in the receive buffer at B
+  * LastByteRcvd – LastByteRead < RcvBuffer
+  * Receive window is set to the amount of spare room in the buffer: rwnd = RcvBuffer – [LastByteRcvd – LastByteRead]
