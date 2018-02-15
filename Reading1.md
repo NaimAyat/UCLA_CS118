@@ -477,3 +477,7 @@ Content-Type: text/html
 * A more realistic model of the underlying channel is one in which bits in a packet may be corrupted
 * The message-dictation protocol uses both positive acknowledgements and negative acknowledgements
   * Process of retransmitting data in a reliable data transfer protocol is called *ARQ (Automatic Repeat Request) Protocol*
+* Three qualities required of an ARQ protocol to handle bit errors:
+  1. Error detection. Set up a checksum: send extra bits from the sender to the receiver to be gathered into the checksum field
+  2. Receiver feedback. Since the sender and receiver execute on different end systems (typically), the only way for the sender to learn of the receiver's worldview is for the receiver to provide explicit feedback to the sender. The positive (ACK) and negative (NAK) acknowledgement replies in the message-dictation scenario are examples of such feedback
+  3. Retransmission. A packet that is received in error at the receiver will be retransmitted by the sender
