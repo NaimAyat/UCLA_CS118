@@ -298,3 +298,11 @@ Content-Type: text/html
   * Simple Mail Transfer Protocol (SMTP)
 * Mail servers form the core of the e-mail infrastructure. Each recipient, such as Bob, has a mailbox located in one of the mail servers. Bob’s mailbox manages and maintains the messages that have been sent to him
 * A typical message starts its journey in the sender’s user agent, travels to the sender’s mail server, and travels to the recipient’s mail server, where it is deposited in the recipient’s mailbox
+#### 2.4.1 SMTP
+* Older than HTTP; legacy technology. Restricts body of mail messages to 7-bit ASCII
+* Example: Alice sends Bob an ASCII message
+  1. Alice invokes her user agent for e-mail, provides Bob’s e-mail address (for example, `bob@someschool.edu`), composes a message, and instructs the user agent to send the message
+  2. Alice's user agent sends the message to her mail server, where it is placed in a message queue
+  3. The client side of SMTP, running on Alice's mail server, sees the message in the message queue. It opens a TCP connection to an SMTP server, running on Bob's mail server
+  4. After some initial SMTP handshaking, the SMTP client sends Alice's message into the TCP connection
+  5. At Bob's mail server, the server side of SMTP receives the message. Bob's mail server then places the message in Bob's mailbox
