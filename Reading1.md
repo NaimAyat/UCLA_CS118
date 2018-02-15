@@ -568,3 +568,5 @@ Content-Type: text/html
 ##### Setting and Managing the Retransmission Timeout Interval
 * What value should be used for TCP's timeout interval?
 * `TimeoutInterval = EstimatedRTT + 4 • DevRTT`
+#### 3.5.4 Reliable Data Transfer
+* TCP creates a *reliable data transfer service* on top of IP's unreliable best-effort service
