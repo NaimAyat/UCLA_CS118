@@ -306,3 +306,20 @@ Content-Type: text/html
   3. The client side of SMTP, running on Alice's mail server, sees the message in the message queue. It opens a TCP connection to an SMTP server, running on Bob's mail server
   4. After some initial SMTP handshaking, the SMTP client sends Alice's message into the TCP connection
   5. At Bob's mail server, the server side of SMTP receives the message. Bob's mail server then places the message in Bob's mailbox
+#### 2.4.2 Comparison with HTTP
+* SMTP and HTTP are both protocols used to transfer files: HTTP transfers files (also called objects) from a Web server to a Web client (typically a browser); SMTP transfers files (that is, e-mail messages) from one mail server to another mail server
+* HTTP and SMTP both use persistent connections
+* HTTP is mainly a pull protocol: someone loads information on a Web server and users use HTTP to pull the information from the server at their convenience
+* SMTP is primarily a push protocol: the sending mail server pushes the file to the receiving mail server
+* SMTP restricts messages to 7-bit ASCII (ex. French characters with accents not supported). HTTP does not impose this restriction
+#### 2.4.4 Mail Access Protocols
+* How does a recipient obtain messages which are sitting in a server within their ISP?
+  * User agent can't use SMPT because obtaining messages is a a pull operation, whereas SMTP is a push operation
+  * Hence, user must select a mail access protocol
+##### POP3
+* The simplest mail access protocol; short and readable
+* Begins when the user agent opens a TCP connection to the mail server
+* POP3 progresses through three phases
+  1. Auhtorization: user agent sends a username and password to authenticate the user
+  2. Transition: user agent receives messages and the user agent can mark messages for deletion/remove deletion marks/obtain mail statistics
+  3. Update: occurs after the client has issued `quit` command, ending POP3 session. The mail server deletes the messages that were marked for deletion
