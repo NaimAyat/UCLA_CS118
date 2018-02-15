@@ -427,3 +427,6 @@ Content-Type: text/html
 ### 3.1 Introduction and Transport-Layer Services
 * Transport layer protocol provides for logical communication between application processes running on different hosts
 * Transport-layer packets are called *segments*
+#### 3.1.1 Relationship Between Transport and Network Layers
+* A transport-layer protocol provides logical communication between processes running on different hosts, a network-layer protocol provides logical communication between hosts
+#### 3.1.2 Overview of the Transport Layer in the Internet
