@@ -563,3 +563,5 @@ Content-Type: text/html
 * EstimatedRTT: average of the SampleRTT values. Upon obtaining a new SampleRTT, TCP updates EstimatedRTT according to the following formula: `EstimatedRTT = (1 – α) • EstimatedRTT + α • SampleRTT`
   * Where `α = 0.125`
   * Thus: `EstimatedRTT = 0.875 • EstimatedRTT + 0.125 • SampleRTT`
+* It is also valuable to have a measure of the variability of RTT. DevRTT is an estimate of how much SampleRTT deviates from EstimatedRTT: `DevRTT = (1 – β) • DevRTT + β • | SampleRTT – EstimatedRTT |`
+  * Where `β = 0.25`
