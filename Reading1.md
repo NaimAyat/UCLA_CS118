@@ -597,3 +597,8 @@ Content-Type: text/html
 * The TCP congestion-control mechanism operating at the sender keeps track of an additional variable, the congestion window. The congestion window, denoted *cwnd*, imposes a constraint on the rate at which a TCP sender can send traffic into the network
 * The amound of unACKed data at a sender may not exceed the minimum of cwnd and rwnd: `LastByteSent – LastByteAcked < min{cwnd, rwnd}`
 * **The sender’s send rate is roughly cwnd/RTT bytes/sec. By adjusting the value of cwnd, the sender can therefore adjust the rate at which it sends data into its connection**
+* Because TCP uses acknowledgments to trigger (or clock) its increase in congestion window size, TCP is said to be *self-clocking*
+* TCP Congestion Control operates under the following principles:
+  * *A lost segment implies congestion, and hence, the TCP sender's rate should be decreased when a segment is lost*
+  * *An acknowledged segment indicates that the network is delivering the sender's segments to the receiver, and hence, the sender's rate can be increased when an ACK arrives for a previously unacknowledged segment.*
+  * Bandwidth probing. Given ACKs indicating a congestion-free source-to-destination path and loss events indicating a congested path, TCP's strategy for adjusting its transmission rate is to increase its rate in response to arriving ACKs until a loss event occurs, at which point, the transmission rate is decreased. The TCP sender thus increases its transmission rate to probe for the rate that at which congestion onset begins, backs off from that rate, and then to begins probing again to see if the congestion onset rate has changed
