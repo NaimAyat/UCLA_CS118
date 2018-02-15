@@ -191,3 +191,18 @@
   * The syntax of various message types (Ex. the fields of the message and how they are delineated)
   * The semantics of the fields
   * Rules for determining when and how a process sends messages and responds to messages
+### 2.2 The Web and HTTP
+#### 2.2.1 Overview of HTTP
+* HyperText Transfer Protocol (HTTP) is the Web's application layer protocol
+* Implemented in two programs: a client program and a server program
+  * Each execute on different end systems, talk to each other by exchanging HTTP messages
+  * HTTP defines the structure of these messages
+* Web browsers implement the client side of HTTP, so we can use "client" and "browser" interchangeably in this context
+* Web servers implement the server side of HTTP, house Web objects, each addressable by a URL
+* When a user requests a Web page, the browser sends HTTP request messages for the objects in the page to the server. The server receives the requests and responds with HTTP response messages that contain objects
+* HTTP uses TCP as its underlying transport protocol
+* HTTP client first initiates a TCP connection with the server. Once the connection is established, the browser and the server processes access TCP through their socket interfaces
+#### 2.2.2 Non-Persistent and Persistent Connections
+* Non-persistent: each request/response pair is sent over a separate TCP connection
+* Persistent: all the requests and their corresponding responses are sent over the same TCP connection
+##### HTTP with Non-Persistent Connections
