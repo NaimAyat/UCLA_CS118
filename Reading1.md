@@ -403,3 +403,23 @@ Content-Type: text/html
   * As with the client-server architecture, the peer with the lowest download rate cannot obtain all F bits of the file in less than F/d<sub>min</sub> seconds. Thus the minimum distribution time is at least F/d<sub>min</sub>.
   * Finally, observe that the total upload capacity of the system as a whole is equal to the upload rate of the server plus the upload rates of each of the individual peers, that is, u<sub>total</sub> = u<sub>s</sub> + u<sub>1</sub> + ... + u<sub>N</sub>. The system must deliver (upload) F bits to each of the N peers, thus delivering a total of NF bits. This cannot be done at a rate faster than utotal. Thus, the minimum distribution time is also at least NF/(u<sub>s</sub> + u<sub>1</sub> + ... + u<sub>N</sub>).
 * **Thus, the minimum distribution time for client-server architectures increases linearlly with the number of peers, wheras P2P is logarithmic**
+##### BitTorrent
+* Collection of all peers participating in the distribution of a file is called a torrent
+* Peers in a torrent download equal-size chunks of the file from one another
+* When a peer first joins a torrent, it has no chunks
+* When a peer accumulates chunks, it also uploads them to other peers
+* Once a peer has aquired the entire file, it may (selfishly) leave the torrent or remain and continue to upload chunks to other peers
+* A peer may leave the torrent at any time with only a subset of chunks, and later rejoin the torrent
+* Each torrent has an infrastructure node called a tracker
+  * When a peer joins a torrent, it registers itself with the tracker and periodically informs the tracker that it is still in the torrent
+* When a new peer joins the torrent, the tracker randomly selects a subset of peers from the set of participants and sends their addresses to the new peer. The new peer can then establish concurrent TCP connections with all the peers on this list, called "neighboring peers"
+  * As time passes, some of these neighbors may leave and some may attempt to join
+* At any given time, each peer will have a subset of chunks from the file
+* Periodically, a peer will ask each of its neighbors for the list of the chunks they have. If it has L neighbors, it will obtain L lists of chunks 
+  * With this knowledge, the peer uses a techique called *rarest first* to request the rarest chunks for download, aiming to equalize the numbers of copies of each chunk in the torrent
+* A peer gives priority to the four neighbors that are supplying data at the highest rates
+  * The peer reciprocates and sends chunks to these same four peers. Every 10 seconds, the peer recalculates the rates and possibly modifies the set of four peers
+  * These four peers are said to be *unchoked*
+  * Every 30 seconds, the peer picks another neighbor at random and sends it chunks. This randomly selected peer is said to be *optimistically unchoked* in hopes that the random peer will start sending data back
+    * The optimistically unchoked peer could become one of our top four uploaders, and hence we start trading data
+    * This is a tit-for-tat system allowing peers of similar upload capacity to share with each other
