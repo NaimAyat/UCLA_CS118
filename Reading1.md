@@ -603,6 +603,12 @@ Content-Type: text/html
   * *An acknowledged segment indicates that the network is delivering the sender's segments to the receiver, and hence, the sender's rate can be increased when an ACK arrives for a previously unacknowledged segment.*
   * Bandwidth probing. Given ACKs indicating a congestion-free source-to-destination path and loss events indicating a congested path, TCP's strategy for adjusting its transmission rate is to increase its rate in response to arriving ACKs until a loss event occurs, at which point, the transmission rate is decreased. The TCP sender thus increases its transmission rate to probe for the rate that at which congestion onset begins, backs off from that rate, and then to begins probing again to see if the congestion onset rate has changed
 ##### Slow Start
+```
+Initially cwnd = 1
+After 1 RTT, cwnd = 2^(1) = 2
+2 RTT, cwnd = 2^(2) = 4
+3 RTT, cwnd = 2^(3) = 8
+```
 * When TCP connection begins, the value of cwnd is typically initialized to a small value of 1 MSS
 * In the slow-start state, the value of cwnd begins at 1 MSS and increases by 1 MSS every time a transmitted segment is first acknowledged
 ##### Congestion Avoidance
