@@ -514,3 +514,5 @@ Content-Type: text/html
   2. Receipt of an ACK. An ACK for a packet with sequence number n will be taken to be a *cumulative acknowledgement*, indicating that all packets with a sequence number up to and including n have been correctly received
   * A timeout event. If a timeout occurs, the sender resends all packets that have not yet been acknowledged. If an ACK is received but there are still additional transmitted but not yet ACK-ed packets, the timer is restarted. If there are no outsanding unACK-ed packets, the timer is stopped.
   * GBN does not buffer out-of-order packets; it simply discards them
+#### 3.4.4 Selective Repeat (SR)
+* A disadvantage of GBN: when the window size and bandwidth-delay product are both large, many packets can be in the pipeline. A single packet error can thus cause GBN to retransmit a large number of packets, many unnecessarily. As the probability of channel errors increases, the pipeline can become filled with these unnecessary retransmissions
