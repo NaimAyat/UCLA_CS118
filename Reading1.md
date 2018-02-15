@@ -544,3 +544,10 @@ Content-Type: text/html
   * 16-bit receive window for flow control; used to indicate the number of bytes that a receiver is willing to accept
   * 4-bit header length field specifies the length of the TCP header in 32-bit words
   * Options field is used when a sender and receiver negotiate the MSS or as a window scaling factor for use in high-speed networks
+  * The flag field contains 6 bits:
+    1. ACK bit indicates whether the value carried in the ACK field is valid
+    2. RST
+    3. SYN
+    4. FIN: along with above two, used for connection setup and teardown
+    5. PSH bit indicates that the receiver should pass the data to the upper layer immediately
+    6. URG bit indicates that there is data in this segment that the sending-side upper-layer has marked urgent. The location of the last byte of this urgent data is indicated by the 16-bit urgent data pointer field.
