@@ -393,3 +393,8 @@ Content-Type: text/html
 * Additional section contains other helpful records. For example, the answer field in a reply to an MX query contains a resource record providing the canonical hostname of a mail server. The additional section contains a Type A record providing the IP address for the canonical hostname of the mail server
 ### 2.6 Peer-to-Peer Applications
 * So far, everything covered employs client-server architecture
+#### 2.6.1 P2P File Distribution
+##### Scalability of P2P Architectures
+* Distribution time is the time it takes to get a copy of the file to all N peers
+* Distribution time for client-server architecture D<sub>cs</sub> ≥ max{NF/u<sub>s</sub>, F/d<sub>min</sub>}
+  * Where N = number peers, F = file size in bits, u<sub>s</sub> = server upload rate, d<sub>min</sub> = download rate of the peer with the lowest download rate
