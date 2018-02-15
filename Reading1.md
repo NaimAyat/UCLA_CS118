@@ -523,3 +523,6 @@ Content-Type: text/html
   * SR receiver will ACK a correctly received packet regardless of whether in order; out-of-order packets are buffered until any missing packets are received, at which point a batch of packets can be delivered in order to the upper layer
 * Window size must be less than or equal to half the size of the sequence number space for SR protocols.
 ### 3.5 Connection-Oriented Transport: TCP
+#### 3.5.1 The TCP Connection
+* A TCP connection provides a full-duplex service: If there is a TCP connection between Process A on one host and Process B on another host, then application layer data can flow from Process A to Process B at the same time as application layer data flows from Process B to Process A
+* TCP connection is always *point-to-point*, between a single sender and a single receiver
