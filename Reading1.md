@@ -291,3 +291,10 @@ Content-Type: text/html
   * HTTP uses only one TCP connection; hence it is said to send its control information in-band
 * FTP maintains **state** about the user
   * In particular, the server must associate the control connection with a specific user account, and the server must keep track of the user’s current directory as the user wanders about the remote directory tree
+#### 2.4 Electronic Mail in the Internet
+* Three major components:
+  * User agents
+  * Mail servers
+  * Simple Mail Transfer Protocol (SMTP)
+* Mail servers form the core of the e-mail infrastructure. Each recipient, such as Bob, has a mailbox located in one of the mail servers. Bob’s mailbox manages and maintains the messages that have been sent to him
+* A typical message starts its journey in the sender’s user agent, travels to the sender’s mail server, and travels to the recipient’s mail server, where it is deposited in the recipient’s mailbox
