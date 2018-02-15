@@ -351,3 +351,10 @@ Content-Type: text/html
   * Host aliasing: A host with a complicated hostname can have one or more alias names. For example, a hostname such as `relay1.west-coast.enterprise.com` could have, say, two aliases such as `enterprise.com` and `www.enterprise.com`. In this case, the hostname `relay1.westcoast.enterprise.com` is said to be a canonical hostname. Alias hostnames, when present, are typically more mnemonic than canonical hostnames. DNS can be invoked by an application to obtain the canonical hostname for a supplied alias hostname as well as the IP address of the host
   * Mail server aliasing: For obvious reasons, it is highly desirable that e-mail addresses be mnemonic. For example, if Bob has an account with Hotmail, an e-mail address might be as simple as `bob@hotmail.com`. However, the hostname of the Hotmail mail server is more complicated and much less mnemonic than simply hotmail.com (for example, the canonical hostname might be something like `relay1.west-coast.hotmail.com`). DNS can be invoked by a mail application to obtain the canonical hostname for a supplied alias hostname as well as the IP address of the host.
   * Load distribution: DNS can distribute the load among a website's servers by associating a set of IP addresses with a specific server
+#### 2.5.2 Overview of How DNS Works
+* There are a large number of DNS servers distributed around the globe
+* Problems with a single DNS server
+  * A single point of failure: if DNS server crashes, so does the entire internet
+  * Traffic volume: the single server would have to handle all the DNS queries for millions of hosts
+  * Distant centralized database: a single DNS server cannot be "close to" all the querying clients
+  * Maintenence: a single DNS server wuld have to keep records for all internet hosts
