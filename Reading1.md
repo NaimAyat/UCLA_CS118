@@ -504,3 +504,13 @@ Content-Type: text/html
   * The range of sequence numbers must be increased, since each in-transit packet must have a unique sequence number and there may be multiple, in-transit, unacknowledged packets
   * The sender and receiver sides of the protocols may have to buffer more than one packet
   * The range of sequence numbers needed and the buffering requirements will depend on the manner in which a data transfer protocol responds to lost, corrupted, and overly-delayed packets. Two approaches toward pipelined error recovery can be identified: *Go-Back-N* and *selevtive repeat*
+#### 3.4.3 Go-Back-N (GBN)
+* The sender is allowed to transmit multiple packets without waiting for an ACK, but is constrained to have no more than some max allowable number N of unacknowledged packets in the pipeline
+* The range of permissible sequence numbers for transmitted but not yet acknowledged packets can be viewed as a window of size N over the range of sequence numbers
+  * As the protocol operates, this window slides forward over the sequence number space
+  * Hence, N is often referred to as the *window size* and GBN itself *sliding-window* protocol
+* The GBN sender must respond to three types of events:
+  1. Invocation from above. When `rdt_send()` is called from above, the sender first checks to see if the window is full; that is, whether there are N outstanding unacknowledged packets. If not full, a packet is sent and variables are updated. If full, the sender returns the data back to the upper layer. The upper later tries again later
+  2. Receipt of an ACK. An ACK for a packet with sequence number n will be taken to be a *cumulative acknowledgement*, indicating that all packets with a sequence number up to and including n have been correctly received
+  * A timeout event. If a timeout occurs, the sender resends all packets that have not yet been acknowledged. If an ACK is received but there are still additional transmitted but not yet ACK-ed packets, the timer is restarted. If there are no outsanding unACK-ed packets, the timer is stopped.
+  * GBN does not buffer out-of-order packets; it simply discards them
