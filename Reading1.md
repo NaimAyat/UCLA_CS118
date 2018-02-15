@@ -226,3 +226,19 @@
 * Multiple web pages residing on the same server can be sent from the server to the same client over a single persistent TCP connection
 * Requests for objects can be made back-to-back, without waiting for replies to pending requests (pipelining)
 * The default mode of HTTP uses persistent connections with pipelining
+#### 2.2.3 HTTP Message Format
+##### HTTP Request Message
+```
+GET /somedir/page.html HTTP/1.1
+Host: www.someschool.edu
+Connection: close
+User-agent: Mozilla/5.0
+Accept-language: fr
+```
+* First line is called the request line; subsequent lines are called header lines
+* The request line has three fields
+  * The method field (GET, POST, HEAD, PUT, or DELETE)
+  * The URL field
+  * The HTTP version field
+* `Connection: close` means we don't want a persistent connection; close the connection after sending the requested object
+* `Accept-language: fr` means we prefer French, but return the default language if not available
