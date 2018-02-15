@@ -594,3 +594,5 @@ Content-Type: text/html
 * End-to-end congestion control approach: network layer provides no explicit support to the transport layer for congestion control purposes. Even the presence of congestion in the network must be inferred by the end systems based only on observed network behavior. TCP segment loss (as indicated by a timeout or a triple duplicate acknowledgment) is taken as an indication of network congestion and TCP decreases its window size accordingly
 * Network-assisted congestion control approach: network-layer components (that is, routers) provide explicit feedback to the sender regarding the congestion state in the network. This feedback may be as simple as a single bit indicating congestion at a link
 ### 3.7 TCP Congestion Control
+* The TCP congestion-control mechanism operating at the sender keeps track of an additional variable, the congestion window. The congestion window, denoted *cwnd*, imposes a constraint on the rate at which a TCP sender can send traffic into the network
+* The amound of unACKed data at a sender may not exceed the minimum of cwnd and rwnd: `LastByteSent – LastByteAcked < min{cwnd, rwnd}`
