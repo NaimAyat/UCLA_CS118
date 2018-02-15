@@ -436,3 +436,4 @@ Content-Type: text/html
 * The responsibility of UDP and TCP is to extend IP's delivery service between two end systems to a delivery service between two processes running on the end systems
 * Extending host-to-host delivery to process-to-process delivery is called *transport layer multiplexing* and *demultiplexing*
 * TCP provides reliable data transfer using flow control, sequence numbers, acknowledgments, and timers. Also provides congestion control for the general good of the internet
+### 3.2 Multiplexing and Demultiplexing
