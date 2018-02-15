@@ -530,4 +530,4 @@ Content-Type: text/html
   * First two segments carry no payload, the third may carry a payload
 * Once data passes through the client socket, TCP directs the data to the connection's *send buffer*, which is one of the buffers set aside by the initial three-way handshake
 * The maximum amount of data that can be grabbed and placed in a segment is limited by the maximum segment size (MSS)
-  * MSS usually set by determining the length of the largest link-layer frame that can be sent by the local sending host
+  * MSS usually set by determining the length of the largest link-layer frame that can be sent by the local sending host (the Maximum Transmission Unit, MTU) and setting the MSS to ensure that a TCP segment will fit into a single link-layer frame
