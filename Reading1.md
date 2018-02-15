@@ -576,3 +576,4 @@ Content-Type: text/html
 ##### Fast Retransmit
 * One of the problems with timeout-triggered retransmissions is that the timeout period can be relatively long
 * The sender can often detect packet loss well before the timeout event occurs by noting so-called duplicate ACKs. A duplicate ACK is an ACK that reacknowledges a segment for which the sender has already received an earlier acknowledgment
+* Since TCP does not use negative acknowledgments, the receiver cannot send an explicit negative acknowledgment back to the sender. Instead, it simply reacknowledges (that is, generates a duplicate ACK for) the last in-order byte of data it has received
