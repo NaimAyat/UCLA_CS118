@@ -452,3 +452,13 @@ Content-Type: text/html
 * A TCP socket is identified by a four-tuple as opposed to UDP's two-tuple: (source IP, source port, destination IP, destination port)
 * When a TCP segment arrives from the network to a host, the host uses all four values to direct (demultiplex) the segment to the appropriate socket
 ### Connectionless Transport: UDP
+* UDP takes messages from the application process, attaches source and destination port number fields for the multiplexing/demultiplexing service, adds two other small fields, and passes the tesulting segment to the network layer
+* The network layer encapsulates the transport layer segment into an IP datagram then makes a best-effort attempt to deliver the segment to the receiving host
+* If the segment arrives at the receiving host, UDP uses the destination port number to deliver the segment's data to the correct application process
+* Note that there is no handshaking in UDP; it is therefore connectionless
+* DNS is an application-layer protocol that typically uses UDP
+* When is UDP preferable?
+  * We want finer application-level control over what data is sent, and when. Under UDP, as soon as an application process passes data to UDP, UDP will package the data inside a UDP segment and immediately pass the segment to the network layer. TCP, on the other hand, has a congestion-control mechanism that throttles the transport-layer TCP sender when one or more links between the source and destination hosts become excessively congested.
+  * We want no connection establishment; since the handshake would introduce delay to establish a connection. This is why DNS uses UDP rather than TCP; it would be much slower otherwise.
+  * We want no connection state. A server devoted to a particular app can typically support many more active clients when the application runs over UDP
+  * We want smaller packet overhead. TCP headers adds 20 bytes to every segment, while UDP adds only 8
