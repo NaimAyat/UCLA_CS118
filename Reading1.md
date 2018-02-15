@@ -377,3 +377,10 @@ Content-Type: text/html
     * If type=NS, then name is a domain and value is the hostname of an authoritative DNS server that knows how to obtain the IP addresses for hosts in the domain
     * If type=CNAME, then Value is a canonical hostname for the alias hostname name. This record can provide querying hosts the canonical name for a hostname
     * If type=MX, then value is the canonical name of a mail server that has an alias hostname name
+##### DNS Messages
+* First 12 bytes is the header section
+  1. 16-bit number that identifies the query
+  2. A 1-bit query/reply flag indicates when the message is a query or reply
+  3. A1-bit authoritative flag is set in a reply message when a DNS server is an authoritative server for a queried name
+  4. A 1-bit recursion-desired flag is set when a client (host or DNS server) desires that the DNS server perform recursion when it doesn't have the record
+  5. A 1-bit recursionavailable field is set in a reply if the DNS server supports recursion
