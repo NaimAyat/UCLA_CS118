@@ -565,3 +565,6 @@ Content-Type: text/html
   * Thus: `EstimatedRTT = 0.875 • EstimatedRTT + 0.125 • SampleRTT`
 * It is also valuable to have a measure of the variability of RTT. DevRTT is an estimate of how much SampleRTT deviates from EstimatedRTT: `DevRTT = (1 – β) • DevRTT + β • | SampleRTT – EstimatedRTT |`
   * Where `β = 0.25`
+##### Setting and Managing the Retransmission Timeout Interval
+* What value should be used for TCP's timeout interval?
+* `TimeoutInterval = EstimatedRTT + 4 • DevRTT`
