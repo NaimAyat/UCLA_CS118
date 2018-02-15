@@ -543,3 +543,4 @@ Content-Type: text/html
   * 32-bit sequence number field and 32-bit ACK number field
   * 16-bit receive window for flow control; used to indicate the number of bytes that a receiver is willing to accept
   * 4-bit header length field specifies the length of the TCP header in 32-bit words
+  * Options field is used when a sender and receiver negotiate the MSS or as a window scaling factor for use in high-speed networks
