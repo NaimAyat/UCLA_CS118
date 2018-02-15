@@ -365,3 +365,6 @@ Content-Type: text/html
     2. Top-level domain (TLD) DNS servers. Responsible for top-level domains such as com, org, net, edu.
     3. Authoritative DNS servers. Every organization with publicly accessible hosts (such as Web servers and mail servers) on the Internet must provide publicly accessible DNS records that map the names of those hosts to IP addresses.
 * There is another important type of DNS server called the local DNS server. A local DNS server does not strictly belong to the hierarchy of servers but is nevertheless central to the DNS architecture. Each ISP—such as a university, an academic department, an employee’s company, or a residential ISP—has a local DNS server (also called a default name server). When a host connects to an ISP, the ISP provides the host with the IP addresses of one or more of its local DNS servers
+##### DNS Caching
+* In a query chain, when a DNS server receives a DNS reply (containing, for example, a mapping from a hostname to an IP address), it can cache the mapping in its local memory
+* Since mappings between hostnames and IP address are not permanent, DNS servers discard cached information after a period of time (often set to two days)
