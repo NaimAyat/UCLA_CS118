@@ -516,3 +516,8 @@ Content-Type: text/html
   * GBN does not buffer out-of-order packets; it simply discards them
 #### 3.4.4 Selective Repeat (SR)
 * A disadvantage of GBN: when the window size and bandwidth-delay product are both large, many packets can be in the pipeline. A single packet error can thus cause GBN to retransmit a large number of packets, many unnecessarily. As the probability of channel errors increases, the pipeline can become filled with these unnecessary retransmissions
+* Selective repeat avoids unnecessary retransmission by having the sender retransmit only those packets that it suspects were lost or corrupted at the receiver
+  * Requires that the receiver individually acknowledge correctly receive packets
+  * Again, a window size of N limits the number of outstanding, unacknowledged packets in the pipeline
+  * Unlike GBN, the sender will have already received ACKs for some of the packets in the window
+  * SR receiver will ACK a correctly received packet regardless of whether in order; out-of-order packets are buffered until any missing packets are received, at which point a batch of packets can be delivered in order to the upper layer
