@@ -437,5 +437,11 @@ Content-Type: text/html
 * Extending host-to-host delivery to process-to-process delivery is called *transport layer multiplexing* and *demultiplexing*
 * TCP provides reliable data transfer using flow control, sequence numbers, acknowledgments, and timers. Also provides congestion control for the general good of the internet
 ### 3.2 Multiplexing and Demultiplexing
-* Job of delivering data in a transport layer segment to the correct socket is called **demultiplexing**
 * Gathering data chunks at the source host from different sockets, encapsulating each data chunk with header information (that will later be used in demultiplexing) to create segments, and passing the segments to the network layer is called **multiplexing**
+* Job of delivering data in a transport layer segment to the correct socket is called **demultiplexing**
+* Transport layer multiplexing requires
+  1. That sockets have unique identifiers
+  2. That each segment have special fields that indicate the socket to which the segment is to be delivered
+* These special fields are the *source port number field* and the *destination port number field*
+  * Each port number is a 16-bit number (range from 0 to 66535)
+  * The port numbers ranging from 0 to 1023 are called *well-known port numbers* are restricted, meaning they are reserved for use by well-known application protocols such as HTTP (port 80) and FTP (port 21)
