@@ -445,3 +445,5 @@ Content-Type: text/html
 * These special fields are the *source port number field* and the *destination port number field*
   * Each port number is a 16-bit number (range from 0 to 66535)
   * The port numbers ranging from 0 to 1023 are called *well-known port numbers* are restricted, meaning they are reserved for use by well-known application protocols such as HTTP (port 80) and FTP (port 21)
+##### Connectionless Multiplexing and Demultiplexing
+* When a UDP socket is created, the transport layer automatically assigns a port number in the range 1024 to 65535
