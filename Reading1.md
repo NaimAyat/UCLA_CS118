@@ -498,3 +498,9 @@ Content-Type: text/html
     * Because packet sequence numbers alternate between 0 and 1, protocol rdt3.0 is sometimes known as the *alternating-bit protocol*
 #### 3.4.2 Pipelined Reliable Data Transfer Protocols
 * Alternating-bit protocol is slow; it is unlikely that anyone would be happy with its performance today
+* Rather than operating in a stop-and-wait manner, we should allow the sender to send multiple packets without waiting for ACKs
+  * This is called *pipelining*
+* Pipelining has the following consequences:
+  * The range of sequence numbers must be increased, since each in-transit packet must have a unique sequence number and there may be multiple, in-transit, unacknowledged packets
+  * The sender and receiver sides of the protocols may have to buffer more than one packet
+  * The range of sequence numbers needed and the buffering requirements will depend on the manner in which a data transfer protocol responds to lost, corrupted, and overly-delayed packets. Two approaches toward pipelined error recovery can be identified: *Go-Back-N* and *selevtive repeat*
