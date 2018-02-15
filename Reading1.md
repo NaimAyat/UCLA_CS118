@@ -496,4 +496,5 @@ Content-Type: text/html
       2. Respond to a timer interrupt
       3. Stop the timer
     * Because packet sequence numbers alternate between 0 and 1, protocol rdt3.0 is sometimes known as the *alternating-bit protocol*
-    
+#### 3.4.2 Pipelined Reliable Data Transfer Protocols
+* Alternating-bit protocol is slow; it is unlikely that anyone would be happy with its performance today
