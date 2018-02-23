@@ -2,8 +2,6 @@
 ## Socket Programming
 * What is the model for network programming? 
   * Client-server
-* Where are we programming?
-  * At the app layer
 ## Abstraction Level
 * Clients and servers are both programs at the app layer
 * Transport layer is responsible for providing communication services
