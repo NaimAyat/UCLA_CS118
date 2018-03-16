@@ -80,3 +80,5 @@
 * NAT-enabled router resides in home
   * The address space 10.0.0.0/8 is one of three portions of the IP address space that is reserved in [RFC 1918] for a private network or a realm with private addresses, such as the home network
     * *A realm with private addresses* refers to a network whose addresses only have meaning to devices within that network.
+  * The NAT-enabled router does not look like a router to the outside world. Instead the NAT router behaves to the outside world as a single device with a single IP address
+  * For example, all traffic leaving a home has address 138.76.29.7, and all traffic entering the home router must have a destination address of 138.76.29.7. In essence, the NAT-enabled router is hiding the details of the home network from the outside world. Inside the house, however, devices within a given home network can send packets to each other using 10.0.0.0/24 addressing.
