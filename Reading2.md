@@ -25,5 +25,16 @@
 ### 4.2 Virtual Circuit and Datagram Networks
 #### 4.2.1 Virtual-Circuit Networks
 * While the Internet is a datagram network, many alternative network architectures - including those of ATM and frame relay - are virtual-circuit networks and, therefore, use connections at the network layer. These network-layer connections are called virtual circuits (VCs).
+* Routers must maintain connection state information
 #### 4.2.2 Datagram Networks
 * Each time an end system wants to send a packet, it stamps the packet with the address of the destination end system and pops the packet into the network
+### 4.3 What's Inside a Router?
+* Input ports
+  * Perform the physical layer function of terminating an incoming physical link at a router
+  * Perform link-layer functions needed to interoperate with the link layer at the other side of the incoming link
+* Switching fabric: connects input ports to output ports
+* Output ports
+  * Stores packets received from switching fabric and transmits them on the outgoing link
+  * When a link is bidirectional, the output port is paired with the input port
+* Routing processor
+  * Executes routing protocols, maintains routing tables and link state info, computes forwarding table
