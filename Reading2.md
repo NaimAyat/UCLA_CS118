@@ -84,3 +84,4 @@
   * For example, all traffic leaving a home has address 138.76.29.7, and all traffic entering the home router must have a destination address of 138.76.29.7. In essence, the NAT-enabled router is hiding the details of the home network from the outside world. Inside the house, however, devices within a given home network can send packets to each other using 10.0.0.0/24 addressing.
 * If all datagrams arriving at the NAT router from the WAN have the same destination IP address (specifically, that of the WAN-side interface of the NAT router), then how does the router know the internal host to which it should forward a given datagram? 
    * The trick is to use a NAT translation table at the NAT router, and to include port numbers as well as IP addresses in the table entries
+#### 4.4.3 Internet Control Message Protocol (ICMP)
