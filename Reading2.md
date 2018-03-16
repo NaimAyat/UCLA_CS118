@@ -5,4 +5,9 @@
 * Role of network layer is simple: move packets from sending host to receiving host. We do this via two steps:
   1. Forwarding: When a packet arrives at a router's input link, the router must move it to the appropriate output link.
   2. Routing: The network layer must determine the route packets take as they flow from sender to receiver. This necessitates the use of routing algorithms.
+* [Every router has a forwarding table](http://slideplayer.com/5001771/16/images/3/Interplay+between+routing+and+forwarding.jpg)
+  * Router forwards packet by examining the value of the field in the arriving packet's header, then using the header value to index into the router's forwarding table
+  * The value stored in the forwarding table entry for that header indicates the router's outgoing link interface to which that packet is to be forwarded
+  * The header value could be the destination address of the packet or an indication of the connection to which the packet belongs
+  * Router receives routing protocol messages, which are used to configure forwarding table
   
