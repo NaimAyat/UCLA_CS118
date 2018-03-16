@@ -61,4 +61,14 @@
 * The x most significant bits of an addres of the form a.b.c.d/x constitute the network portion of the IP address, and are often referred to as the prefix (or network prefix) of the address. An organization is typically assigned a block of contiguous addresses, that is, a range of addresses with a common prefix
 * The remaining 32-x bits of an address can be thought of as distinguishing among the devices within the organization, all of which have the same network prefix
   * These are the bits that will be considered when forwarding packets at routers within the organization. These lower-order bits may (or may not) have an additional subnetting structure
-* 
+##### Obtaining a Block of Addresses
+* In order to obtain a block of IP addresses for use within an organization’s subnet, a network administrator might first contact its ISP, which would provide addresses from a larger block of addresses that had already been allocated to the ISP
+* Is there a global authority that has ultimate responsibility for managing the IP address space and allocating address blocks to ISPs and other organizations? IP addresses are managed under the authority of the Internet Corporation for Assigned Names and Numbers (ICANN)
+* The role of the nonprofit ICANN organization [NTIA 1998] is not only to allocate IP addresses, but also to manage the DNS root servers. It also has the very contentious job of assigning domain names and resolving domain name disputes
+##### Obtaining a Host Address: the Dynamic Host Configuration Protocol
+* Once an organization has obtained a block of addresses, it can assign individual IP addresses to the host and router interfaces in its organization
+* Host addresses can also be configured manually, but more often this task is now done using the Dynamic Host Configuration Protocol (DHCP)
+* DHCP allows a host to obtain (be allocated) an IP address automatically
+* Because of DHCP’s ability to automate the network-related aspects of connecting a host into a network, it is often referred to as a plug-and-play protocol. This capability makes it very attractive to the network administrator who would otherwise have to perform these tasks manually
+* For a newly arriving host, the DHCP protocol is a four-step process:
+  1. DHCP server discovery: newly arriving host must find a DHCP server with which to interact. This is done using a DHCP discover message, which a client sends within a UDP packet to port 67. the DHCP client creates an IP datagram containing its DHCP discover message along with the broadcast destination IP address of 255.255.255.255 and a "this host" source IP address of 0.0.0.0. The DHCP client passes the IP datagram to the link layer, which then broadcasts this frame to all nodes attached to the subnet
