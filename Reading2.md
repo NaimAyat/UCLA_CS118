@@ -38,3 +38,11 @@
   * When a link is bidirectional, the output port is paired with the input port
 * Routing processor
   * Executes routing protocols, maintains routing tables and link state info, computes forwarding table
+#### 4.3.1 Input Processing
+* The lookup performed in the input port is central to the router’s operation—it is here that the router uses the forwarding table to look up the output port to which an arriving packet will be forwarded via the switching fabric
+* The forwarding table is computed and updated by the routing processor
+#### 4.3.2 Switching
+* Switching (forwarding) from an input port to an output port can be accomplished in a number of ways:
+  * Switching via memory: The simplest, earliest routers were traditional computers, with switching between input and output ports being done under direct control of the routing processor
+  * Switching via bus: an input port transfers a packet directly to the output port over a shared bus, without intervention by the routing processor. This is typically done by having the input port pre-pend a switch-internal label (header) to the packet indicating the local output port to which this packet is being transferred and transmitting the packet onto the bus. Because every packet must cross the single bus, the switching speed of the router is limited to the bus speed
+  * Switching via an interconnection network: One way to overcome the bandwidth limitation of a single, shared bus is to use a more sophisticated interconnection network, such as those that have been used in the past to interconnect processors in a multiprocessor computer architecture. A crossbar switch is an interconnection network consisting of 2N buses that connect N input ports to N output ports. When a packet arrives from port A and needs to be forwarded to port Y, the switch controller closes the crosspoint at the intersection of busses A and Y, and port A then sends the packet onto its bus, which is picked up (only) by bus Y. Thus, unlike the previous two switching approaches, crossbar networks are capable of forwarding multiple packets in parallel. However, if two packets from two different input ports are destined to the same output port, then one will have to wait at the input, since only one packet can be sent over any given bus at a time.
