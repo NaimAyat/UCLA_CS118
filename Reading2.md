@@ -85,3 +85,18 @@
 * If all datagrams arriving at the NAT router from the WAN have the same destination IP address (specifically, that of the WAN-side interface of the NAT router), then how does the router know the internal host to which it should forward a given datagram? 
    * The trick is to use a NAT translation table at the NAT router, and to include port numbers as well as IP addresses in the table entries
 #### 4.4.3 Internet Control Message Protocol (ICMP)
+* The network layer of the Internet has three main components
+  1. IP protocol
+  2. Internet routing protocols
+  * ICMP
+* ICMP is used by hosts and routers to communicate network- layer information to each other
+* ICMP is often considered part of IP but architecturally it lies just above IP, as ICMP messages are carried inside IP datagrams. That is, ICMP messages are carried as IP payload, just as TCP or UDP segments are carried as IP payload
+#### 4.4.4 IPv6 
+* Successor to IPv4 developed in the 1990s
+* [IPv6 datagram](https://electronicspost.com/wp-content/uploads/2016/05/4.24.png)
+  * Expanded addressing capabilities: IP address size expanded from 32 to 128 bits
+    * New type of address, *anycast address*, allows datagram to be delivered to any one of a group of hosts
+  * Streamlined 40-byte header: allows for faster processing of IP datagram
+##### Transitioning from IPv4 to IPv6
+* Probably the most straightforward way to introduce IPv6-capable nodes is a dual-stack approach, where IPv6 nodes also have a complete IPv4 implementation. Such a node, referred to as an IPv6/IPv4 node in RFC 4213, has the ability to send and receive both IPv4 and IPv6 datagrams
+* Alternative to dual-stack: tunneling. With tunneling, the IPv6 node on the sending side of the tunnel (for example, B) takes the entire IPv6 datagram and puts it in the data (payload) field of an IPv4 datagram.
