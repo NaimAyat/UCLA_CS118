@@ -14,3 +14,16 @@
   * Some packet switches, called *link-layer switches*, base their forwarding decision on values in the fields of the link-layer frame
   * Other packet switches, called *routers*, base their forwarding decision on the value in the network-layer field
 * Connection setup: routers along the path from source to destination must handshake with each other before packets can flow
+#### 4.1.2 Network Service Models
+* Some services that could be provided by the network layer:
+  * Guaranteed delivery with bounded delay: this service not only guarantees delivery of the packet, but delivery within a specified host-to-host delay bound (for example, within 100 msec).
+  * In-order packet delivery
+  * Guaranteed minimal bandwidth: network-layer service emulates the behavior of a transmission link of a specified bit rate (for example, 1 Mbps) between sending and receiving hosts
+  * Guaranteed maximum jitter: guarantees that the amount of time between the transmission of two successive packets at the sender is equal to the amount of time between their receipt at the destination
+  * Security services: encrypt and decrypt datagrams
+* Internet network layer provides *best-effort* service: timing between packets is not guaranteed to be preserved, packets are not guaranteed to be received in the order in which they were sent, nor is the eventual delivery of transmitted packets guaranteed
+### 4.2 Virtual Circuit and Datagram Networks
+#### 4.2.1 Virtual-Circuit Networks
+* While the Internet is a datagram network, many alternative network architectures - including those of ATM and frame relay - are virtual-circuit networks and, therefore, use connections at the network layer. These network-layer connections are called virtual circuits (VCs).
+#### 4.2.2 Datagram Networks
+* Each time an end system wants to send a packet, it stamps the packet with the address of the destination end system and pops the packet into the network
