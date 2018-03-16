@@ -108,3 +108,5 @@
 * In static routing algorithms, routes change very slowly over time, often as a result of human intervention (for example, a human manually editing a router’s forwarding table).
 * Dynamic routing algorithms change the routing paths as the network traffic loads or topology change. A dynamic algorithm can be run either periodically or in direct response to topology or link cost changes. While dynamic algorithms are more responsive to network changes, they are also more susceptible to problems such as routing loops and oscillation in routes.
 * In a load-sensitive algorithm, link costs vary dynamically to reflect the current level of congestion in the underlying link. If a high cost is associated with a link that is currently congested, a routing algorithm will tend to choose routes around such a congested link.
+### 4.5.1 The Link-State (LS) Routing Algorithm
+* Essentially just [Dijkstra’s algorithm](https://courses.cs.washington.edu/courses/cse326/00wi/handouts/lecture22/img014.gif)
