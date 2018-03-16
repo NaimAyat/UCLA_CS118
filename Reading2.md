@@ -10,4 +10,7 @@
   * The value stored in the forwarding table entry for that header indicates the router's outgoing link interface to which that packet is to be forwarded
   * The header value could be the destination address of the packet or an indication of the connection to which the packet belongs
   * Router receives routing protocol messages, which are used to configure forwarding table
-  
+* *Packet switch*: general device that transfers a packet from an input link to an output link, according to the value in a field in the header of the packet
+  * Some packet switches, called *link-layer switches*, base their forwarding decision on values in the fields of the link-layer frame
+  * Other packet switches, called *routers*, base their forwarding decision on the value in the network-layer field
+* Connection setup: routers along the path from source to destination must handshake with each other before packets can flow
