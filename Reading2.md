@@ -75,3 +75,8 @@
   2. DHCP server offers: DHCP server receiving a DHCP discover message responds to the client with a DHCP offer message that is broadcast to all nodes on the subnet, again using the IP broadcast address of 255.255.255.255. Each server offer message contains the transaction ID of the received discover message, the proposed IP address for the client, the network mask, and an IP address lease time—the amount of time for which the IP address will be valid. It is common for the server to set the lease time to several hours or days
   3. DHCP request: the newly arriving client will choose from among one or more server offers and respond to its selected offer with a DHCP request message, echoing back the configuration parameters.
   4. DHCP ACK: the server responds to the DHCP request message with a DHCP ACK message, confirming the requested parameters
+##### Network Address Translation (NAT)
+* Simpler approach to IP address allocation for small offices or homes
+* NAT-enabled router resides in home
+  * The address space 10.0.0.0/8 is one of three portions of the IP address space that is reserved in [RFC 1918] for a private network or a realm with private addresses, such as the home network
+    * *A realm with private addresses* refers to a network whose addresses only have meaning to devices within that network.
