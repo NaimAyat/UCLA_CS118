@@ -291,3 +291,5 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 #### 5.4.2 Ethernet
 ##### Ethernet Frame Structure
 * [Ethernet frame structure](http://fschub.com/wp-content/uploads/2017/03/ethernet-II.jpg)
+#### 5.4.3 Link-Layer Switches
+* The switch itself is transparent to the hosts and routers in the subnet; that is, a host/router addresses a frame to another host/router (rather than addressing the frame to the switch) and happily sends the frame into the LAN, unaware that a switch will be receiving the frame and forwarding it.
