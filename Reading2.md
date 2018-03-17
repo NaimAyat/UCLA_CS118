@@ -343,3 +343,8 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 * Hosts associated with a base station are said to be operating in *infrastructure mode*
   * In *ad hoc networks*, hosts have no infrastructure with which to connect. The hosts themselves provided for routing, addres assignment, DNS-like name translation, and more
 * *Handoff*: when a host moves beyond the range of one base station and into another
+* Networks can be classified according to two criteria: (1) whether a packet crosses one or multiple wireless hops, and (2) whether there is infrastructure such as a base station in the network
+  * Single-hop, infrastructure based. Have a base station that is connected to a larger wired network, like the Internet. All communication between the base station and a wireless host occurs over a single wireless hop. Examples: 802.11 networks in a classroom, cafe, or library; 3G cell networks
+  * Single-hop, infrastructure-less. One of the nodes in the single-hop network may coordinate the transmissions of other nodes. Examples: Bluetooth and 802.11 networks in ad hoc mode
+  * Multi-hop, infrastructure-based. Base station is wired to the larger networks. Some wireless nodes may have to relay communication via other nodes in order to communicate via the base station. Example: wireless mesh networks
+  * Multi-hop, infrastructure-less. Nodes may have to relay messages among several other nodes to reach a destination. Nodes may also be mobile, with connectivity changing among nodes. Examples: mobile ad hoc networks (MANETs) and vehicular ad hoc networks (VANET)
