@@ -229,4 +229,4 @@
 * A third channel partitioning protocol is code division multiple access (CDMA)
   * While TDM and FDM assign time slots and frequencies, respectively, to the nodes, CDMA assigns a different code to each node
     * Each node then uses its unique code to encode the data bits it sends. If the codes are chosen carefully, CDMA networks have the wonderful property that different nodes can transmit simultaneously and yet have their respective receivers correctly receive a sender's encoded data bits (assuming the receiver knows the sender’s code) in spite of interfering transmissions by other nodes
-    
+#### 5.3.2 Random Access Protocols
