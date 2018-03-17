@@ -266,3 +266,5 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   3. When transmitting, the adapter monitors for the presence of signal energy coming from other adapters using the broadcast channel
   4. If the adapter transmits the entire frame without detecting signal energy from the other adapters, the adapter is finished with the frame. If, on the other hand, the adapter detects signal energy from other adapters while transmitting, it aborts the transmission
   5. After aborting, the adapter waits a random amount of time and then returns to step 2
+##### CSMA/CD Efficiency
+* Efficiency = 1/(1 + 5d<sub>prop</sub>/d<sub>trans</sub>)
