@@ -168,3 +168,5 @@
 * Need to judiciously choose when to flood a packet
   * In sequence-number-controlled flooding, a source node puts its address (or other unique identifier) as well as a broadcast sequence number into a broadcast packet, then sends the packet to all of its neighbors
   * Reverse path forwarding, also sometimes referred to as reverse path broadcast (RPB). The idea behind RPF is simple, yet elegant. When a router receives a broadcast packet with a given source address, it transmits the packet on all of its outgoing links (except the one on which it was received) only if the packet arrived on the link that is on its own shortest unicast path back to the source. Otherwise, the router simply discards the incoming packet without forwarding it on any of its outgoing links
+## Chapter 5: The Link Layer: Links, Access, Networks, and LANs
+### 5.1 Introduction to the Link Layer
