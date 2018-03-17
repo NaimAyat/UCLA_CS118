@@ -349,3 +349,12 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   * Multi-hop, infrastructure-based. Base station is wired to the larger networks. Some wireless nodes may have to relay communication via other nodes in order to communicate via the base station. Example: wireless mesh networks
   * Multi-hop, infrastructure-less. Nodes may have to relay messages among several other nodes to reach a destination. Nodes may also be mobile, with connectivity changing among nodes. Examples: mobile ad hoc networks (MANETs) and vehicular ad hoc networks (VANET)
 ### 6.2 Wireless Links and Network Characteristics
+* Differences between wired link and wireless link
+  * Decreasing signal strength (path loss)
+  * Interference from other sources (radio sources transmitting on the same frequency)
+  * Multipath propagation: portions of the electromagnetic wave reflect and take paths of different length between a sender and receiver, resulting in blurring of received signal
+* Signal-to-noise ratio (SNR): strength of the received signal vs. noise in the environment. Measured in dB
+  * For a given scheme, the higher the SNR, the lower the bit error rate (BER)
+  * For a given SNR, a modulation technique with a higher bit transmission rate (whether in error or not) will have a higher BER
+  * Dynamic selection of the physical-layer modulation technique can be used to adapt the modulation technique to channel conditions
+* Hidden terminal problem: Suppose that Station A is transmitting to Station B. Suppose also that Station C is transmitting to Station B. With the socalled hidden terminal problem, physical obstructions in the environment (for example, a mountain or a building) may prevent A and C from hearing each other's transmissions, even though A's and C's transmissions are indeed interfering at the destination, B.
