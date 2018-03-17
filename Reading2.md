@@ -391,8 +391,25 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
    4. Retry: retransmit indication
    5. Power management: inform AP that host will be sleeping to save power
    6. More data: AP informing host not to sleep
-2. Duration: length of transmission in nanoseconds
+2. Duration: length of transmission in microseconds
 3. Address 1: Destination MAC
 4. Address 2: Source MAC
 5. Address 3: MAC address of router inferface attached to AP
 6. Sequence control: for fragment reassembly
+#### 6.3.5 Advanced Features in 802.11
+##### 802.11 Rate Adaption
+* Two consecutive retransmits results in backing down to the next lowest transmission rate. 10 successful frames in a row or fallback timer timeout results in increasing to the next highest transmission rate
+##### Power Management
+* A node that has no frames to send or receive can be asleep 99% of the time, resulting in a significant energy savings
+#### 6.3.6 Personal Area Networks: Bluetooth and Zigbee
+##### Bluetooth
+* Short range, low power, low cost "cable replacement" tech for interconnecting notebooks, peripheral devices, cell phones
+* Sometimes referred to as wireless personal area networks (WPANs)
+* The link and physical layers of 802.15.1 are based on earlier *Bluetooth* spec for personal area networks
+  * Operate in the 2.4 GHz unlicensed radio band in a TDM manner, with time slots of 625 microseconds
+    * During each time slot, a sender transmits on one of 79 channels, with the channel changing an a known but pseudo-random manner from slot to slot. This is known as frequency-hopping spread spectrum (FHSS)
+* Ad hoc networks: no infrastucture is necessary
+* Devices are organized into a piconet of up to eight devices. One device is designated as the master; the rest are slaves
+  * Master node clock determines time in piconet, transmits in each odd slot
+  * Slaves can only transmit after master has initiated communication in the previous slot, and slaves can only transmit to the master
+  * There can also be 255 parked devices in the piconet, which are all inactive until the master changes their status to slave
