@@ -231,7 +231,7 @@
     * Each node then uses its unique code to encode the data bits it sends. If the codes are chosen carefully, CDMA networks have the wonderful property that different nodes can transmit simultaneously and yet have their respective receivers correctly receive a sender's encoded data bits (assuming the receiver knows the sender’s code) in spite of interfering transmissions by other nodes
 #### 5.3.2 Random Access Protocols
 ##### Slotted ALOHA
-* All frames consist of exactly L bit
+* All frames consist of exactly L bits
 * Time is divided into slots of L/R seconds (where R is transmission rate in bps)
 * Nodes start to transmit frames only at the beginnings of slots
 * Nodes are synchronized so that each node knows when the slots begin
@@ -250,3 +250,19 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 * A slot in which exactly one node transmits is said to be a *successful slot*
 * The *efficiency* of a slotted multiple access protocol is defined to be the long-run fraction of successful slots in the case when there are a large number of active nodes, each always having a large number of frames to send
 * When there are N actice nodes, the efficiency of slotted ALOHA is Np(1-p)<sup>N-1</sup>
+##### ALOHA
+* When a frame first arrives, the node immediately transmits it to the broadcast channel
+* If a transmitted frame experiences a collision, the node will immediately retransmit the frame with probability p
+  * Otherwise, the node waits for a frame transmission time
+    * After the wait, the node transmits the frame with probability p, or waits (remaining idle) for another frame time with probability 1 – p
+* Efficiency = 1/(2e) = Half that of Slotted ALOHA. this is the price to be paid for a fully decentralized ALOHA protocol
+##### Carrier Sense Multiple Access (CSMA)
+* *Carrier sensing*: a node listens to the channel before transmitting. If a frame from another node is currently being transmitted into the channel, a node then waits until it detects no transmissions for a short amount of time and then begins transmission
+* *Collision detection*: a transmitting node listens to the channel while it is transmitting. If it detects that another node is transmitting an interfering frame, it stops transmitting and waits a random amount of time before repeating the sense-and-transmit-when-idle cycle
+##### Carrier Sense Multiple Access with Collision Dection (CSMA/CD)
+* CSMA/CD operation from the perspective of an adapter in a node attached to a broadcast channnel
+  1. The adapter obtains a datagram from the network layer, prepares a link-layer frame, and puts the frame adapter buffer
+  2. If the adapter senses that the channel is idle, it starts to transmit the frame. If the adapter senses that the channel is busy, it waits until it senses no signal energy and then starts to transmit the frame
+  3. When transmitting, the adapter monitors for the presence of signal energy coming from other adapters using the broadcast channel
+  4. If the adapter transmits the entire frame without detecting signal energy from the other adapters, the adapter is finished with the frame. If, on the other hand, the adapter detects signal energy from other adapters while transmitting, it aborts the transmission
+  5. After aborting, the adapter waits a random amount of time and then returns to step 2
