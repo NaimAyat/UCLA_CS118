@@ -12,4 +12,5 @@
 1. TCP round-trip estimation and timeout [**See Homework 4, Problem 4**]
 2. Is SampleRTT computer for a segment that has been retransmitted? Why?
    * No, when its ACK arrives it is impossible to know if this is ACK was from the first transmission or from a retransmission. Thus, this could ruin our value of RTT.
-3. 
+3. What is the negative effect if the timeout value is too small? Too big?
+   * If it is too small, then overhead will be spent on unnecessary retransmissions. If it is too big, we will waste an unecessary amount of time waiting for ACKs that are never going to arrive.
