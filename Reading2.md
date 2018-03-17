@@ -170,3 +170,20 @@
   * Reverse path forwarding, also sometimes referred to as reverse path broadcast (RPB). The idea behind RPF is simple, yet elegant. When a router receives a broadcast packet with a given source address, it transmits the packet on all of its outgoing links (except the one on which it was received) only if the packet arrived on the link that is on its own shortest unicast path back to the source. Otherwise, the router simply discards the incoming packet without forwarding it on any of its outgoing links
 ## Chapter 5: The Link Layer: Links, Access, Networks, and LANs
 ### 5.1 Introduction to the Link Layer
+* Any device that runs a link-layer protocol is called a *node*
+  * Nodes include hosts, routers, switches, and WiFi access points
+  * Communication channels that connect adjacent nodes are *links*
+* *Link-layer frames* are link-layer data chunks
+* Analogy:
+  * Tourist = datagram
+  * Transportation segment = link
+  * Transportation mode = link-layer protocol
+  * Travel agent = routing protocol
+#### 5.1.1 The Services Provided by the Link Layer
+* Framing: link-layer protocols encapsulate each network-layer datagram within a link-layer frame before transmission over the link
+  * Frames consist of a data field (where the network-layer datagram is stored) and a number of header fields
+* Link access: a medium access control (MAC) protocol specifies the rules by which a frame is transmitted onto the link.
+* Reliable delivery: guarantees to move each network-layer datagram across the link without error
+  * A link-layer reliable delivery service is often used for links that are prone to high error rates, such as a wireless link, with the goal of correcting an error locally, on the link where the error occurs, rather than forcing an end-to-end retransmission of the data by a transport- or application-layer protocol.
+  * Link-layer reliable delivery is typically unnecessary for low bit-error links, including fiber, coax, and twisted-air copper
+* Error detection and correction: The link-layer hardware in a receiving node can incorrectly decide that a bit in a frame is zero when it was transmitted as a one, and vice versa. Such bit errors are introduced by signal attenuation and electromagnetic noise. Because there is no need to forward a datagram that has an error, many link-layer protocols provide a mechanism to detect such bit errors. This is done by having the transmitting node include error-detection bits in the frame, and having the receiving node perform an error check.
