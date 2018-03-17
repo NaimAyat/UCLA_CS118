@@ -462,3 +462,19 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 * Complications of direct routing:
   * Mobile-user location protocol is needed for the correspondent agent to query the home agent to obtain the mobile node's COA
   * When the mobile node moves from one foreign network to another, how will data be forwarded to the new foreign network?
+### 6.6 Mobile IP
+* Internet architecture and protocols for supporting mobility = mobile IP
+  * Agent discovery: mobile IP defines protocols used by a home or foreign agent ot advertise its services to mobile nodes, and protocols for mobile nodes to solicit the services of a foreign or home agent
+  * Registration with the home agent: mobile IP defines the protocols used by the mobile node and/or foreign agent to register and deregister COAs with a mobile node's home agent
+  * Indirect routing of datagrams: manner in which datagrams are forwarded to mobile nodes by a home agent
+##### Agent Discovery
+* Discovery of a new foreign agent, with a new network address, allows the network layer in a mobile node to learn that it has moved into a new foreign network
+* Agent advertisement allows a foreign of home agent to advertise its services using an extension to the existing router discovery protocol
+  * Agent broadcasts an ICMP message with a type field 9 to all links to which it is connected
+### 6.7 Managing Mobility in Cellular Networks
+* Home network maintains a database known as the home location register (HLR), which contains the permanent cell phone number and subscriber profile information for each of its subscribers. Importantly, the HLR also contains information about the current locations of these subscribers
+* Visited network maintains visitor location register (VLR), containing an entry for each mobile user currently in the portion of the network server by VLR
+#### 6.7.1 Routing Calls to a Mobile User
+1. Correspondent dials mobile user's number. The digits globally identify the mobile's home network. The call is routed to the correspondent throught he public switched telephone network (PSTN) to the home MSC
+2. The home MSC receives the call and asks the HLR to determine the mobile user location. The HLR returns the mobile station roaming number (MSRN)
+3. Given the roaming number, the home MSC sets up the second leg of the call through the network to the MSC in the visited network. The call is completed, being routed from the correspondent to the home MSC, and from there to the visited MSC, and from there to the base station serving the mobile user
