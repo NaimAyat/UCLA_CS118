@@ -247,3 +247,6 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   * When there are multiple active nodes, two concerns:
     1. A fraction of the slots will have collisions and therefore be wasted
     2. A second fraction will be empty because all active nodes refrain from transmitting as a result of the probabilistic transmission policy
+* A slot in which exactly one node transmits is said to be a *successful slot*
+* The *efficiency* of a slotted multiple access protocol is defined to be the long-run fraction of successful slots in the case when there are a large number of active nodes, each always having a large number of frames to send
+* When there are N actice nodes, the efficiency of slotted ALOHA is Np(1-p)<sup>N-1</sup>
