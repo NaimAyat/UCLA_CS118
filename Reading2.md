@@ -288,3 +288,6 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 * An ARP module in the sending host takes any IP address on the same LAN as input, and returns the corresponding MAC address
 * Each host and router has an ARP table in its memory which contains mappings of IP addresses to MAC addresses. The ARP table also contains a time-to-live (TTL) value, which indicates when each mapping will be deleted from the table
 * First, the sender constructs a special packet called an ARP packet. An ARP packet has several fields, including the sending and receiving IP and MAC addresses. Both ARP query and response packets have the same format. The purpose of the ARP query packet is to query all the other hosts and routers on the subnet to determine the MAC address corresponding to the IP address that is being resolved
+#### 5.4.2 Ethernet
+##### Ethernet Frame Structure
+* [Ethernet frame structure](http://fschub.com/wp-content/uploads/2017/03/ethernet-II.jpg)
