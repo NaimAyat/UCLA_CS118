@@ -268,3 +268,13 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   5. After aborting, the adapter waits a random amount of time and then returns to step 2
 ##### CSMA/CD Efficiency
 * Efficiency = 1/(1 + 5d<sub>prop</sub>/d<sub>trans</sub>)
+#### 5.3.3 Taking-Turns Protocols
+* Two desirable properties of a multiple access protocol are: 
+  1. When only one node is active, the active node has a throughput of R bps
+  2. When M nodes are active, then each active node has a throughput of nearly R/M bps
+  * The ALOHA and CSMA protocols have this first property but not the second
+* This motivated the creation of taking-turns protocols
+  1. Polling protocol: one of the nodes to be designated as a master node. The master node polls each of the nodes in a round-robin fashion. In particular, the master node first sends a message to node 1, saying that it (node 1) can transmit up to some maximum number of frames. After node 1 transmits some frames, the master node tells node 2 it (node 2) can transmit up to the maximum number of frames. (The master node can determine when a node has finished sending its frames by observing the lack of a signal on the channel.) The procedure continues in this manner, with the master node polling each of the nodes in a cyclic manner.
+     * Drawbacks: introduces a polling delay. Also, if the master node fails, the entire channel fails
+  2. Token-passing protocol: A small, special-purpose frame known as a token is exchanged among the nodes in some fixed order. For example, node 1 might always send the token to node 2, node 2 might always send the token to node 3, and node N might always send the token to node 1. When a node receives a token, it holds onto the token only if it has some frames to transmit; otherwise, it immediately forwards the token to the next node. If a node does have frames to transmit when it receives the token, it sends up to a maximum number of frames and then forwards the token to the next node.
+     * Drawbacks: The failure of one node can crash the entire channel. If a node neglects to release the token, then some recovery procedure must be invoked to get the token back in circulation
