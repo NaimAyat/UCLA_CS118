@@ -361,8 +361,8 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 #### 6.2.1 CDMA
 * Code division multiple access (CDMA) belongs to the family of channel partitioning protocol
   * Each bit sent is encoded by mutiplying the bit by a signal (the code) that changes at a much faster rate (the chipping rate_ than the original sequence of data bits
-## 6.3: WiFi 802.11 Wireless LANs
-### 6.3.1 The 802.11 Architecture
+### 6.3: WiFi 802.11 Wireless LANs
+#### 6.3.1 The 802.11 Architecture
 * Basic architecture is the *basic service set (BSS)*. A BSS contains one or more wireless stations and a cental base station, known as an access point (AP). Each 802.11 wireless station has a MAC address that is stored in the firmware of the station's adapter. Each AP also has a MAC address
 * Wireless LANs that deploy APs are often referred to as *infrastructure wireless LANs*, with the "infrastructure" being the APs along with the wired Ethernet infrastructure that interconnects the APs and a router
 * When a network admin installs an AP, the admin assigns a one- or two-word Service Set Identifier (SSID) to the access point
@@ -372,7 +372,7 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   * APs periodically send beacon frames, each containing the AP's SSID and MAC address
   * The process of scanning channels and listening for beacon frames is known as passive scanning
   * A wireless host can also perform active scanning by broadcasting a probe frame that will be received by all APs within range
-### 6.3.2 The 802.11 MAC Protocol
+#### 6.3.2 The 802.11 MAC Protocol
 * Because multiple stations may want to transmit frames at the same time over the same channel, a multiple access protocol is needed to coordinate transmissions
 * CSMA with collision avoidance (CSMA/CA): random access protocol for 802.11 inspired by the success of Ethernet random access protocol
   * Unlike the Ethernet protocol, the MAC protocol does not implement collision detection because:
@@ -380,3 +380,4 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
     * If the adapter could transmit and listen at the same time, the adapter would still not be able to detect all collisions, due to the hidden terminal problem and fading
 * Because wireless LANs do not use collision detection, once a station begins to transmit a frame, it transmits the frame its in entirety
 * When a station in a wireless LAN sends a frame, the frame may not reach the destination intact. To deal with this, the 802.11 MAC protocol uses link-layer acknowledgements. When the destination receives a frame that passes the CRC, it waits for a duration (Short Inter-frame Spacing, SIFS) and sends back the ACK frame. If the transmitting station does not receive the ACK within a certain amount of time, it retransmits the frame, using CSMA/CA protocol to access the channel. IF the ACK is not received after a certain number of transmissions, the frame is discarded
+##### Dealing with Hidden Terminals: RTS and CTS
