@@ -296,3 +296,8 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 ##### Forwarding and Filtering
 * *Filtering* is the switch function that determines whether a frame should be forwarded to some interface or should just be dropped. 
 * *Forwarding* is the switch function that determines the interfaces to which a frame should be directed, and then moves the frame to those interfaces. Switch filtering and forwarding are done with a *switch table*.
+##### Self-Learning
+* In other words, switches are self-learning. This capability is accomplished as follows:
+  1. The switch table is initially empty.
+  2. For each incoming frame received on an interface, the switch stores in its table the MAC address in the frame’s source address field, the interface from which the frame arrived, and (3) the current time. In this manner the switch records in its table the LAN segment on which the sender resides. If every host in the LAN eventually sends a frame, then every host will eventually get recorded in the table.
+  3. The switch deletes an address in the table if no frames are received with that address as the source address after some period of time (the aging time). In this manner, if a PC is replaced by another PC (with a different adapter), the MAC address of the original PC will eventually be purged from the switch table.
