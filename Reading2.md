@@ -358,3 +358,23 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   * For a given SNR, a modulation technique with a higher bit transmission rate (whether in error or not) will have a higher BER
   * Dynamic selection of the physical-layer modulation technique can be used to adapt the modulation technique to channel conditions
 * Hidden terminal problem: Suppose that Station A is transmitting to Station B. Suppose also that Station C is transmitting to Station B. With the socalled hidden terminal problem, physical obstructions in the environment (for example, a mountain or a building) may prevent A and C from hearing each other's transmissions, even though A's and C's transmissions are indeed interfering at the destination, B.
+#### 6.2.1 CDMA
+* Code division multiple access (CDMA) belongs to the family of channel partitioning protocol
+  * Each bit sent is encoded by mutiplying the bit by a signal (the code) that changes at a much faster rate (the chipping rate_ than the original sequence of data bits
+## 6.3: WiFi 802.11 Wireless LANs
+### 6.3.1 The 802.11 Architecture
+* Basic architecture is the *basic service set (BSS)*. A BSS contains one or more wireless stations and a cental base station, known as an access point (AP). Each 802.11 wireless station has a MAC address that is stored in the firmware of the station's adapter. Each AP also has a MAC address
+* Wireless LANs that deploy APs are often referred to as *infrastructure wireless LANs*, with the "infrastructure" being the APs along with the wired Ethernet infrastructure that interconnects the APs and a router
+* When a network admin installs an AP, the admin assigns a one- or two-word Service Set Identifier (SSID) to the access point
+* A *WiFi jungle* is any location where a wireless station receives a sufficiently strong signal from two or more APs
+  * A wireless station needs to associate with exactly one AP; only one AP will send data frames to the machine and vice versa
+* How does your wireless station associate with a particular AP?
+  * APs periodically send beacon frames, each containing the AP's SSID and MAC address
+  * The process of scanning channels and listening for beacon frames is known as passive scanning
+  * A wireless host can also perform active scanning by broadcasting a probe frame that will be received by all APs within range
+### 6.3.2 The 802.11 MAC Protocol
+* Because multiple stations may want to transmit frames at the same time over the same channel, a multiple access protocol is needed to coordinate transmissions
+* CSMA with collision avoidance (CSMA/CA): random access protocol for 802.11 inspired by the success of Ethernet random access protocol
+  * Unlike the Ethernet protocol, the MAC protocol does not implement collision detection because:
+    * The ability to detect collisions requres the ability to send and receive at the same time; this is costly because the strength of the received signal is small compared to the strength of the transmitted signal
+    * If the adapter could transmit and listen at the same time, the adapter would still not be able to detect all collisions, due to the hidden terminal problem and fading
