@@ -381,3 +381,18 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 * Because wireless LANs do not use collision detection, once a station begins to transmit a frame, it transmits the frame its in entirety
 * When a station in a wireless LAN sends a frame, the frame may not reach the destination intact. To deal with this, the 802.11 MAC protocol uses link-layer acknowledgements. When the destination receives a frame that passes the CRC, it waits for a duration (Short Inter-frame Spacing, SIFS) and sends back the ACK frame. If the transmitting station does not receive the ACK within a certain amount of time, it retransmits the frame, using CSMA/CA protocol to access the channel. IF the ACK is not received after a certain number of transmissions, the frame is discarded
 ##### Dealing with Hidden Terminals: RTS and CTS
+* Request to Send (RTS) control frame and Clear to Send (CTS) control frames are sent to reserve access to the channel
+#### 6.3.3 The IEEE 802.11 Frame
+* [Diagram](http://phoenix.goucher.edu/~kelliher/s2011/cs325/may04img10.png)
+1. Frame Control: 
+   1. Protocol version: which version of 802.11?
+   2. Type and subtype: which type of frame (data, RTS, CTS, beacon, etc)
+   3. More frag: link layer fragment indication
+   4. Retry: retransmit indication
+   5. Power management: inform AP that host will be sleeping to save power
+   6. More data: AP informing host not to sleep
+2. Duration: length of transmission in nanoseconds
+3. Address 1: Destination MAC
+4. Address 2: Source MAC
+5. Address 3: MAC address of router inferface attached to AP
+6. Sequence control: for fragment reassembly
