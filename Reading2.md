@@ -198,6 +198,9 @@
 * The sender includes one extra bit and chooses its value such that the total number of 1s in the original data plus the parity bit is even
   * The receiver counts the number of 1s in the received data; if an odd number is found, the receiver knows a bit error has occured
   * Note that if there is a multiple of 2 total errors, they will go undetected. However, it is rare for bit errors to occur, so this is quite unlikely
-* Employ a *two-dimensional parity scheme*: data bits are divided into `i` rows and `j` columns. A parity value is computed for each row and column. The resulting `i+j+1` parity bits comprise the lin-laer frame's error detection bits
+* Employ a *two-dimensional parity scheme*: data bits are divided into `i` rows and `j` columns. A parity value is computed for each row and column. The resulting `i + j + 1` parity bits comprise the lin-laer frame's error detection bits
   * Now, the parity of both the column and the row containing the flipped bit will be in error
     * Thus, the receiver will know the exact bit that is in error
+#### 5.2.2 Checksumming Methods
+* In checksumming techniques, the d bits of data in Figure 5.4 are treated as a sequence of k-bit integers. One simple checksumming method is to simply sum these k-bit integers and use the resulting sum as the error-detection bits. 
+  * The Internet checksum is based on this approach—bytes of data are treated as 16-bit integers and summed. The 1s complement of this sum then forms the Internet checksum that is carried in the segment header
