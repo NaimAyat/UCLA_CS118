@@ -122,3 +122,12 @@
 ### 4.6 Routing in the Internet
 #### 4.6.1 Intra-AS Routing in the Internet: RIP
 * Intra-AS routing protocols are also known as interior gateway protocols. Historically, two routing protocols have been used extensively for routing within an autonomous system in the Internet: the Routing Information Protocol (RIP) and Open Shortest Path First (OSPF).
+* Each link has a cost of 1
+* RIP uses the term hop, which is the number of subnets traversed along the shortest path from source router to destination subnet, including the destination subnet
+* In RIP, routing updates are exchanged between neighbors approximately every 30 seconds using a RIP response message. The response message sent by a router or host contains a list of up to 25 destination subnets within the AS, as well as the sender’s distance to each of those subnets
+* Each router maintains a RIP table known as a routing table
+#### 4.6.2 Intra-AS Routing in the Internet: OSPF
+* OSPF was conceived as the successor to RIP and as such has a number of advanced features
+* At its heart, however, OSPF is a link-state protocol that uses flooding of link-state information and a Dijkstra least-cost path algorithm. 
+* A router constructs a complete topological map (that is, a graph) of the entire autonomous system. The router then locally runs Dijkstra’s shortest-path algorithm to determine a shortest-path tree to all subnets, with itself as the root node. Individual link costs are configured by the network administrator
+  * The administrator might choose to set all link costs to 1, thus achieving minimum-hop routing, or might choose to set the link weights to be inversely proportional to link capacity in order to discourage traffic from using low-bandwidth links
