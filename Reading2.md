@@ -108,8 +108,17 @@
 * In static routing algorithms, routes change very slowly over time, often as a result of human intervention (for example, a human manually editing a router’s forwarding table).
 * Dynamic routing algorithms change the routing paths as the network traffic loads or topology change. A dynamic algorithm can be run either periodically or in direct response to topology or link cost changes. While dynamic algorithms are more responsive to network changes, they are also more susceptible to problems such as routing loops and oscillation in routes.
 * In a load-sensitive algorithm, link costs vary dynamically to reflect the current level of congestion in the underlying link. If a high cost is associated with a link that is currently congested, a routing algorithm will tend to choose routes around such a congested link.
-### 4.5.1 The Link-State (LS) Routing Algorithm
+#### 4.5.1 The Link-State (LS) Routing Algorithm
 * Essentially just [Dijkstra’s algorithm](https://courses.cs.washington.edu/courses/cse326/00wi/handouts/lecture22/img014.gif)
-### 4.5.2 The Distance-Vector (DV) Routing Algorithm
+#### 4.5.2 The Distance-Vector (DV) Routing Algorithm
 * The distance vector (DV) algorithm is iterative, asynchronous, and distributed. It is distributed in that each node receives some information from one or more of its directly attached neighbors, performs a calculation, and then distributes the results of its calculation back to its neighbors. It is iterative in that this process continues on until no more information is exchanged between neighbors
 * [Example](https://www.youtube.com/watch?v=x9WIQbaVPzY)
+#### 4.5.3 Hierarchical Routing
+* Previously, we simplified routing algorithms to assume that routers were indistinguishable. In practice, this is not efficient because:
+  * Scale. As the number of routers increases, the overhead involved in computing, storing, and communicating routing info becomes prohibitive
+  * Administrative autonomy. Organizations may run its routers on any algorithm they choose
+* These issues can be solved by organizing routers into autonomous systems
+* Intraautonomous system routing protocol: routing algorithm running within an autonomous system
+### 4.6 Routing in the Internet
+#### 4.6.1 Intra-AS Routing in the Internet: RIP
+* Intra-AS routing protocols are also known as interior gateway protocols. Historically, two routing protocols have been used extensively for routing within an autonomous system in the Internet: the Routing Information Protocol (RIP) and Open Shortest Path First (OSPF).
