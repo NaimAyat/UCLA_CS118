@@ -413,3 +413,24 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   * Master node clock determines time in piconet, transmits in each odd slot
   * Slaves can only transmit after master has initiated communication in the previous slot, and slaves can only transmit to the master
   * There can also be 255 parked devices in the piconet, which are all inactive until the master changes their status to slave
+### 6.4 Cellular Internet Access
+#### 6.4.1 An Overview of Cellular Network Architecture
+##### Cellular Network Architecture, 2G: Voice Connections to the Telephone Network
+* "Cellular" refers to the fact that the region covered by a cell network is partitioned into a number of geographic coverage areas (cells)
+  * Each cell contains a base transceiver station (BTS) that transmits signals to and receives signls from the mobile stations in its cell
+* GSM standard for 2G cell systems used combined FDM/TDM radio for the air interface
+  * The channel is partitioned into a number of frequency sub-bands; within each sub-band, time is partitioned into frames and slots
+* A GSM network's base station controller (BSC) will service several dozens of base tranceiver stations
+  * BSC allocates BTS radio channels to mobile subscribers, performs paging (finds the cell in which a mobile user is located), and performs handoffs of mobile users
+  * Base station controller and its controlled base transceiver stations constitute a GSM Base Station System (BSS)
+* Mobil
+#### 6.4.2 3G Cellular Data Networks: Extending the Internet to Cellular Subscribers
+##### 3G Core Network
+* Leave the existing core GSM cell voice network untouched, adding additional cellular data functionality in parallel to the existing cellular voice network
+* Types of nodes in 3G core:
+  * Serving GPRS Support Nodes and Gateway GPRS Support Nodes
+##### 3G Radio Access Network: The Wireless Edge
+* Wireless first-hop network that we see as 3G users
+#### 6.4.3 On to 4G: LTE
+* Evolved packet core (EPC): simplified all-IP core network that unifies separate circuit-switched cell voice network and the packet-switched cell data network. Both voice and data are carried in IP datagrams
+* LTE radio access network: combines frequency division multiplexing and time division multiplexing on the downstream channel. Each active mobile node is allocated one or more 0.5 ms time slots in one or more of the channel frequencies; a mobile node is able to achieve increasingly higher transmission rates. Uses sophisticated multiple output antennas
