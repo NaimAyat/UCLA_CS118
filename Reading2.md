@@ -153,3 +153,14 @@
 ### 4.7 Broadcast and Multicast Routing
 * In broadcast routing, the network layer provides a service of delivering a packet sent from a source node to all other nodes in the network
 * Multicast routing enables a single source node to send a copy of a packet to a subset of the other network nodes
+#### 4.7.1 Broadcast Routing Algorithms
+* Perhaps the most straightforward way to accomplish broadcast communication is for the sending node to send a separate copy of the packet to each destination
+* Given N destination nodes, the source node simply makes N copies of the packet, addresses each copy to a different destination, and then transmits the N copies to the N destinations using unicast routing
+* This N-way unicast approach to broadcasting is simple—no new network-layer routing protocol, packet-duplication, or forwarding functionality is needed
+  * Drawbacks: 
+    * Inefficient; if the source node is connected to the rest of the network via a single link, then N separate copies of the (same) packet will traverse this single link
+    * An implicit assumption of N-way-unicast is that broadcast recipients, and their addresses, are known to the sender. But how is this information obtained? Most likely, additional protocol mechanisms (such as a broadcast membership or destination-registration protocol) would be required.
+##### Uncontrolled Flooding
+* The most obvious technique for achieving broadcast is a flooding approach in which the source node sends a copy of the packet to all of its neighbors. When a node receives broadcast packet, it duplicates the packet and forwards it to all of its neighbors
+  * Problem: if the graph has cycles, then one or more copies of each broadcast packet will cycle indefinitely
+  * Even larger problem: When a node is connected to more than two other nodes, it will create and forward multiple copies of the broadcast packet, each of which will create multiple copies of itself (at other nodes with more than two neighbors), and so on. This broadcast storm, resulting from the endless multiplication of broadcast packets, would eventually result in so many broadcast packets being created that the network would be rendered useless
