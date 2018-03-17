@@ -187,3 +187,17 @@
   * A link-layer reliable delivery service is often used for links that are prone to high error rates, such as a wireless link, with the goal of correcting an error locally, on the link where the error occurs, rather than forcing an end-to-end retransmission of the data by a transport- or application-layer protocol.
   * Link-layer reliable delivery is typically unnecessary for low bit-error links, including fiber, coax, and twisted-air copper
 * Error detection and correction: The link-layer hardware in a receiving node can incorrectly decide that a bit in a frame is zero when it was transmitted as a one, and vice versa. Such bit errors are introduced by signal attenuation and electromagnetic noise. Because there is no need to forward a datagram that has an error, many link-layer protocols provide a mechanism to detect such bit errors. This is done by having the transmitting node include error-detection bits in the frame, and having the receiving node perform an error check.
+#### 5.1.2 Where is the Link Layer Implemented?
+* For the most part, the link layer is implemented in a network adapter, also sometimes known as a network interface card (NIC)
+  * At the heart of the network adapter is the link-layer controller, usually a single, special-purpose chip that implements many of the link-layer services (framing, link access, error detection, etc.)
+  * Thus, much of a link-layer controller’s functionality is implemented in hardware
+### 5.2 Error-Detection and Correction Techniques
+* Even with the use of error-detection bits there still may be undetected bit errors
+#### 5.2.1 Parity Checks
+* Employ a single *parity bit*
+* The sender includes one extra bit and chooses its value such that the total number of 1s in the original data plus the parity bit is even
+  * The receiver counts the number of 1s in the received data; if an odd number is found, the receiver knows a bit error has occured
+  * Note that if there is a multiple of 2 total errors, they will go undetected. However, it is rare for bit errors to occur, so this is quite unlikely
+* Employ a *two-dimensional parity scheme*: data bits are divided into `i` rows and `j` columns. A parity value is computed for each row and column. The resulting `i+j+1` parity bits comprise the lin-laer frame's error detection bits
+  * Now, the parity of both the column and the row containing the flipped bit will be in error
+    * Thus, the receiver will know the exact bit that is in error
