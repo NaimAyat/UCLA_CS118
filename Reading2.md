@@ -212,4 +212,7 @@
   * A *point-to-point link* consists of a single sender at one end of the link and a single receiver at the other end of the link
   * A *broadcast link*, can have multiple sending and receiving nodes all connected to the same, single, shared broadcast channel
 * *Multiple access problem*: how to coordinate the access of multiple sending and receiving nodes to a shared broadcast channel
-* *Multiple access protocols*: rules by which nodes regulate their transmission into the shared broadcast channel.
+* *Multiple access protocols*: rules by which nodes regulate their transmission into the shared broadcast channel
+* Because all nodes are capable of transmitting frames, more than two nodes can transmit frames at the same time
+  * When this happens, all of the nodes receive multiple frames at the same time; that is, the transmitted frames collide at all of the receivers. Typically, when there is a collision, none of the receiving nodes can make any sense of any of the frames that were transmitted. Hence, frames are lost in collisions
+* Any multiple access protocol as belonging to one of three categories: *channel partitioning protocols*, *random access protocols*, and *taking-turns protocols*
