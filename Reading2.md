@@ -283,3 +283,7 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 * Hosts and routers have link-layer addresses, just as they have network-layer addresses
 ##### MAC Addresses
 * A link-layer address is variously called a LAN address, a physical address, or a MAC address
+##### Address Resolution Protocol (ARP)
+* Because there are both network-layer addresses (for example, Internet IP addresses) and link-layer addresses (that is, MAC addresses), there is a need to translate between them. For the Internet, this is the job of the Address Resolution Protocol (ARP)
+* An ARP module in the sending host takes any IP address on the same LAN as input, and returns the corresponding MAC address
+* Each host and router has an ARP table in its memory which contains mappings of IP addresses to MAC addresses. The ARP table also contains a time-to-live (TTL) value, which indicates when each mapping will be deleted from the table
