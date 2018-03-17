@@ -230,3 +230,20 @@
   * While TDM and FDM assign time slots and frequencies, respectively, to the nodes, CDMA assigns a different code to each node
     * Each node then uses its unique code to encode the data bits it sends. If the codes are chosen carefully, CDMA networks have the wonderful property that different nodes can transmit simultaneously and yet have their respective receivers correctly receive a sender's encoded data bits (assuming the receiver knows the sender’s code) in spite of interfering transmissions by other nodes
 #### 5.3.2 Random Access Protocols
+##### Slotted ALOHA
+* All frames consist of exactly L bit
+* Time is divided into slots of L/R seconds (where R is transmission rate in bps)
+* Nodes start to transmit frames only at the beginnings of slots
+* Nodes are synchronized so that each node knows when the slots begin
+* If two or more frames collide in a slot, then all the nodes detect the collision event before the slot ends
+Let p be a probability, that is, a number between 0 and 1. The operation of slotted ALOHA in each node is simple:
+* When the node has a fresh frame to send, it waits until the beginning of the next slot and transmits the entire frame in the slot
+* If there isn’t a collision, the node has successfully transmitted its frame and thus need not consider retransmitting the frame. (The node can prepare a new frame for transmission, if it has one.)
+* If there is a collision, the node detects the collision before the end of the slot. The node retransmits its frame in each subsequent slot with probability p until the frame is transmitted without a collision.
+* Pros: 
+  * Unlike channel partitioning, slotted ALOHA allows a node to transmit continuously at the full rate, R, when that node is the only active node. (A node is said to be active if it has frames to send.) 
+  * Slotted ALOHA is also highly decentralizedd because each node detects collisions and independently decides when to retransmit
+* Cons:
+  * When there are multiple active nodes, two concerns:
+    1. A fraction of the slots will have collisions and therefore be wasted
+    2. A second fraction will be empty because all active nodes refrain from transmitting as a result of the probabilistic transmission policy
