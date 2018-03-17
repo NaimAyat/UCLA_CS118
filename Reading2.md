@@ -434,3 +434,23 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 #### 6.4.3 On to 4G: LTE
 * Evolved packet core (EPC): simplified all-IP core network that unifies separate circuit-switched cell voice network and the packet-switched cell data network. Both voice and data are carried in IP datagrams
 * LTE radio access network: combines frequency division multiplexing and time division multiplexing on the downstream channel. Each active mobile node is allocated one or more 0.5 ms time slots in one or more of the channel frequencies; a mobile node is able to achieve increasingly higher transmission rates. Uses sophisticated multiple output antennas
+### 6.5 Mobility Management: Principles
+* The permanent home of a mobile node (such as a laptop or phone) is known as the home network
+* The entity within the home network that performs mobility management functions is known as the home agent
+* The network in which the mobile node is residing is known as the foreign (or visited) network
+* Entity within the foreign network that helps mobile node with mobility management is foreign agent
+* A correspondent is the entity that wishes to communicate with the mobile node
+#### 6.5.1 Addressing
+* Locate foreign agents at hthe edge routers in the foreign network
+  * Foreign agent creates *care-of address (COA)* for the mobile node; network portion of the COA matches that of the foreign network
+* Two addresses associated with a mobile node:
+  1. Permanent address
+  2. COA (foreign address)
+#### 6.5.2 Routing to a Mobile Node
+##### Indirect Routing to a Mobile Node
+* Correspondent addresses the datagram to the mobile node's permanent address and sends the datagram into the network
+* Netowork layer functionality required to support mobility:
+  * Mobile node to foreign agent protocol: mobile node registers with foreign agent when attaching to foreign network. Mobile node will deregister with foreign agent when it leaves foreign network
+  * Foreign agent to home agent registration protocol. Foreign agent will register the mobile node's COA with the home agent. The foreign agent need not explicitly deregister a COA when a mobile node leaves its network, because the subsequent registration of a new COA will take care of this
+  * Home agent datagram encapsulation protocol. Encapsulation and forwarding of the correspondent's original datagram within a datagram addressed to the COA
+  * Foreign agent decapsulation protocol. Extraction of the correspondent's original datagram from the encapsulating datagram, and the forwarding of the original datagram to the mobile node
