@@ -318,3 +318,5 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 #### 5.5.1 Multiprotocol Label Switching (MPLS)
 * [MPLS header](http://blog.internetworkexpert.com/wp-content/uploads/2010/02/Screen-shot-2010-02-21-at-2.18.06-PM.png)
 * An MPLS-capable router is often referred to as a label-switched router, since it forwards an MPLS frame by looking up the MPLS label in its forwarding table and then immediately passing the datagram to the appropriate output interface.
+### 5.6 Data Center Networking
+* Each data center has its own *data center network* that interconnects its hosts with each other and interconnects the data center with the Internet
