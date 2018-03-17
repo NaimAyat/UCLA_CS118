@@ -207,3 +207,7 @@
 #### 5.2.3 Cyclic Redundancy Check (CRC)
 * An error-detection technique used widely in today’s computer networks is based on cyclic redundancy check (CRC) codes
 * CRC codes operate as follows. Consider the d-bit piece of data, D, that the sending node wants to send to the receiving node. The sender and receiver must first agree on an r + 1 bit pattern, known as a generator, which we will denote as G. We will require that the most significant (leftmost) bit of G be a 1. For a given piece of data, D, the sender will choose r additional bits, R, and append them to D such that the resulting d + r bit pattern (interpreted as a binary number) is exactly divisible by G (i.e., has no remainder) using modulo-2 arithmetic. The process of error checking with CRCs is thus simple: The receiver divides the d + r received bits by G. If the remainder is nonzero, the receiver knows that an error has occurred; otherwise the data is accepted as being correct.
+### 5.3 Multiple Access Links and Protocols
+* There are two types of network links:
+  * A *point-to-point link* consists of a single sender at one end of the link and a single receiver at the other end of the link
+  * A *broadcast link*, can have multiple sending and receiving nodes all connected to the same, single, shared broadcast channel
