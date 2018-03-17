@@ -454,3 +454,11 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   * Foreign agent to home agent registration protocol. Foreign agent will register the mobile node's COA with the home agent. The foreign agent need not explicitly deregister a COA when a mobile node leaves its network, because the subsequent registration of a new COA will take care of this
   * Home agent datagram encapsulation protocol. Encapsulation and forwarding of the correspondent's original datagram within a datagram addressed to the COA
   * Foreign agent decapsulation protocol. Extraction of the correspondent's original datagram from the encapsulating datagram, and the forwarding of the original datagram to the mobile node
+##### Direct Routing to a Mobile Node
+* Indirect routing suffers from *triangle routing problem*, datagrams addressed to the mobile node must be routed first to the home agent and then to the foreign netowrk, even when a more efficient route exists between the correspondent and the mobile node
+* Direct routing overcomes this, but does this at the cost of additional complexity
+  * Corresponding agent in the correspondent's network learns the COA of the mobile node
+  * Correspondent agent tunnels datagrams to the mobile node's COA
+* Complications of direct routing:
+  * Mobile-user location protocol is needed for the correspondent agent to query the home agent to obtain the mobile node's COA
+  * When the mobile node moves from one foreign network to another, how will data be forwarded to the new foreign network?
