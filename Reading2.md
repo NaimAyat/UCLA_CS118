@@ -131,3 +131,14 @@
 * At its heart, however, OSPF is a link-state protocol that uses flooding of link-state information and a Dijkstra least-cost path algorithm. 
 * A router constructs a complete topological map (that is, a graph) of the entire autonomous system. The router then locally runs Dijkstra’s shortest-path algorithm to determine a shortest-path tree to all subnets, with itself as the root node. Individual link costs are configured by the network administrator
   * The administrator might choose to set all link costs to 1, thus achieving minimum-hop routing, or might choose to set the link weights to be inversely proportional to link capacity in order to discourage traffic from using low-bandwidth links
+#### 4.6.3 Inter-AS Routing: BGP
+* Border Gateway Protocol version 4  is the de facto standard inter-AS routing protocol in today’s Internet
+* Provides each AS a means to
+  * Obtain subnet reachability information from neighboring ASs.
+  * Propagate the reachability information to all routers internal to the AS.
+  * Determine “good” routes to subnets based on the reachability information and on AS policy.
+* In BGP, pairs of routers exchange routing information over semipermanent TCP connections using port 179
+* The two routers at the end of the connection are called BGP peers, and the TCP connection along with all the BGP messages sent over the connection is called a BGP session
+* BGP session that spans two ASs is called an external BGP (eBGP) session
+* BGP session between routers in the same AS is called an internal BGP (iBGP) session
+* In BGP, destinations are not hosts but instead are CIDRized prefixes, with each prefix representing a subnet or a collection of subnets
