@@ -216,3 +216,13 @@
 * Because all nodes are capable of transmitting frames, more than two nodes can transmit frames at the same time
   * When this happens, all of the nodes receive multiple frames at the same time; that is, the transmitted frames collide at all of the receivers. Typically, when there is a collision, none of the receiving nodes can make any sense of any of the frames that were transmitted. Hence, frames are lost in collisions
 * Any multiple access protocol as belonging to one of three categories: *channel partitioning protocols*, *random access protocols*, and *taking-turns protocols*
+#### 5.3.1 Channel Partitioning Protocols
+* Time-division multiplexing (TDM) and frequency-division multiplexing (FDM) are two techniques that can be used to partition a broadcast channel’s bandwidth among all nodes sharing that channel
+  * TDM divides time into time frames and further divides each time frame into N time slots. Each time slot is then assigned to one of the N nodes. Whenever a node has a packet to send, it transmits the packet’s bits during its assigned time slot in the revolving TDM frame. Typically, slot sizes are chosen so that a single packet can be transmitted during a slot time
+    * TDM is appealing because it eliminates collisions and is perfectly fair: Each node gets a dedicated transmission rate of R/N bps during each frame time. However, it has two major drawbacks: 
+      1. A node is limited to an average rate of R/N bps even when it is the only node with packets to send
+      2. a node must always wait for its turn in the transmission sequence—again, even when it is the only node with a frame to send
+* While TDM shares the broadcast channel in time, FDM divides the R bps channel into different frequencies (each with a bandwidth of R/N) and assigns each frequency to one of the N nodes
+  * FDM thus creates N smaller channels of R/N bps out of the single, larger R bps channel. FDM shares both the advantages and drawbacks of TDM:
+    1. Avoids collisions and divides the bandwidth fairly among the N nodes.
+    2. A node is limited to a bandwidth of R/N, even when it is the only node with packets to send
