@@ -314,3 +314,7 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   3. Managing users. If an employee moves between groups, the physical cabling must be changed to connect the employee to a different switch. Employees belonging to two groups make the problem even harder.
 * Each of these difficulties can be handled by a switch that supports virtual local area networks (VLANs). As the name suggests, a switch that supports VLANs allows multiple virtual local area networks to be defined over a single physical local area network infrastructure
 * A more scalable approach to interconnecting VLAN switches is known as *VLAN trunking*
+### 5.5 Link Virtualization: A Network as a Link Layer
+#### 5.5.1 Multiprotocol Label Switching (MPLS)
+* [MPLS header](http://blog.internetworkexpert.com/wp-content/uploads/2010/02/Screen-shot-2010-02-21-at-2.18.06-PM.png)
+* An MPLS-capable router is often referred to as a label-switched router, since it forwards an MPLS frame by looking up the MPLS label in its forwarding table and then immediately passing the datagram to the appropriate output interface.
