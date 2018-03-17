@@ -334,3 +334,12 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
 5. Let’s suppose that the DHCP server running within the router can allocate IP addresses in the CIDR (Section 4.4.2) block 68.85.2.0/24. In this example, all IP addresses used within the school are thus within Comcast’s address block.
 6. The Ethernet frame containing the DHCP ACK is sent (unicast) by the router to the switch. Because the switch is self-learning (Section 5.4.3) and previously received an Ethernet frame (containing the DHCP request) from Bob’s laptop, the switch knows to forward a frame addressed to 00:16:D3:23:68:8A only to the output port leading to Bob’s laptop.
 7. Bob’s laptop receives the Ethernet frame containing the DHCP ACK, extracts the IP datagram from the Ethernet frame, extracts the UDP segment from the IP datagram, and extracts the DHCP ACK message from the UDP segment. Bob’s DHCP client then records its IP address and the IP address of its DNS server. It also installs the address of the default gateway into its IP forwarding table (Section 4.1). Bob’s laptop will send all datagrams with destination address outside of its subnet 68.85.2.0/24 to the default gateway. At this point, Bob’s laptop has initialized its networking components and is ready to begin processing the Web page fetch. (Note that only the last two DHCP steps of the four presented in Chapter 4 are actually necessary.)
+## Chapter 6: Wireless and Mobile Networks
+### 6.1 Introduction
+* Elements of a wireless network:
+  * Wireless hosts. As in wired networks, these are the end-systems that run applications
+  * Wireless links. A host connects to a base station or to another host via a wireless communication link
+  * Base station. Responsible for sending and receiving data to and from a wireless host that is associated with the base station. There are no counterparts to these in wired networks. Examples include cell towers and access points
+* Hosts associated with a base station are said to be operating in *infrastructure mode*
+  * In *ad hoc networks*, hosts have no infrastructure with which to connect. The hosts themselves provided for routing, addres assignment, DNS-like name translation, and more
+* *Handoff*: when a host moves beyond the range of one base station and into another
