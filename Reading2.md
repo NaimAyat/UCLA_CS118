@@ -226,3 +226,7 @@
   * FDM thus creates N smaller channels of R/N bps out of the single, larger R bps channel. FDM shares both the advantages and drawbacks of TDM:
     1. Avoids collisions and divides the bandwidth fairly among the N nodes.
     2. A node is limited to a bandwidth of R/N, even when it is the only node with packets to send
+* A third channel partitioning protocol is code division multiple access (CDMA)
+  * While TDM and FDM assign time slots and frequencies, respectively, to the nodes, CDMA assigns a different code to each node
+    * Each node then uses its unique code to encode the data bits it sends. If the codes are chosen carefully, CDMA networks have the wonderful property that different nodes can transmit simultaneously and yet have their respective receivers correctly receive a sender's encoded data bits (assuming the receiver knows the sender’s code) in spite of interfering transmissions by other nodes
+    
