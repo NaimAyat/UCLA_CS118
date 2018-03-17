@@ -348,3 +348,4 @@ Let p be a probability, that is, a number between 0 and 1. The operation of slot
   * Single-hop, infrastructure-less. One of the nodes in the single-hop network may coordinate the transmissions of other nodes. Examples: Bluetooth and 802.11 networks in ad hoc mode
   * Multi-hop, infrastructure-based. Base station is wired to the larger networks. Some wireless nodes may have to relay communication via other nodes in order to communicate via the base station. Example: wireless mesh networks
   * Multi-hop, infrastructure-less. Nodes may have to relay messages among several other nodes to reach a destination. Nodes may also be mobile, with connectivity changing among nodes. Examples: mobile ad hoc networks (MANETs) and vehicular ad hoc networks (VANET)
+### 6.2 Wireless Links and Network Characteristics
