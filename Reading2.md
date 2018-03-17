@@ -142,3 +142,14 @@
 * BGP session that spans two ASs is called an external BGP (eBGP) session
 * BGP session between routers in the same AS is called an internal BGP (iBGP) session
 * In BGP, destinations are not hosts but instead are CIDRized prefixes, with each prefix representing a subnet or a collection of subnets
+* In BGP, an autonomous system is identified by its globally unique autonomous system number (ASN)
+* When a router advertises a prefix across a BGP session, it includes with the prefix a number of BGP attributes
+##### BGP Route Selection
+* BGP uses eBGP and iBGP to distribute routes to all the routers within ASs. From this distribution, a router may learn about more than one route to any one prefix, in which case the router must select one of the possible routes. The input into this route selection process is the set of all routes that have been learned and accepted by the router. If there are two or more routes to the same prefix, then BGP sequentially invokes the following elimination rules until one route remains:
+  * Routes are assigned a local preference value as one of their attributes. The local preference of a route could have been set by the router or could have been learned by another router in the same AS. This is a policy decision that is left up to the AS’s network administrator
+  * From the remaining routes, the route with the shortest AS-PATH is selected. If this rule were the only rule for route selection, then BGP would be using a DV algorithm for path determination, where the distance metric uses the number of AS hops rather than the number of router hops.
+  * From the remaining routes (all with the same local preference value and the same AS-PATH length), the route with the closest NEXT-HOP router is selected. Here, closest means the router for which the cost of the least-cost path, determined by the intra-AS algorithm, is the smallest. This process is called hot-potato routing.
+  * If more than one route still remains, the router uses BGP identifiers to select the route
+### 4.7 Broadcast and Multicast Routing
+* In broadcast routing, the network layer provides a service of delivering a packet sent from a source node to all other nodes in the network
+* Multicast routing enables a single source node to send a copy of a packet to a subset of the other network nodes
