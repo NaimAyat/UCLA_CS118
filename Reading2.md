@@ -110,3 +110,6 @@
 * In a load-sensitive algorithm, link costs vary dynamically to reflect the current level of congestion in the underlying link. If a high cost is associated with a link that is currently congested, a routing algorithm will tend to choose routes around such a congested link.
 ### 4.5.1 The Link-State (LS) Routing Algorithm
 * Essentially just [Dijkstra’s algorithm](https://courses.cs.washington.edu/courses/cse326/00wi/handouts/lecture22/img014.gif)
+### 4.5.2 The Distance-Vector (DV) Routing Algorithm
+* The distance vector (DV) algorithm is iterative, asynchronous, and distributed. It is distributed in that each node receives some information from one or more of its directly attached neighbors, performs a calculation, and then distributes the results of its calculation back to its neighbors. It is iterative in that this process continues on until no more information is exchanged between neighbors
+* [Example](https://www.youtube.com/watch?v=x9WIQbaVPzY)
