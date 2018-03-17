@@ -211,3 +211,4 @@
 * There are two types of network links:
   * A *point-to-point link* consists of a single sender at one end of the link and a single receiver at the other end of the link
   * A *broadcast link*, can have multiple sending and receiving nodes all connected to the same, single, shared broadcast channel
+* * Multiple access problem*: how to coordinate the access of multiple sending and receiving nodes to a shared broadcast channel
