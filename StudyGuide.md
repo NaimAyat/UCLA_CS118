@@ -143,4 +143,5 @@
     * The BGP route is, conceptually, a “promise” to carry data to a section of IP space. The route is a “bag” of attributes.
 27. Can BGP lead to a routing loop?
     * No. When BGP updates travel through different ASes, EBGP routers prepend their AS to AS PATH attribute. BGP routers use this information to check through which Autonomous Systems certain updates passed. If a EBGP speaking router detects its own AS in AS PATH attribute update, the router will ignore the update and will not advertise it further to IBGP neighbors, because it is a routing information loop. This is a built in mechanism for loop prevention in BGP.
-    
+28. How is the BGP reachability info propagated within an AS and across ASes?
+    * Each pair of connected ASes needs to run the same inter-AS routing protocol to exchange reachability information. Neighboring ASs send eachother the list of prefixes that are reachable from that AS. 
