@@ -156,4 +156,14 @@
    * Channel partitioning: divide channel into smaller pieces, by time slot, frequency, or code. Allocate a piece to a node for exclusive use. This allows the channel to be shared effectively under high load. However, it is inefficient at low load; there is a delay in channel access, and 1/N bandwidth is allocated even if there is one node
    * Random access: channel not divided, allow for collisions and "recover" from them. Efficient for low load; single node can fully utilize channel. Inefficient for high load as collision overhead increases.
    * Taking-turns MAC: Nodes take turns to send, but nodes with more to send can take longer turns. This is good in that there is no collision, bad that it is unfair.
-4. 
+4. CSMA and CSMA/CD:
+   * Carrier sensing: a node listens to the channel before transmitting. If a frame from another node is currently being transmitted into the channel, a node then waits until it detects no transmissions for a short amount of time and then begins transmission.
+   * Collision detection: a transmitting node listens to the channel while it is transmitting. If another node is transmitting an interfering frame, it stops and waits a random amount of time before repeating the sense-and-transmit-when-idle cycle.
+5. When do collisions occur in CSMA and CSMA/CD?
+   *  A radio carrier senses before transmitting, but collisions occur either (1) because a second radio transmits after the first finishes sensing due to propagation delay; or (2) because a carrier signal may exist at the receiver that the transmitter could not sense.
+6. How does binary exponential back off work?
+   * Random waiting period, but consecutive collisions increase wait time. 
+     * After first collision, wait 0 or 1 slot time (random decision)
+     * If collided twice, wait 0, 1, 2, or 3 at random
+     * If collided ith time, wait 0, 1, ..., or 2<sup>i</sup>-1 at random
+     * Try 16 times and give up if cannot transmit
