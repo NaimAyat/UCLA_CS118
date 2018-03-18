@@ -65,4 +65,4 @@
      * First packet goes and reserves resources for subsequent packets. As a result, all packets follow the same path during the connection
      * Since all packets follow the same path, a global header is required only for the first packet
      * Since all packets follow the same path, packets reach the destination in order
-     * Since each time a new connection has to be setup with reservation of resources and extra information handling at routers, VCs are costly to implement
+     * Since each time a new connection has to be setup with reservation of resources and routers need to store connection state information, VCs are costly to implement
