@@ -80,7 +80,7 @@
      * Header length: determines where in the datagram the data actually begins
      * Type of service: allow different types of datagrams to be distinguished (low delay, high throughput, etc.)
      * Datagram length: total length of the datagram, header+data
-     * Identifier, flags, fragmentation offset: determines if data is fragmented and needs fixing
+     * Identifier, flags, fragmentation offset: determines if data is fragmented and needs fixing at intermediate routers
      * Time-to-live: ensures that datagrams do not circulate forever in the network. This is decremented by 1 each time the datagram is processed by a router. If it reaches 0, the datagram is dropped.
      * Protocol: used when the datagram reaches its destination; indicates the transport-layer protcol to which the data portion should be passed
      * Header checksum: aids router in detecting bit errors in a received IP datagram
