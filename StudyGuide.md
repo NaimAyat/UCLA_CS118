@@ -124,3 +124,10 @@
     * Yes, when multiple paths to a destination have the same cost, OSPF allows multiple paths to be used. This is one of the serveral advancements OSPF offered as a successor to RIP.
 18. Why are intra-AS and inter-AS routing protocols different?
     * In intra-AS, there is a single network adminsitrator, so no policy decisions are needed. In inter-AS, network administrators want control over how traffic is routed and who routes through their network. Hence, intra-AS protocols focus on performance, while inter-AS protocols typically favor policy over performance.
+19. Can BGP always compute the shortest path route?
+    * By definition, BGP routers will always choose a loop-free route. However, the route is not always the shortest AS-path. BGP routers employ an algorithm that considers many metrics when determining the best route; hence, it is possible that a longer loop-free path is preferred over a shorter one due to performance or policy reasons. 
+20. Does the path vector in BGP include any router's IP address? Why?
+    * Yes, it includes the NEXT-HOP, which is the next closest router a packet can go through. The next hop is among the series of routers that are connected together in a network and is the next possible destination for a data packet.
+21. What is the difference between hierarchical OSPF and BGP inter-domain routing?
+    * OSPF is an internal gateway protocol, while BGP is an external gateway protocol. OSPF is fast to converge, while BGP is slow. OSPF uses Dijkstra algorithm and IP, while BGP uses best path algorithm and TCP.  OSPF is a link state protocol and BGP is a path vector protocol.
+22. 
