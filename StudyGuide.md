@@ -182,4 +182,9 @@
 12. Difference between a router and a switch?
     * Router: reads IP addresses, can direct messages to another network with different IP addresses to the originating network. The router can build up an address table and "know" where other devices are.
     * A switch is not as intelligent as a router; it can pen messages, check IP address, and direct the packets to the port on which the device with that ip address resides. It cannot modify IP addresses or see outside of the home network.
-13. 
+13. Which device can isolate collision domains?
+    * Network bridge.
+14. ** Given a scenario, use the appropriate devices (hub, switch, and router) to interconnect hosts to form a large network.**
+15. How does the self-learning algorithm work?
+    * A switch table is initially empty. For each incoming frame received on an interface, the switch stores in its table (1) the MAC address in the frame’s source address field, (2) the interface from which the frame arrived, and (3) the current time. In this manner the switch records in its table the LAN segment on which the sender resides. If every host in the LAN eventually sends a frame, then every host will eventually get recorded in the table. The switch deletes an address in the table if no frames are received with that address as the source address after some period of time (the aging time). In this manner, if a PC is replaced by another PC (with a different adapter), the MAC address of the original PC will eventually be purged from the switch table.
+16. 
