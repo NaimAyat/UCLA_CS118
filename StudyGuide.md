@@ -71,4 +71,4 @@
      * Packets are free to travel any path on any intermediate router, which is decided on-the-fly by dynamically changing routing tables on routers
      * All packets must be associated with a header with proper information about the source and upper layer data
      * Packets reach the destination in any order
-     * Not as reliable as virtual circuits, but easy and cost-efficient because there are no reserved resources
+     * Not as reliable as virtual circuits, but easy to implement and cost-efficient because there are no reserved resources
