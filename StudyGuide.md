@@ -58,3 +58,4 @@
      * When retransmision timer expires, `ssthresh = max(cwnd/2, 2*MSS)`, `cwnd = 1 MSS`, retransmit lost packet
 ### Network Layer
 1. What is the Internet service model?
+   * "Best-effort service". Timing between packets is not guaranteed to be preserved, packets are not guaranteed to be in order, and the delivery of packets is not guaranteed.
