@@ -120,3 +120,6 @@
     * When a link-cost changes or a link fails, it is possible that distance vector rousing causes a routing loop - packets will bounce between the same nodes indefinitely without getting to their destination. We can acoid this by adding poisoned reverse; when a node routes to another node to get to a destination, the first node will tell the second node that its distance to the destination is infinity, thus preventing the second node from sending the packet back to the first node. 
 16. Why does RIP limit the maximum hop count as 16? Can it fully address the count-to-inf problem?
     * Routing information protocol (RIP) uses 4-bit binary form to store numbers. The maximum binary form in four positions is 15 (1111), making 16 represent "infinity", the maximum hop count. This was simply a decision by the creators of RIP to combat routing loops as part of the poisoned reverse solution. It does not completely solve the count-to-infinity problem, as loops involving three or more nodes will not be detected by the poisoned reverse technique. 
+17. Can OSPF compute multiple same-cost paths?
+    * Yes, when multiple paths to a destination have the same cost, OSPF allows multiple paths to be used. This is one of the serveral advancements OSPF offered as a successor to RIP.
+18. 
