@@ -122,4 +122,5 @@
     * Routing information protocol (RIP) uses 4-bit binary form to store numbers. The maximum binary form in four positions is 15 (1111), making 16 represent "infinity", the maximum hop count. This was simply a decision by the creators of RIP to combat routing loops as part of the poisoned reverse solution. It does not completely solve the count-to-infinity problem, as loops involving three or more nodes will not be detected by the poisoned reverse technique. 
 17. Can OSPF compute multiple same-cost paths?
     * Yes, when multiple paths to a destination have the same cost, OSPF allows multiple paths to be used. This is one of the serveral advancements OSPF offered as a successor to RIP.
-18. 
+18. Why are intra-AS and inter-AS routing protocols different?
+    * In intra-AS, there is a single network adminsitrator, so no policy decisions are needed. In inter-AS, network administrators want control over how traffic is routed and who routes through their network. Hence, intra-AS protocols focus on performance, while inter-AS protocols typically favor policy over performance.
