@@ -51,3 +51,10 @@
      * `cwnd = ssthresh + 3MSS`
      * Retransmit the lost packet
      * Fast recovery: until a non-duplicate ACK arrives, increase `cwnd` by `1 MSS` upon every duplicate ACK
+     * Upon 3rd duplicate ACK `ssthresh = max(cwnd/2, 2*MSS)`, `cwnd = ssthresh + 3*MSS`, retransmit lost packet
+     * Upon each additional duplicate ACK, `cwnd += 1 MSS`, transmit a new packet if allowed by the updated cwnd and rwnd
+     * Upon a new non-duplicate ACK `cwnd = ssthresh`, deflating the congestion window size
+   * Retransmission Timeout:
+     * When retransmision timer expires, `ssthresh = max(cwnd/2, 2*MSS)`, `cwnd = 1 MSS`, retransmit lost packet
+     
+       
