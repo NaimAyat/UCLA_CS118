@@ -130,4 +130,5 @@
     * Yes, it includes the NEXT-HOP, which is the next closest router a packet can go through. The next hop is among the series of routers that are connected together in a network and is the next possible destination for a data packet.
 21. What is the difference between hierarchical OSPF and BGP inter-domain routing?
     * OSPF is an internal gateway protocol, while BGP is an external gateway protocol. OSPF is fast to converge, while BGP is slow. OSPF uses Dijkstra algorithm and IP, while BGP uses best path algorithm and TCP.  OSPF is a link state protocol and BGP is a path vector protocol.
-22. 
+22. What is longest prefix matching rule?
+    * Longest prefix match refers to an algorithm used by routers in Internet Protocol (IP) networking to select an entry from a forwarding table. The most specific of the matching table entries — the one with the longest subnet mask — is called the longest prefix match. This allows for efficiency, since prefix blocks can be allocated on a much finer granularity, as well as aggregation.
