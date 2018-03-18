@@ -147,3 +147,8 @@
     * Each pair of connected ASes needs to run the same inter-AS routing protocol to exchange reachability information. Neighboring ASs send eachother the list of prefixes that are reachable from that AS. 
 29. What is hot potato routing? How is it used?
     * In hot-potato routing, the AS gets rid of the packet (the hot potato) as quickly as possible (more precisely, as inexpensively as possible). This is done by having a router send the packet to the gateway router that has the smallest router-to-gateway cost among all gateways with a path to the destination. It is a step in adding an outside-AS destination in a router's forwarding table, since we want to choose the gateway that hast the smallest least cost.
+### Link Layer
+1. Why do you need a new link-layer header (frame header) in addition to IP header?
+   * If the link layer performs error detection, then it is the sending controller that sets the error-detection bits in the frame header and it is the receiving controller that performs error detection. Moreover, the frame header contains MAC information to coordinate the frame transmissions of many nodes. It can provide reliable delivery, unlike IP on its own.
+2. Can an error-detection algorithm detect packet errors with 100% accuracy?
+   * No, parity checks only work in the case of single-bit errors. Moreover, checksum data itself can be corrupted. 
