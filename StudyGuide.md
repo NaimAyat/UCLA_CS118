@@ -96,4 +96,5 @@
      * Hop limit: similar to the time-to-live field in IPv4
      * Source and destination addresses: to ensure the packet is delivered to the right place
      * Data: actual information we want to be transmitted
-     
+5. Explain IP fragmentation and reassembly.
+   * Only offered in routers in IPv4; IPv6 fragmentation and reassembly can only be performed by the source and destination. When a router's outgoing link has a smaller maximum transmission unit than the length of an IP datagram, the datagram is fragmented into two or more smaller IP datagrams, each encapsulated in a separate link-layer frame, and sent over the outgoing link. When the fragments arrive at the destination, the destination host can reassemble the fragments based on the identifier, flags, and fragmentation offset header fields.
