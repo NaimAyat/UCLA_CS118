@@ -56,5 +56,5 @@
      * Upon a new non-duplicate ACK `cwnd = ssthresh`, deflating the congestion window size
    * Retransmission Timeout:
      * When retransmision timer expires, `ssthresh = max(cwnd/2, 2*MSS)`, `cwnd = 1 MSS`, retransmit lost packet
-     
-       
+### Network Layer
+1. What is the Internet service model?
