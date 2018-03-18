@@ -152,3 +152,8 @@
    * If the link layer performs error detection, then it is the sending controller that sets the error-detection bits in the frame header and it is the receiving controller that performs error detection. Moreover, the frame header contains MAC information to coordinate the frame transmissions of many nodes. It can provide reliable delivery, unlike IP on its own.
 2. Can an error-detection algorithm detect packet errors with 100% accuracy?
    * No, parity checks only work in the case of single-bit errors. Moreover, checksum data itself can be corrupted. 
+3. Compare channel partitioning MAC, random access MAC, and taking-turns MAC
+   * Channel partitioning: divide channel into smaller pieces, by time slot, frequency, or code. Allocate a piece to a node for exclusive use. This allows the channel to be shared effectively under high load. However, it is inefficient at low load; there is a delay in channel access, and 1/N bandwidth is allocated even if there is one node
+   * Random access: channel not divided, allow for collisions and "recover" from them. Efficient for low load; single node can fully utilize channel. Inefficient for high load as collision overhead increases.
+   * Taking-turns MAC: Nodes take turns to send, but nodes with more to send can take longer turns. This is good in that there is no collision, bad that it is unfair.
+4. 
