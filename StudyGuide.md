@@ -72,3 +72,19 @@
      * All packets must be associated with a header with proper information about the source and upper layer data
      * Packets reach the destination in any order
      * Not as reliable as virtual circuits, but easy to implement and cost-efficient because there are no reserved resources
+3. How does a router decide which next hop to forward when a packet arrives?
+   * The router's routing table contains the IP address of the destination network and the IP address of the next hop along the path to the final destination. Towards the edges of the Internet, each router has one or more default routes. The default route is used for all destination addresses for which the router doesn't have a specific route, and points "inward" - ie. it is assigned to the router's upstream link. Each packet will therefore tend to flow upstream, towards the core of the network. As you get closer towards the network core, the routers tend to have larger and larger routing tables - they "know about" more networks. The core routers themselves do not have default routes - if they don't know how to get to the destination, they just drop the packet. The routers at this level use BGP to exchange routes with other core routers. If your packet makes it this far, it will then start flowing downstream again, until it reaches its destination.
+4. What is the rationale for each field in the IP packet header?
+   * IPv4:
+     * Version number: 4 bits specify the IP protocol version of the datagram
+     * Header length: determines where in the datagram the data actually begins
+     * Type of service: allow different types of datagrams to be distinguished (low delay, high throughput, etc.)
+     * Datagram length: total length of the datagram, header+data
+     * Identifier, flags, fragmentation offset: determines if data is fragmented and needs fixing
+     * Time-to-live: ensures that datagrams do not circulate forever in the network. This is decremented by 1 each time the datagram is processed by a router. If it reaches 0, the datagram is dropped.
+     * Protocol: used when the datagram reaches its destination; indicates the transport-layer protcol to which the data portion should be passed
+     * Header checksum: aids router in detecting bit errors in a received IP datagram
+     * Source and destination IP addresses: to ensure the packet is delivered to the right place
+     * Options: allow header to be extended
+     * Data: actual information we want to be transmitted
+     
