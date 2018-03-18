@@ -87,4 +87,13 @@
      * Source and destination IP addresses: to ensure the packet is delivered to the right place
      * Options: allow header to be extended
      * Data: actual information we want to be transmitted
+   * IPv6: 
+     * Version number: specify the IP version number
+     * Traffic class: similar to the type of service field in IPv4
+     * Flow label: identifies flow of datagram
+     * Payload length: unsigned integer giving the number of bytes in the IPv6 datagram following the fixed length, 40-byte header
+     * Next header: similar to the protocol field in IPv4
+     * Hop limit: similar to the time-to-live field in IPv4
+     * Source and destination addresses: to ensure the packet is delivered to the right place
+     * Data: actual information we want to be transmitted
      
