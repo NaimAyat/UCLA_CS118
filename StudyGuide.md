@@ -207,3 +207,6 @@
    * They are the smallest; there is nothing encrypted in 802.11 MAC ACK frames. The source address is implied, so it does not need to be included in order to save power. TCP ACKs could, in theory, replace them, but they would be overkill. Coversely, MAC ACKs could not replace TCP ACKs because they do not contain enough information.
 6. What is the mechanism to handle hidden terminals?
    * Stations use a short Request to Send (RTS) control frame and a short Clear to Send (CTS) control frame to reserve access to the channel. When a sender wants to send a DATA frame, it can first send an RTS frame to the AP, indicating the total time required to transmit the DATA frame and the ACK frame. When the AP receives the RTS frame, it responds by broadcasting a CTS frame. This CTS frame serves two purposes: It gives the sender explicit permission to send and also instructs the other stations not to send for the reserved duration.
+7. How is mobility in the same IP subnet handled? 
+   * When a device moves from one base station's range to another, the device disassociates with the first access point and connects to the other, all while keeping its IP address and maintaining its ongoing TCP sessions. The switch to which the access points are connected handles occasional moves via self-learning; however, they are not designed for highly mobile users. 
+8. 
