@@ -16,4 +16,38 @@
    * If it is too small, then overhead will be spent on unnecessary retransmissions. If it is too big, we will waste an unecessary amount of time waiting for ACKs that are never going to arrive.
 4. Why does sampleRTT fluctuate?
    * SampleRTT values will fluctuate from segment to segment due to congestion in the routers and to the varying load on the end systems.
-5. 
+5. How does TCP readjust its timer? 
+   * Consider RTT measurements for segments that have not been retransmitted. Every time TCP sends a data segment, it records the transmission time. When the ACK is received, TCP reads the system time again. This difference is called SampleRTT. When we have to retransmit a segment, we set the timer to twice its previous value. Hence, when when TCP time outs repeatedly, the timeout value will increase exponentially.
+### TCP Connection Management
+1. What is the 3-way handshake? 
+  * The client sends SYN packet to the server. The server responds with a SYN-ACK. The client responds with an ACK. The connection is established.
+2. How are the initial seq, ACK #, etc. decided?
+  * When a TCP connection is established, each side generates a random number as its initial sequence number. This is important, because if sequence or ACK numbers were guessable, this would be a security issue. Thereafter, for every byte transmitted the sequence number will increment by 1. The ACK field is the sequence number from the other side, sent back to acknowledge reception.
+3. Are the TCP connection setup and teardown identical? 
+  * No, the teardown works as follows: One side of the connection sends a packet with the FIN bit. The other side responds with two packets, an ACK and a FIN of its own. This last fin is ACKed by the original side, indicating the connection has been closed on both sides.
+4. Why are there so many states in the FSM model for TCP connection?
+   * We need a state to represent each step of the handshake and teardown process. Otherwise, it would be unclear what part of the connection setup or teardown we are currently on. 
+### TCP Congestion Control
+1. How many components are there in TCP congestion control? 
+   * Slow start, congestion avoidance, fast retransmit, fast recovery.
+2. How does each component of TCP congestion control work?
+   * Slow start:
+     * Set `cwnd = maximum segment size (MSS)`
+     * When connection begins, increase rate exponentially until cwnd reaches slow start threshold `ssthresh`
+     * Double `cwnd` every RTT by setting `cwnd += MSS` for each ACK received
+     * Initial transmission rate is slow but ramps up exponentially fast
+   * Switching from slow start to congestion avoidance:
+     * When `cwnd` gets to half its value before timeout. `ssthresh` is set to half of `cwnd` just before loss event
+   * Congestion avoidance:
+     * Increase `cwnd` by `1 MSS` per RTT until loss is detected
+     * Active when `cwnd > ssthresh` and no loss occurs
+     * `cwnd += (MSS/cwnd)*MSS` upon every incoming non-duplicate ACK
+   * When loss occurs:
+     * Through duplicate ACKS: fast retransmit / fast recovery
+     * Through retransmission timeout: reset everything
+   * Fast retransmit / Fast Recovery
+     * 3 duplicate ACKs infer packet loss
+     * `ssthresh = cwnd/2`
+     * `cwnd = ssthresh + 3MSS`
+     * Retransmit the lost packet
+     * Fast recovery: until a non-duplicate ACK arrives, increase `cwnd` by `1 MSS` upon every duplicate ACK
