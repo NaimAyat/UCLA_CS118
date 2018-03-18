@@ -177,4 +177,9 @@
 9. **Given a network scenario, explain how the packet is delivered from the sending host to the receiving host (that is located on a different subnet) step-by-step. How many protocols are used in the delivery process? What are the IP header and frame header as the IP data packet is being delivered at each step? How is the next hop found out?**
 10. Is DHCP a soft-state protocol? 
     * DHCP configuration state is leased (only valid for a certain amount of time). Hence, it is a soft-state protocol.
-11. 
+11. Can ARP work in point-to-point link, rather than broadcast medium?
+    * ARP needs to querey all devices in the local network to find out the MAC address for the destination IP. In theory, it could do this point-to-point. However, it would be largely inefficient, since there is no telling whether the first or last machine we try to access contains the MAC address we're looking for.
+12. Difference between a router and a switch?
+    * Router: reads IP addresses, can direct messages to another network with different IP addresses to the originating network. The router can build up an address table and "know" where other devices are.
+    * A switch is not as intelligent as a router; it can pen messages, check IP address, and direct the packets to the port on which the device with that ip address resides. It cannot modify IP addresses or see outside of the home network.
+13. 
