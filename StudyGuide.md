@@ -156,6 +156,9 @@
    * Channel partitioning: divide channel into smaller pieces, by time slot, frequency, or code. Allocate a piece to a node for exclusive use. This allows the channel to be shared effectively under high load. However, it is inefficient at low load; there is a delay in channel access, and 1/N bandwidth is allocated even if there is one node
    * Random access: channel not divided, allow for collisions and "recover" from them. Efficient for low load; single node can fully utilize channel. Inefficient for high load as collision overhead increases.
    * Taking-turns MAC: Nodes take turns to send, but nodes with more to send can take longer turns. This is good in that there is no collision, bad that it is unfair.
+   * TDMA: Time divisison multiple access. Pros: good for digital, high channel utilization, no packet collisions. Cons: need node for synchronization, can't handle mobile nodes.
+   * Slotted ALOHA: Pros: single active node can transmit at full rate of channel, only slots in nodes need to be in sync. Cons: collisions, wasting slots, idle slots, clock synchronization.
+   * Polling: Pros: good for single I/O, low latency. Cons: not scalable.
 4. CSMA and CSMA/CD:
    * Carrier sensing: a node listens to the channel before transmitting. If a frame from another node is currently being transmitted into the channel, a node then waits until it detects no transmissions for a short amount of time and then begins transmission.
    * Collision detection: a transmitting node listens to the channel while it is transmitting. If another node is transmitting an interfering frame, it stops and waits a random amount of time before repeating the sense-and-transmit-when-idle cycle.
