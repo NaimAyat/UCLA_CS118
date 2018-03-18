@@ -209,4 +209,10 @@
    * Stations use a short Request to Send (RTS) control frame and a short Clear to Send (CTS) control frame to reserve access to the channel. When a sender wants to send a DATA frame, it can first send an RTS frame to the AP, indicating the total time required to transmit the DATA frame and the ACK frame. When the AP receives the RTS frame, it responds by broadcasting a CTS frame. This CTS frame serves two purposes: It gives the sender explicit permission to send and also instructs the other stations not to send for the reserved duration.
 7. How is mobility in the same IP subnet handled? 
    * When a device moves from one base station's range to another, the device disassociates with the first access point and connects to the other, all while keeping its IP address and maintaining its ongoing TCP sessions. The switch to which the access points are connected handles occasional moves via self-learning; however, they are not designed for highly mobile users. 
-8. 
+8. How is routing to a mobile node accomplished?
+   * Indirect: Correspondent addresses packets using home address of mobile node. Home agent intercepts packets, forwards to foreign agent. Foreign agent receives packets, forwards to mobile node. Mobile node replies directly to correspondent.
+   * Direct: Correspondent requests, receives foreign address of mobile. Correspondent forwards to foreign agent. Foreign agent receives packets, forwards to mobile. Mobile replies directly to correspondent.
+9. How is mobility supported across different subnets?  
+   * Home agent: router on a mobile node's home network that maintains information. It's the device's current location, as identified in its care-of address
+   * Foreign agent: router serves as a mobility agent for a mobile node. Works in conjunction with a home agent to support internet traffic forwarding, from any location other than the home network of the mobile node.
+10. 
