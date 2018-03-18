@@ -187,4 +187,23 @@
 14. ** Given a scenario, use the appropriate devices (hub, switch, and router) to interconnect hosts to form a large network.**
 15. How does the self-learning algorithm work?
     * A switch table is initially empty. For each incoming frame received on an interface, the switch stores in its table (1) the MAC address in the frame’s source address field, (2) the interface from which the frame arrived, and (3) the current time. In this manner the switch records in its table the LAN segment on which the sender resides. If every host in the LAN eventually sends a frame, then every host will eventually get recorded in the table. The switch deletes an address in the table if no frames are received with that address as the source address after some period of time (the aging time). In this manner, if a PC is replaced by another PC (with a different adapter), the MAC address of the original PC will eventually be purged from the switch table.
-16. 
+16. What protocols are used in web browsing, file transfer or email checking?
+    * DHCP, UDP, MAC, DNS
+    * DHCP is accessed before DNS
+    * The address of the DNS server is returned in the DHCP ACK
+    * For the UDP/TCP segments, arbitrary source/destination ports cannot be selected as some are reserved
+    * ARP only works between devices in the same IP subnet.
+### Wireless and Mobile Networks
+1. Which category of MAC does CDMA belong to?
+   * MAC has three types of protocols: random access, controlled access, and channelization. CDMA is channelization.
+2. CSMA/CA operations?
+   * Listens to determine how busy shared media is. Broadcasts a message telling all other nodes it is sending data; all other nodes "back off" from sending data for a set time.
+3. CSMA/CD vs. CSMA/CA
+   * CSMA/CD: for wire communication, no corntrol before transmission, generates collisions
+   * CSMA/CA: for wireless communication, collision avoidance before transmission, difficult to distinguish between incoming weak signals, noise, and effects of own transmission
+4. Why doesn't 802.11 MAC implement collision detection, but collision avoidance?
+   * Wireless transceivers can't send and receive on the same channel at the same time, so they can't detect collisions. This is due to the fact that there's an incredible difference between send power and receive sensitivity. The sending would cover up any possible chance of receiving a foreign signal, no chance of "Collision Detection". For this reason Collision Avoidance with Control Messages is necessary.
+5. Why use link-layer ACKs in 802.11 MAC?
+   * They are the smallest; there is nothing encrypted in 802.11 MAC ACK frames. The source address is implied, so it does not need to be included in order to save power. TCP ACKs could, in theory, replace them, but they would be overkill. Coversely, MAC ACKs could not replace TCP ACKs because they do not contain enough information.
+6. What is the mechanism to handle hidden terminals?
+   * Stations use a short Request to Send (RTS) control frame and a short Clear to Send (CTS) control frame to reserve access to the channel. When a sender wants to send a DATA frame, it can first send an RTS frame to the AP, indicating the total time required to transmit the DATA frame and the ACK frame. When the AP receives the RTS frame, it responds by broadcasting a CTS frame. This CTS frame serves two purposes: It gives the sender explicit permission to send and also instructs the other stations not to send for the reserved duration.
