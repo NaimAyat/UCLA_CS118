@@ -215,4 +215,5 @@
 9. How is mobility supported across different subnets?  
    * Home agent: router on a mobile node's home network that maintains information. It's the device's current location, as identified in its care-of address
    * Foreign agent: router serves as a mobility agent for a mobile node. Works in conjunction with a home agent to support internet traffic forwarding, from any location other than the home network of the mobile node.
-10. 
+10. How do we solve the tringle routing problem (datagrams addressed to the mobile node must be routed first to the home agent and then to the foreign network, even when a much more efficient route exists)?
+    * We use direct routing. This overcomes the inefficienty of triangle routing, but oes so at the cost of additional complexity. A correspondent agent in the correspondent's network first learns the COA of the mobile node. This can be done by having the correspondent agent query the home agent, assuming that (as in the case of indirect routing) the mobile node has an up-to-date value for its COA registered with its home agent. It is also possible for the correspondent itself to perform the function of the correspondent agent, just as a mobile node could perform the function of the foreign agent.n The correspondent agent then tunnels datagrams directly to the mobile node's COA. 
