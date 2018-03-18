@@ -174,3 +174,7 @@
    * Slotted ALOHA = Np(1-p)<sup>N-1</sup>
    * ALOHA = p(1-p)<sup>2(N-1)</sup>
    * CSMA/CD seems more efficient because when only one node has a frame to send, the node can transmit at the full channel rate. 
+9. **Given a network scenario, explain how the packet is delivered from the sending host to the receiving host (that is located on a different subnet) step-by-step. How many protocols are used in the delivery process? What are the IP header and frame header as the IP data packet is being delivered at each step? How is the next hop found out?**
+10. Is DHCP a soft-state protocol? 
+    * DHCP configuration state is leased (only valid for a certain amount of time). Hence, it is a soft-state protocol.
+11. 
