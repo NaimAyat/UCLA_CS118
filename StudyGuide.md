@@ -66,3 +66,9 @@
      * Since all packets follow the same path, a global header is required only for the first packet
      * Since all packets follow the same path, packets reach the destination in order
      * Since each time a new connection has to be setup with reservation of resources and routers need to store connection state information, VCs are costly to implement
+   * Datagram networks:
+     * Connectionless; there is no need to reserve resources as there is no dedicated path
+     * Packets are free to travel any path on any intermediate router, which is decided on-the-fly by dynamically changing routing tables on routers
+     * All packets must be associated with a header with proper information about the source and upper layer data
+     * Packets reach the destination in any order
+     * Not as reliable as virtual circuits, but easy and cost-efficient because there are no reserved resources
