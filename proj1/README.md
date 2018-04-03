@@ -6,6 +6,6 @@ To fulfill the request, the server obtains the name of the provided file along w
 
 The server then compares the file extension to the list of supported formats (`.html`, `.htm`, `.jpeg`, `.jpg`, and `.gif`). The response message is constructed by concatenating the accumulated status and header lines; the result is then written to the socket. If the file type is indeed supported, its contents will be displayed in the client web browser. If the file extension is non-existent or unsupported, the file is treated as a binary; that is, the web browser will prompt the user to download it.
 ## Manual
-* To compile the source code, simply type: `make`
+* To compile the source code: `make`
 * To run the server, type: `./server <port>`
 * To test the program, open a web browser to: `http://localhost:<port>/<file>`
