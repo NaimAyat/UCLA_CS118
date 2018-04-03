@@ -1,4 +1,4 @@
-# Lecture 10 (Feb 13, 2018)
+# Lecture 9, Part 2 (Feb 13, 2018)
 ##### Midterm
 * Covers chapters 1-3; no need to memorize all TCP connections
 ## Router Architecture
