@@ -11,3 +11,14 @@ The server then compares the file extension to the list of supported formats (`.
 * To test the server, open a web browser to: `http://localhost:<port>/<file>`
 ## Sample Executions
 ![Figure 1](https://raw.githubusercontent.com/NaimAyat/UCLA_CS118/master/images/proj1_1.PNG)
+
+*Figure 1: Output for a file called “na.html”, which contains the text “Hello world”. The contents of the file are displayed in Google Chrome on the left, and the request message is displayed on the right.*
+
+![Figure 2](https://raw.githubusercontent.com/NaimAyat/UCLA_CS118/master/images/proj1_2.PNG)
+
+*Figure 2: Output corresponding to a request made for an extensionless binary file named “binary”. As shown, the web browser (Mozilla Firefox) prompts the user to download the file.*
+
+![Figure 3](https://github.com/NaimAyat/UCLA_CS118/blob/master/images/proj1_3.PNG)
+
+*Figure 3: Output corresponding to a request made for an image file named “meta.JPEG”. Note that file extensions are not case-sensitive.*
+
