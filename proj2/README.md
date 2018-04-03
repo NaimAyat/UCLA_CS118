@@ -1,4 +1,4 @@
-# Window-Based Reliable Data Transfer with TCP Tahoe Implementation
+# Window-Based Reliable Data Transfer with TCP Tahoe Congestion Control
 ## 1. Introduction
 ### 1.1. Design Overview
 The objective is to implement a reliable data transfer protocol using UDP sockets in the C programming language. To accomplish this, a simple congestion window-based protocol is developed on top of a selective repeat algorithm. One file, server.c, implements the server side of the transfer. Another file, client.c, represents the client side. The client program acts as a client application – it possesses the ability to request files from the server. 
@@ -32,7 +32,7 @@ Upon each receipt of a data packet, the client simply prints:
 “Receiving packet” [sequence number]
 ```
 ### 1.2 Usage
-The software package contains the source files `server.c` and `client.c`. as well as both a `README` and `Makefile`. Therefore, the program may be compiled by typing:
+The software package contains the source files `server.c` and `client.c`, as well as both a `README` and `Makefile`. Therefore, the program may be compiled by typing:
 
 ```
 $ make
