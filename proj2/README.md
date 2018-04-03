@@ -38,15 +38,15 @@ The software package contains the source files `server.c` and `client.c`. as wel
 $ make
 ```
 
-Once the server and client executables are gen-erated, data transmission may begin. Note that for the following operations, it is assumed that all project files are contained in the same directory.
+Once the server and client executables are generated, data transmission may begin. Note that for the following operations, it is assumed that all project files are contained in the same directory.
 
-The server accepts only one argument: a port num-ber. It can be initialized via the command line with the following syntax:
+The server accepts only one argument: a port number. It can be initialized via the command line with the following syntax:
 
 ```
 $ ./server <port>
 ```
 
-Meanwhile, the client program accepts three argu-ments: the server hostname, a port number, and the name of a file to retrieve. It may also be invoked via the command line with by the following statement:
+Meanwhile, the client program accepts three arguments: the server hostname, a port number, and the name of a file to retrieve. It may also be invoked via the command line with by the following statement:
 
 ```
 $ ./client <hostname> <port> <file>
@@ -55,12 +55,12 @@ $ ./client <hostname> <port> <file>
 If the wrong number of arguments is provided for either program, the protocol throws an exception and closes the connection.
 ## 2. Congestion Control
 ### 2.1. TCP Tahoe
-A version of TCP Tahoe is implemented in the trans-fer protocol to allow for efficient congestion control. First, the initial slow start threshold is set to 15360 bytes. In addition, the initial congestion window size is defined to be 1024 bytes.
+A version of TCP Tahoe is implemented in the transfer protocol to allow for efficient congestion control. First, the initial slow start threshold is set to 15360 bytes. In addition, the initial congestion window size is defined to be 1024 bytes.
 
-During the slow start phase, Tahoe protocol incre-ments the congestion window by one for each acknowledgement that is received. As a result, the congestion window size is effectively doubled for each round-trip time (RTT).
+During the slow start phase, Tahoe protocol increments the congestion window by one for each acknowledgement that is received. As a result, the congestion window size is effectively doubled for each round-trip time (RTT).
 
-When the congestion window surpasses the slow start threshold, the transfer protocol enters a conges-tion avoidance phase. Throughout this process, the congestion window is incremented once for each RTT until a data loss is detected.
+When the congestion window surpasses the slow start threshold, the transfer protocol enters a congestion avoidance phase. Throughout this process, the congestion window is incremented once for each RTT until a data loss is detected.
 
-In general TCP, data loss is measured by a protocol-maintained timer; if an acknowledgement is not re-ceived by timeout, a data loss is considered to have occurred. This is largely inefficient, as it introduces an unnecessarily rigid wait duration before each packet loss is addressed. Hence, a fast-retransmit algorithm is implemented to optimize UDP data transfer. When a duplicate acknowledgement is re-ceived three consecutive times, packet loss is auto-matically assumed.
+In general TCP, data loss is measured by a protocol-maintained timer; if an acknowledgement is not received by timeout, a data loss is considered to have occurred. This is largely inefficient, as it introduces an unnecessarily rigid wait duration before each packet loss is addressed. Hence, a fast-retransmit algorithm is implemented to optimize UDP data transfer. When a duplicate acknowledgement is received three consecutive times, packet loss is automatically assumed.
 
-Further, a fast recovery algorithm is implemented in the case of packet loss. After the sender acknowl-edges a loss, it will reduce the congestion window by a factor of one half. Then, the congestion window is set to either the receiver window size or congestion window size summed with the number of duplicate acknowledgements received – this value assigned is always the lower of the two.
+Further, a fast recovery algorithm is implemented in the case of packet loss. After the sender acknowledges a loss, it will reduce the congestion window by a factor of one half. Then, the congestion window is set to either the receiver window size or congestion window size summed with the number of duplicate acknowledgements received – this value assigned is always the lower of the two.
