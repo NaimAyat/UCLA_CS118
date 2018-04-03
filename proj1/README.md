@@ -9,3 +9,5 @@ The server then compares the file extension to the list of supported formats (`.
 * To compile the source code: `make`
 * To run the server: `./server <port>`
 * To test the server, open a web browser to: `http://localhost:<port>/<file>`
+## Sample Executions
+![Figure 1](https://raw.githubusercontent.com/NaimAyat/UCLA_CS118/master/images/proj1_1.PNG)
